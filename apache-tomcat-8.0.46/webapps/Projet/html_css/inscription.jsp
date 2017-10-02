@@ -8,7 +8,7 @@
 
 	<title>Projet</title>
 	<link href="style.css" rel="stylesheet">
-	<meta http-equiv="refresh" content="1" >
+<!-- 	<meta http-equiv="refresh" content="1" > -->
 </head>
 <body>
 	
@@ -18,19 +18,19 @@
 			
 			<div class="champ">
 				<label for="Nom">Nom :</label><br/>
-				<input type="text" name="nom"required><br/>
+				<input type="text" name="nom"><br/>
 			</div>
 			<div class="champ">
 				<label for="mail">Adresse mail :</label>
-				<input type="email"id="mail" name="mail" required><br/>
+				<input type="email"id="mail" name="mail"><br/>
 			</div>
 			<div class="champ">
 				<label for="mdp">Mot de Passe :</label> 
-				<input type="password" name="mdp" required><br/>
+				<input type="password" name="mdp"><br/>
 			</div>
 			<div class="champ">
 				<label for="mdp2">Confirmation de Mot de Passe :</label> 
-				<input type="password" name="mdp2"required><br/>
+				<input type="password" name="mdp2"><br/>
 			</div>
 			<input type="submit" class="button">
 
