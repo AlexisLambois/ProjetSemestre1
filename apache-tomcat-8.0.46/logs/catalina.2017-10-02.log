@@ -739,3 +739,126 @@
 02-Oct-2017 16:18:24.777 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 02-Oct-2017 16:18:24.781 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 02-Oct-2017 16:18:24.782 INFOS [main] org.apache.catalina.startup.Catalina.start Server startup in 1031 ms
+02-Oct-2017 16:27:36.466 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:27:36.518 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:27:36.569 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service Catalina
+02-Oct-2017 16:27:36.609 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:27:36.611 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:27:36.611 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:27:36.612 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:27:38.080 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.46
+02-Oct-2017 16:27:38.082 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 10 2017 10:10:31 UTC
+02-Oct-2017 16:27:38.082 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.46.0
+02-Oct-2017 16:27:38.082 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-Oct-2017 16:27:38.082 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.16.0-4-amd64
+02-Oct-2017 16:27:38.082 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/local/virtual_machine/anaconda3/jre
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_121-b15
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Azul Systems, Inc.
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/conf/logging.properties
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Oct-2017 16:27:38.083 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Oct-2017 16:27:38.084 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Oct-2017 16:27:38.084 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/endorsed
+02-Oct-2017 16:27:38.084 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:27:38.084 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:27:38.084 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/temp
+02-Oct-2017 16:27:38.084 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+02-Oct-2017 16:27:38.153 INFOS [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:27:38.164 INFOS [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+02-Oct-2017 16:27:38.166 INFOS [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:27:38.167 INFOS [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+02-Oct-2017 16:27:38.168 INFOS [main] org.apache.catalina.startup.Catalina.load Initialization processed in 361 ms
+02-Oct-2017 16:27:38.187 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service Catalina
+02-Oct-2017 16:27:38.187 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.46
+02-Oct-2017 16:27:38.195 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ROOT de l'application web
+02-Oct-2017 16:27:38.448 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:38.490 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ROOT has finished in 295 ms
+02-Oct-2017 16:27:38.490 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ServerWeb de l'application web
+02-Oct-2017 16:27:38.572 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:38.577 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ServerWeb has finished in 87 ms
+02-Oct-2017 16:27:38.577 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/docs de l'application web
+02-Oct-2017 16:27:38.622 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:38.624 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/docs has finished in 46 ms
+02-Oct-2017 16:27:38.624 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/manager de l'application web
+02-Oct-2017 16:27:38.685 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:38.690 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/manager has finished in 65 ms
+02-Oct-2017 16:27:38.690 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/host-manager de l'application web
+02-Oct-2017 16:27:38.734 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:38.736 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/host-manager has finished in 46 ms
+02-Oct-2017 16:27:38.736 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/examples de l'application web
+02-Oct-2017 16:27:39.004 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:39.034 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/examples has finished in 298 ms
+02-Oct-2017 16:27:39.034 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/Projet de l'application web
+02-Oct-2017 16:27:39.082 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:27:39.134 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/Projet has finished in 100 ms
+02-Oct-2017 16:27:39.136 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:27:39.141 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:27:39.144 INFOS [main] org.apache.catalina.startup.Catalina.start Server startup in 975 ms
+02-Oct-2017 16:28:12.065 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:12.118 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:12.168 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service Catalina
+02-Oct-2017 16:28:12.194 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:12.269 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:12.277 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:12.277 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:13.374 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.46
+02-Oct-2017 16:28:13.375 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 10 2017 10:10:31 UTC
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.46.0
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.16.0-4-amd64
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/local/virtual_machine/anaconda3/jre
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_121-b15
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Azul Systems, Inc.
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:28:13.376 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/conf/logging.properties
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/endorsed
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46
+02-Oct-2017 16:28:13.377 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/temp
+02-Oct-2017 16:28:13.378 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+02-Oct-2017 16:28:13.448 INFOS [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:13.458 INFOS [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+02-Oct-2017 16:28:13.460 INFOS [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:13.461 INFOS [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+02-Oct-2017 16:28:13.462 INFOS [main] org.apache.catalina.startup.Catalina.load Initialization processed in 358 ms
+02-Oct-2017 16:28:13.479 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service Catalina
+02-Oct-2017 16:28:13.479 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.46
+02-Oct-2017 16:28:13.487 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ROOT de l'application web
+02-Oct-2017 16:28:13.745 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:13.786 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ROOT has finished in 298 ms
+02-Oct-2017 16:28:13.787 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ServerWeb de l'application web
+02-Oct-2017 16:28:13.863 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:13.867 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/ServerWeb has finished in 80 ms
+02-Oct-2017 16:28:13.867 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/docs de l'application web
+02-Oct-2017 16:28:13.914 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:13.916 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/docs has finished in 48 ms
+02-Oct-2017 16:28:13.916 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/manager de l'application web
+02-Oct-2017 16:28:13.971 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:13.975 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/manager has finished in 59 ms
+02-Oct-2017 16:28:13.975 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/host-manager de l'application web
+02-Oct-2017 16:28:14.022 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:14.024 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/host-manager has finished in 49 ms
+02-Oct-2017 16:28:14.024 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/examples de l'application web
+02-Oct-2017 16:28:14.199 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:14.228 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/examples has finished in 203 ms
+02-Oct-2017 16:28:14.228 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/Projet de l'application web
+02-Oct-2017 16:28:14.276 INFOS [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+02-Oct-2017 16:28:14.325 INFOS [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/webapps/Projet has finished in 97 ms
+02-Oct-2017 16:28:14.328 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:14.332 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:14.333 INFOS [main] org.apache.catalina.startup.Catalina.start Server startup in 871 ms
+02-Oct-2017 16:28:59.450 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:59.502 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:59.553 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service Catalina
+02-Oct-2017 16:28:59.580 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:59.581 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+02-Oct-2017 16:28:59.582 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+02-Oct-2017 16:28:59.583 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
