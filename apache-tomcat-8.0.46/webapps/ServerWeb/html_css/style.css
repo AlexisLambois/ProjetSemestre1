@@ -1,0 +1,181 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: #C9A0DC;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.page-header {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background-color: #4162a8;
+	width: 75%;
+	heigth: 250px;
+	border-style: dotted;
+	border-color: #370028;
+	border-width: 10px;
+}
+
+.page-header h1 {
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 100px;
+	color: #370028;
+}
+
+.page-header h1:hover {
+	color: #D2CAEC;
+}
+
+h2 {
+	text-align: center;
+	font-family: cursive;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	width: 60%;
+	border-collapse: collapse;
+}
+
+.tab_co th, td {
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}
+
+.tab_co td {
+	height: 100px;
+	text-align: center;
+}
+
+h2 {
+	color: #370028;
+}
+
+h3{
+	color:red;
+}
+
+.control-label {
+	text-align: left;
+	width: 95%;
+	font-size: large;
+	font-family: cursive;
+}
+
+.control-input {
+	border-radius: 4px;
+	width: 90%;
+	text-align: center;
+}
+
+.button {
+	background: #4162a8;
+	border-top: 1px solid #38538c;
+	border-right: 1px solid #1f2d4d;
+	border-bottom: 1px solid #151e33;
+	border-left: 1px solid #1f2d4d;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px
+		0 #1f3053, 0 8px 4px 1px #111111;
+	box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0
+		#1f3053, 0 8px 4px 1px #111111;
+	color: #fff;
+	font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+	margin-bottom: 10px;
+	padding: 10px 0 12px 0;
+	text-align: center;
+	text-shadow: 0 -1px 1px #1e2d4d;
+	width: 150px;
+}
+
+.button:hover {
+	zoom: 120%;
+}
+
+.menu {
+	position: fixed;
+	height: 100%;
+	width: 134px;
+}
+
+.block {
+	height: 50%;
+	margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+	transform: translateY(-50%);
+}
+
+.menu ul {
+	list-style: none;
+	height: 100%;
+	padding: 0;
+}
+
+.menu ul li {
+	height: 100px;
+	width: 100%;
+	background-image: url("bouton.png");
+	margin-top: 2px;
+	border-radius: 4px;
+	text-align: center;
+	display: table;
+}
+
+.menu_a{
+	width: 100%;
+	height:80%;
+	display:table-cell;
+	vertical-align:middle;
+	font-size: x-large;
+	text-decoration: none;
+}
+
+.menu_a a:hover{
+	zoom:120%;
+}
+
+a:link { 
+ 	text-decoration:none; 
+} 
+
+a, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.tab_affiche{
+	width: 1000px;
+	background-color: #D3C2DB;
+}
+
+.plus:hover{
+	zoom:150%;
+}
+
+.tab_affiche td{
+	height: 100px;
+	width: 20%;
+	text-align: center;
+	font-family: cursive;
+	font-weight: bold;
+	font-size: large;
+}
+
+.tab_info{
+	text-align: center;
+}
+
+.tab_info td{
+	height: 70px;
+}
+
+.tab_info input{
+	text-align: center;
+}
+
+

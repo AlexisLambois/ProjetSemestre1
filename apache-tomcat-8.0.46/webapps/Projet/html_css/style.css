@@ -1,0 +1,45 @@
+/**************** Formulaire connection **********************/
+
+.formulaire_connection_inscription{
+	width:15%;
+	margin-top:13%;
+	margin-left: auto;
+	margin-right: auto;
+	border:solid 1px black;
+	min-width:300px;
+}
+.formulaire_connection_inscription form{
+	text-align: center;
+	margin-top:15%;
+}
+.formulaire_connection_inscription label{
+	font-size: large;
+}
+.formulaire_connection_inscription input{
+	font-size: 120%;
+}
+.formulaire_connection_inscription a{
+	font-size:small;
+	text-decoration: none;
+	color: blue;
+	display: block;
+	margin-right: 0px;
+	margin-left: auto;
+	width:30%;
+}
+.formulaire_connection_inscription a:hover{
+	color:red;
+}
+.champ{
+	margin-bottom: 10%
+}
+
+/**************** Formulaire inscription **********************/
+
+.formulaire_connection_inscription .button{
+	margin-bottom: 10px;
+}
+
+.formulaire_connection_inscription .button:hover{
+	zoom:110%;
+}
