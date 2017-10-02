@@ -9,8 +9,6 @@ public class Inscription extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		Connection con=null;
-		int inserer = 0;
-		
 		
 		try {
 
@@ -18,28 +16,19 @@ public class Inscription extends HttpServlet {
 			Class.forName("org.postgresql.Driver");
 
 			// connexion a la base
-			con = DriverManager.getConnection("jdbc:postgresql://localhost/postgres","postgres","root");
-
+			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+			
 			// execution de la requete
 			Statement stmt = con.createStatement();
 			
-			if( !req.getParameter("mdp").equals(req.getParameter("mdp2")) ){
-				inserer=1;
-			}
-			if(!req.getParameter("login").matches("^[a-zA-Z0-9_]*$")){
-				inserer=2;
-			}
-			
-			String query = "SELECT * FROM personne WHERE login='" + req.getParameter("login") + "'";
+			String query = "SELECT cno FROM client WHERE mail='" + req.getParameter("mail") + "'";
 			ResultSet rs = stmt.executeQuery(query);
 			
-			if( rs.next() ){
-				inserer=3;
-			}
-			
-			if(inserer == 0){
-				query = "INSERT INTO personne(login,mdp) VALUES('"+req.getParameter("login")+"','"+req.getParameter("mdp")+"')";
-				stmt.executeUpdate(query);
+			if(!rs.next()){
+				if( ( req.getParameter("mdp").equals(req.getParameter("mdp2")) ) && (req.getParameter("nom").matches("^[a-zA-Z0-9_]*$")) ){
+					query = "INSERT INTO client(nom,mail,mdp) VALUES('"+req.getParameter("nom")+"','"+req.getParameter("mail")+"','"+req.getParameter("mdp")+"')";
+					stmt.executeUpdate(query);
+				}
 			}
 			
 		}catch (Exception e) {
@@ -47,11 +36,7 @@ public class Inscription extends HttpServlet {
 		}finally{
 			try {
 				con.close();
-				if(inserer!=0){
-					res.sendRedirect("../html_css/index.jsp?inscr="+inserer);
-				}else{
-					res.sendRedirect("../html_css/index.jsp?inscr=0");
-				}
+				res.sendRedirect("../html_css/index.jsp");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
