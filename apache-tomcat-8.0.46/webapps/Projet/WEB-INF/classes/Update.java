@@ -13,7 +13,6 @@ public class Update extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		Connection con=null;
-		ResultSet rs=null;
 		HttpSession session = req.getSession(true);
 		boolean valide=false; 
 		String cause = "";
@@ -36,9 +35,7 @@ public class Update extends HttpServlet {
 			String mdp = req.getParameter("passwd");
 			String mail = req.getParameter("mail");
 			String date = req.getParameter("date_naissance");
-			System.out.println(date);
 			java.util.Date temp = formatter.parse(date);
-			System.out.println(temp.toLocaleString());
 			java.sql.Date finale = new java.sql.Date(temp.getYear(),temp.getMonth(),temp.getDate());
 			
 			boolean nom_valide = (nom.matches("^[a-zA-Z]*$") && nom!="null");
@@ -50,23 +47,25 @@ public class Update extends HttpServlet {
 			
 			if(valide){
 				String query = "UPDATE client SET nom='"+nom+"',prenom='"+prenom+"',adresse='"+adresse+"',mdp='"+mdp+"',datenaissance='"+finale+"' WHERE cno='"+session.getAttribute("id_client")+"'";
+				System.out.print(query);
 				stmt.executeUpdate(query);
 			}else{
 				if(!nom_valide){
-					cause+= "Nom invalide : Ne doit contenir que des caractères alphabétiques";
+					cause+= "<br>Nom invalide : Ne doit contenir que des caractères alphabétiques<br>";
 				}
 				if(!prenom_valide){
-					cause+= "Prenom invalide : Ne doit contenir que des caractères alphabétiques";
+					cause+= "<br>Prenom invalide : Ne doit contenir que des caractères alphabétiques<br>";
 				}
 				if(!adresse_valide){
-					cause+= "Adresse invalide";
+					cause+= "<br>Adresse invalide<br>";
 				}
 				if(!mdp_valide){
-					cause+= "Mot de passe invalide";
+					cause+= "<br>Mot de passe invalide<br>";
 				}
 				if(!mail_valide){
-					cause+= "Mail invalide : Doit être du type : texte@texte.texte";
+					cause+= "<br>Mail invalide : Doit être du type : texte@texte.texte<br>";
 				}
+				
 				session.setAttribute("cause", cause);
 			}
 			

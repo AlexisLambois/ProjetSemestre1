@@ -8,8 +8,10 @@
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.io.*"%>
 	<%@ page import="java.util.*"%>
+	<script src="main.js"></script>
 </head>
 <body>
+	<input type="button" value="Disconnect" onclick="disco()">
 	<%
 		Connection con = null;
 		try {
@@ -49,16 +51,21 @@
 		</form>
 	</div>
 	
-		<%if(request.getParameter("modif")!=null && request.getParameter("modif").equals("false")){%>
-			<center><h3>Modification erronée ! Cause :<%session.getAttribute("cause");%></h3></center>
-		<%}else if(request.getParameter("modif")!=null && request.getParameter("modif").equals("true")){%>
-			<center><h3>Modification réussie !</h3></center>
-		<%}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			con.close();
-		}
-	%>
+		<%
+				if(request.getParameter("modif")!=null && request.getParameter("modif").equals("false")){
+		%>
+				<center><h3>Modification erronée ! Cause :<%out.print(session.getAttribute("cause"));%></h3></center>
+		<%
+				}else if(request.getParameter("modif")!=null && request.getParameter("modif").equals("true")){
+		%>
+				<center><h3>Modification réussie !</h3></center>
+		<%		
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				con.close();
+			}
+		%>
 </body>
 </html>
