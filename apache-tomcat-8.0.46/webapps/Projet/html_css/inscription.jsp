@@ -17,20 +17,20 @@
 		<form method="POST" action=".././servlet/Inscription">
 			
 			<div class="champ">
-				<label for="Nom">Nom :</label><br/>
+				<label>Nom :</label><br/>
 				<input type="text" name="nom"><br/>
 			</div>
 			<div class="champ">
-				<label for="mail">Adresse mail :</label>
+				<label>Adresse mail :</label>
 				<input type="email"id="mail" name="mail"><br/>
 			</div>
 			<div class="champ">
-				<label for="mdp">Mot de Passe :</label> 
-				<input type="password" name="mdp"><br/>
+				<label>Mot de Passe :</label> 
+				<input type="password" name="passwd"><br/>
 			</div>
 			<div class="champ">
-				<label for="mdp2">Confirmation de Mot de Passe :</label> 
-				<input type="password" name="mdp2"><br/>
+				<label>Confirmation de Mot de Passe :</label> 
+				<input type="password" name="passwd2"><br/>
 			</div>
 			<input type="submit" class="button">
 

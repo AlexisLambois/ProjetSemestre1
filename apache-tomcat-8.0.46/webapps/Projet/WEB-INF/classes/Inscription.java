@@ -30,7 +30,7 @@ public class Inscription extends HttpServlet {
 			ResultSet rs = stmt.executeQuery(query);
 			
 			if(!rs.next()){
-				if( ( passwd.equals(passwd2) ) && (nom.matches("^[a-zA-Z]*$")) && (mail.matches("^[a-zA-Z0-9_]*@[a-z]*.$")) ){
+				if( ( passwd.equals(passwd2) ) && (nom.matches("^[a-zA-Z]*$")) && (mail.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")) ){
 					query = "INSERT INTO client(nom,mail,mdp) VALUES('"+nom+"','"+mail+"','"+passwd+"')";
 					stmt.executeUpdate(query);
 				}

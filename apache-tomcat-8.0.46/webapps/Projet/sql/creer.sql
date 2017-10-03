@@ -39,7 +39,7 @@ CREATE TABLE client
 	adresse text,
 	mail text,
 	mdp text,
-	dateNaissance time,
+	dateNaissance date,
 	constraint pk_client primary key (cno)
 );
 
@@ -67,8 +67,4 @@ CREATE TABLE billet
 		on update cascade
 );
 
-SELECT * FROM train;
-SELECT * FROM gare;
-SELECT * FROM ligne;
-SELECT * FROM client;
-SELECT * FROM billet;
+INSERT INTO client(nom,mail,mdp) VALUES('root','root@root.root','root');

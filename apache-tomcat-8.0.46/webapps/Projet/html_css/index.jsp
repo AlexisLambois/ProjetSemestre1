@@ -8,7 +8,6 @@
 
 	<title>Projet</title>
 	<link href="style.css" rel="stylesheet">
-<!-- <meta http-equiv="refresh" content="1" > -->
 </head>
 <body>
 
@@ -17,18 +16,22 @@
 		<form method="POST" action=".././servlet/Connexion">
 		
 			<div class="champ">
-				<label for="mail">Adresse mail :</label>
-				<input type="email"id="mail" name="mail" required><br/>
+				<label>Adresse mail :</label>
+				<input type="email" name="mail" required><br/>
 			</div>
 			<div class="champ">
-				<label for="mdp">Mot de Passe :</label>
-				<input type="password" id="mdp" name="mdp" required><br/>
+				<label>Mot de Passe :</label>
+				<input type="password" name="passwd" required><br/>
 			</div>
 			<input type="submit" class="button"><br/>
 		</form>
 		<a href="./inscription.jsp">Pas de compte ?</a>
 		
 	</div>
+	
+	<%if (request.getParameter("auth") != null) {%>
+		<style>.champ input{border: 2px solid red;}</style>
+	<%}%>
 	
 </body>
 </html>
