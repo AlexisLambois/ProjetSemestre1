@@ -4,6 +4,7 @@
 <html>
 <head>
 	<title>Projet</title>
+	<link href="style.css" rel="stylesheet">
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.io.*"%>
 	<%@ page import="java.util.*"%>
@@ -13,35 +14,43 @@
 		Connection con = null;
 		try {
 			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://localhost/postgres", "postgres", "root");
+			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("Select * from client WHERE cno='" + session.getAttribute("compte") + "'");
+			ResultSet rs = stmt.executeQuery("Select * from client WHERE cno='" + session.getAttribute("id_client") + "'");
 			rs.next();
 	%>
-	<table>
+	<div class="formulaire_connection_inscription" >
 		<form method='POST' action='.././servlet/Update'>
-			<tr>
-				<td><label>Login : </label>
-				<input type='text' name='login' value='<% out.print(rs.getString("login"));%>'></td>
-			</tr>
-			<tr>
-				<td><label>Mot de passe : </label>
-				<input type='text' name='mdp' value='<% out.print(rs.getString("mdp"));%>'></td>
-			</tr>
-			<tr>
-				<td><label>Adresse : </label>
-				<input type='text' name='adresse' value='<% out.print(rs.getString("adresse"));%>'></td>
-			</tr>
-			<tr>
-				<td><label>Nombre de connexion : </label>
-				<p><% out.print(rs.getString("nbconnec"));%></p></td>
-			</tr>
-			<tr><td><button type='submit' class='btn btn-primary'>Mettre à jour</button></td></tr>
+			<div class="champ">
+				<label>Nom : </label><br>
+				<input type='text' name='name' value='<%out.print(rs.getString("nom"));%>'><br>
+			</div>
+			<div class="champ">
+				<label>Prénom : </label>
+				<input type='text' name='surname' value='<%if(rs.getString("prenom")!=null){out.print(rs.getString("prenom"));}%>'><br>
+			</div>
+			<div class="champ">
+				<label>Adresse : </label>
+				<input type='text' name='adresse' value='<% if(rs.getString("adresse")!=null){out.print(rs.getString("adresse"));}%>'><br>
+			</div>
+			<div class="champ">
+				<label>Mot de passe : </label>
+				<input type="password" name='passwd' value='<% out.print(rs.getString("mdp"));%>'><br>
+			</div>
+			<div class="champ">
+				<label>Adresse Mail : </label>
+				<input type="email" name='mail' value='<% out.print(rs.getString("mail"));%>'><br>
+			</div>
+			<div class="champ">
+				<label>Date de Naissance : </label>
+				<input type="date" name='date_naissance' value='<%if(rs.getString("datenaissance")!=null){ out.print(rs.getString("datenaissance"));}%>'><br>
+			</div>
+			<input type="submit" class="button" value="Mettre à jour">
 		</form>
-	</table>
-		
+	</div>
+	
 		<%if(request.getParameter("modif")!=null && request.getParameter("modif").equals("false")){%>
-			<center><h3>Modification erronée ! Cause : Le login existe déjà !</h3></center>
+			<center><h3>Modification erronée ! Cause :<%session.getAttribute("cause");%></h3></center>
 		<%}else if(request.getParameter("modif")!=null && request.getParameter("modif").equals("true")){%>
 			<center><h3>Modification réussie !</h3></center>
 		<%}
