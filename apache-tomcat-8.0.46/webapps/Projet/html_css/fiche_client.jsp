@@ -10,7 +10,7 @@
 </head>
 <body>
 	<%
-		Connection con = null
+		Connection con = null;
 		try {
 			Class.forName("org.postgresql.Driver");
 			con = DriverManager.getConnection("jdbc:postgresql://localhost/postgres", "postgres", "root");
@@ -40,11 +40,11 @@
 		</form>
 	</table>
 		
-	<%if(request.getParameter("modif")!=null && request.getParameter("modif").equals("false")){%>
-		<center><h3>Modification erronée ! Cause : Le login existe déjà !</h3></center>
-	<%}else if(request.getParameter("modif")!=null && request.getParameter("modif").equals("true")){%>
-		<center><h3>Modification réussie !</h3></center>
-	<%}
+		<%if(request.getParameter("modif")!=null && request.getParameter("modif").equals("false")){%>
+			<center><h3>Modification erronée ! Cause : Le login existe déjà !</h3></center>
+		<%}else if(request.getParameter("modif")!=null && request.getParameter("modif").equals("true")){%>
+			<center><h3>Modification réussie !</h3></center>
+		<%}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
