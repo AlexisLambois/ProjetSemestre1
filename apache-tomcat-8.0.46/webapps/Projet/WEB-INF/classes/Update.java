@@ -50,7 +50,6 @@ public class Update extends HttpServlet {
 			
 			if(valide){
 				String query = "UPDATE client SET nom='"+nom+"',prenom='"+prenom+"',adresse='"+adresse+"',mdp='"+mdp+"',datenaissance='"+finale+"' WHERE cno='"+session.getAttribute("id_client")+"'";
-				System.out.println(query);
 				stmt.executeUpdate(query);
 			}else{
 				if(!nom_valide){

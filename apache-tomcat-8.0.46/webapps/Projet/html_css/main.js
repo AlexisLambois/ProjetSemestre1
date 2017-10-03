@@ -1,5 +1,4 @@
-var pg = require('pg');
 
-function test(){
-	
+function test(truc){
+	console.log(truc[0]);
 }

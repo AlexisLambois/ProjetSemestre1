@@ -68,3 +68,10 @@ CREATE TABLE billet
 );
 
 INSERT INTO client(nom,mail,mdp) VALUES('root','root@root.root','root');
+INSERT INTO gare(nom,ville) VALUES('St Cyprien','Paris');
+INSERT INTO gare(nom,ville) VALUES('St Jean','Paris');
+INSERT INTO gare(nom,ville) VALUES('St Phillipe','Paris');
+INSERT INTO gare(nom,ville) VALUES('St Carle','Paris');
+INSERT INTO gare(nom,ville) VALUES('St Benoit','Paris');
+INSERT INTO gare(nom,ville) VALUES('St JB','Paris');
+INSERT INTO gare(nom,ville) VALUES('St Truc','Paris');
