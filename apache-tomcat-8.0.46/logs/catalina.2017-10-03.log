@@ -629,3 +629,10 @@
 03-Oct-2017 08:44:35.805 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 03-Oct-2017 08:44:35.809 INFOS [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 03-Oct-2017 08:44:35.810 INFOS [main] org.apache.catalina.startup.Catalina.start Server startup in 873 ms
+03-Oct-2017 08:59:44.604 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+03-Oct-2017 08:59:44.655 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+03-Oct-2017 08:59:44.706 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service Catalina
+03-Oct-2017 08:59:44.732 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+03-Oct-2017 08:59:44.734 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+03-Oct-2017 08:59:44.827 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+03-Oct-2017 08:59:44.827 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
