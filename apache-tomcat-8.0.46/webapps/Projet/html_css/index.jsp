@@ -8,7 +8,6 @@
 
 	<title>Projet</title>
 	<link href="style.css" rel="stylesheet">
-<!-- <meta http-equiv="refresh" content="1" > -->
 </head>
 <body>
 
