@@ -23,11 +23,11 @@
 		<form method='POST' action='.././servlet/Update'>
 			<div class="champ">
 				<label>Nom : </label><br>
-				<input type='text' name='name' value='<%out.print(rs.getString("nom"));%>'><br>
+				<input type='text' name='nom' value='<%out.print(rs.getString("nom"));%>'><br>
 			</div>
 			<div class="champ">
 				<label>Prénom : </label>
-				<input type='text' name='surname' value='<%if(rs.getString("prenom")!=null){out.print(rs.getString("prenom"));}%>'><br>
+				<input type='text' name='prenom' value='<%if(rs.getString("prenom")!=null){out.print(rs.getString("prenom"));}%>'><br>
 			</div>
 			<div class="champ">
 				<label>Adresse : </label>

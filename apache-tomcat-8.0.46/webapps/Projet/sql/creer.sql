@@ -39,7 +39,7 @@ CREATE TABLE client
 	adresse text,
 	mail text,
 	mdp text,
-	dateNaissance time,
+	dateNaissance date,
 	constraint pk_client primary key (cno)
 );
 

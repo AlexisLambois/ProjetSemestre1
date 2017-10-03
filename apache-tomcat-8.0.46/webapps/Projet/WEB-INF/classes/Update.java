@@ -1,5 +1,9 @@
 import java.io.IOException;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -13,6 +17,7 @@ public class Update extends HttpServlet {
 		HttpSession session = req.getSession(true);
 		boolean valide=false; 
 		String cause = "";
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		
 		try {
 
@@ -30,15 +35,22 @@ public class Update extends HttpServlet {
 			String adresse = req.getParameter("adresse");
 			String mdp = req.getParameter("passwd");
 			String mail = req.getParameter("mail");
+			String date = req.getParameter("date_naissance");
+			System.out.println(date);
+			java.util.Date temp = formatter.parse(date);
+			System.out.println(temp.toLocaleString());
+			java.sql.Date finale = new java.sql.Date(temp.getYear(),temp.getMonth(),temp.getDate());
 			
 			boolean nom_valide = (nom.matches("^[a-zA-Z]*$") && nom!="null");
 			boolean prenom_valide = (prenom.matches("^[a-zA-Z]*$") && prenom!="null");
 			boolean adresse_valide = (adresse!="null");
 			boolean mdp_valide = (mdp!="null");
 			boolean mail_valide = (mail.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"));
+			valide = nom_valide && prenom_valide && adresse_valide && mdp_valide && mail_valide;
 			
-			if(nom_valide && prenom_valide && adresse_valide && mdp_valide && mail_valide){
-				String query = "UPDATE personne SET login='" + req.getParameter("login") + "',mdp='"+req.getParameter("mdp")+"',adresse='"+req.getParameter("adresse")+"' WHERE login='"+session.getAttribute("compte")+"'";
+			if(valide){
+				String query = "UPDATE client SET nom='"+nom+"',prenom='"+prenom+"',adresse='"+adresse+"',mdp='"+mdp+"',datenaissance='"+finale+"' WHERE cno='"+session.getAttribute("id_client")+"'";
+				System.out.println(query);
 				stmt.executeUpdate(query);
 			}else{
 				if(!nom_valide){
@@ -56,6 +68,7 @@ public class Update extends HttpServlet {
 				if(!mail_valide){
 					cause+= "Mail invalide : Doit être du type : texte@texte.texte";
 				}
+				session.setAttribute("cause", cause);
 			}
 			
 			
