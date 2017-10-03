@@ -9,9 +9,9 @@ public class Connexion extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		Connection con=null;
-		ResultSet rs=null;
+		boolean find = false;
 		HttpSession session = req.getSession(true);
-		boolean trouve = false;
+		ResultSet rs = null;
 		
 		try {
 
@@ -19,27 +19,23 @@ public class Connexion extends HttpServlet {
 			Class.forName("org.postgresql.Driver");
 
 			// connexion a la base
-			con = DriverManager.getConnection("jdbc:postgresql://localhost/postgres","postgres","root");
-
+			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+			
 			// execution de la requete
 			Statement stmt = con.createStatement();
-			String query = "SELECT * FROM personne WHERE login='" + req.getParameter("login") + "' AND mdp='" + req.getParameter("mdp") + "'";
-			rs = stmt.executeQuery(query);
-			trouve = rs.next();
+			String query = "SELECT nom FROM client WHERE mail='" + req.getParameter("mail") + "' AND mdp='" + req.getParameter("passwd") + "'";
 			
-			if(trouve){
-				query = "UPDATE personne SET nbconnec=" + (rs.getInt("nbconnec")+1) + "WHERE login='"+req.getParameter("login")+"'";
-				stmt.executeUpdate(query);
-			}
+			rs = stmt.executeQuery(query);
+			find = rs.next();
 			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			try {
 				con.close();
-				if(trouve){
+				if(find){
 					res.sendRedirect("../html_css/accueil.jsp");
-					session.setAttribute("compte", req.getParameter("login"));
+					session.setAttribute("nom", rs.getString(1));
 				}else{
 					res.sendRedirect("../html_css/index.jsp?auth=false");
 				}
