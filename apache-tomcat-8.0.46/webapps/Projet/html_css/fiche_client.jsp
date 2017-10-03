@@ -10,7 +10,7 @@
 </head>
 <body>
 	<%
-		Connection con = null;
+		Connection con = null
 		try {
 			Class.forName("org.postgresql.Driver");
 			con = DriverManager.getConnection("jdbc:postgresql://localhost/postgres", "postgres", "root");
