@@ -97,3 +97,13 @@
 0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:44:17 +0200] "GET /Projet/html_css/accueil.jsp HTTP/1.1" 200 1126
 0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:44:41 +0200] "POST /Projet/servlet/Connexion HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:44:41 +0200] "GET /Projet/html_css/accueil.jsp HTTP/1.1" 200 1126
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:55 +0200] "GET /Projet/html_css/accueil.jsp HTTP/1.1" 200 1126
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:55 +0200] "GET /Projet/html_css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:55 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:56 +0200] "GET /Projet/html_css/index.jsp HTTP/1.1" 200 751
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:56 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:56 +0200] "GET /Projet/html_css/index.jsp HTTP/1.1" 200 751
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:56 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:57 +0200] "GET /Projet/html_css/accueil.jsp HTTP/1.1" 200 1126
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:45:57 +0200] "GET /favicon.ico HTTP/1.1" 200 21630
+0:0:0:0:0:0:0:1 - - [03/Oct/2017:08:48:04 +0200] "GET /Projet/html_css/fiche_client.jsp HTTP/1.1" 200 172

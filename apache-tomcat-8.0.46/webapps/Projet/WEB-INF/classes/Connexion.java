@@ -23,7 +23,7 @@ public class Connexion extends HttpServlet {
 			
 			// execution de la requete
 			Statement stmt = con.createStatement();
-			String query = "SELECT nom FROM client WHERE mail='" + req.getParameter("mail") + "' AND mdp='" + req.getParameter("passwd") + "'";
+			String query = "SELECT cno FROM client WHERE mail='" + req.getParameter("mail") + "' AND mdp='" + req.getParameter("passwd") + "'";
 			
 			rs = stmt.executeQuery(query);
 			find = rs.next();
@@ -34,8 +34,8 @@ public class Connexion extends HttpServlet {
 			try {
 				con.close();
 				if(find){
-					res.sendRedirect("../html_css/accueil.jsp");
-					session.setAttribute("nom", rs.getString(1));
+					res.sendRedirect("../html_css/fiche_client.jsp");
+					session.setAttribute("id_client", rs.getString(1));
 				}else{
 					res.sendRedirect("../html_css/index.jsp?auth=false");
 				}
