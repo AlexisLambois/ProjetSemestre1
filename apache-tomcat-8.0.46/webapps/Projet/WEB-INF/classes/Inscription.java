@@ -21,12 +21,17 @@ public class Inscription extends HttpServlet {
 			// execution de la requete
 			Statement stmt = con.createStatement();
 			
-			String query = "SELECT cno FROM client WHERE mail='" + req.getParameter("mail") + "'";
+			String nom = req.getParameter("nom");
+			String mail = req.getParameter("mail");
+			String passwd = req.getParameter("passwd");
+			String passwd2 = req.getParameter("passwd2");
+			
+			String query = "SELECT cno FROM client WHERE mail='" + mail + "'";
 			ResultSet rs = stmt.executeQuery(query);
 			
 			if(!rs.next()){
-				if( ( req.getParameter("mdp").equals(req.getParameter("mdp2")) ) && (req.getParameter("nom").matches("^[a-zA-Z0-9_]*$")) ){
-					query = "INSERT INTO client(nom,mail,mdp) VALUES('"+req.getParameter("nom")+"','"+req.getParameter("mail")+"','"+req.getParameter("mdp")+"')";
+				if( ( passwd.equals(passwd2) ) && (nom.matches("^[a-zA-Z]*$")) && (mail.matches("^[a-zA-Z0-9_]*@[a-z]*.$")) ){
+					query = "INSERT INTO client(nom,mail,mdp) VALUES('"+nom+"','"+mail+"','"+passwd+"')";
 					stmt.executeUpdate(query);
 				}
 			}

@@ -7,13 +7,18 @@
 	<title>Projet</title>
 	<link href="style.css" rel="stylesheet">
 </head>
+
+<!-- -------là -->
 <body style="background-color: gray ;" >
 
 	<label><h1>Réservez vos billets de train</h1></label>
 	<label><h3>Voyagez avec nous</h3></label>
 	
 	<div class="formulaire_trajet">
+	
 		<form action="">
+			
+			<!-- -------là -->
 			<div class="divLabelForm">
 				<label>Votre trajet </label><br>
 			</div>
@@ -25,10 +30,14 @@
 				<input type="text" name="aller" placeholder="Aller"><br>
 				<input type="text" name="retour" placeholder="Retour"/><br>
 			</div>
+			
+				<!-- -------là -->
 			<div class="divBValider">
 				<input type="submit" value="Valider">
 			</div>
+			
 		</form>
+		
 	</div>
 	
 	<table>
