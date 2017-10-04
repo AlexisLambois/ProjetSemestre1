@@ -1,0 +1,8 @@
+!.gitingore
+.classpath
+.project
+bin
+conf
+lib
+logs
+work
