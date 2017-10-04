@@ -45,34 +45,104 @@
 }
 
 
-/*PAGE ACCUEIL*/
+/*******PAGE ACCUEIL********/
 
 .styleBody{
 	margin: 0px;
-	font-family: sans-serif;
+	font-family: Arial;
 }
+
 .hautDePageAccueil {
 	/*fond d'ecran*/
 	background-color: white;
-	background-image: url(train3.jpg);
+	background-image: url(images/train3.jpg);
 	background-attachment: scroll;
 	background-position:center top;
 	background-repeat: no-repeat;
 	background-size :100%;
 	/*texte*/
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 	text-align: center;
+	max-height: 100%;
 }
 
 .hautDePageAccueil h1 {
 	color: white;
-}
-.hautDePageAccueil h3 {
-	color: white;
+	text-shadow: 5px 5px 5px black;
+	margin: 0;
+	padding: 10px;
 }
 
-/*TABLEAU*/
+.hautDePageAccueil h3 {
+	color: rgb(230, 230, 230);
+	text-shadow: 2px 2px 2px black;
+	margin: 0;
+	padding: 10px;
+}
+
+/**FORMULAIRE**/
+.formulaire_trajet{
+	/*fond*/
+	background-color: rgba(255,255,255,0.9);
+	/*bordure*/
+	border-radius : 5px;
+	/*marges*/
+	margin-top: 10%;	
+	margin-bottom: 5%;
+	margin-left: 10%;
+	margin-right: 50%;
+	/*taille*/
+	min-width: 300px;
+	max-width:300px;
+	/*texte*/
+	text-align: left;
+}
+.formulaire_trajet h1{
+	font-size: 150%;
+	padding : 3% 5% 3% 5%;
+	background: rgb(42,136,173);
+	border-radius: 5px 5px 0 0;
+	color: white;
+	text-shadow: none;
+	margin: 0;
+}
+
+.champsForm{
+	padding: 15px;
+}
+.champsForm input[class=trajet]{
+	/*fond*/
+	background-image: url(images/recherche.png);
+	background-size: 12%;
+	background-repeat: no-repeat;
+	
+	padding: 5px;
+	padding-left: 25px;
+}
+.champsForm input[class=date]{
+	/*fond*/
+	background-image: url(images/calendrier.png);
+	background-size: 12%;
+	background-repeat: no-repeat;
+	
+	padding: 5px;
+	padding-left: 25px;
+}
+
+.formulaire_trajet input[type=submit]{
+	margin-right: 5%;
+	margin-left: 60%;
+	margin-bottom:5%;
+	border-radius: 2px;
+	font: Bold 15px Arial;
+	background: rgb(42,136,173);
+	color: white;
+	border: none;
+    padding: 5px 15px 5px 15px;
+}
+
+/*
+/*TABLEAU
 .styleBody table {
 	border-collapse: collapse;
 	width: 100%;
@@ -88,50 +158,4 @@
 	background-color: rgb(242, 242, 242);
 	width: 50%;
 	height: 300px;
-}
-
-.image1 img{
-	/*background-color: rgb(242, 242, 242);
-	background-image: url(train.jpg);
-	background-attachment: scroll;
-	background-position:center center;
-	background-repeat: no-repeat;
-	background-height :100%;*/
-	width: 100%;
-	}
-
-
-/*FORMULAIRE*/
-.enTeteForm{
-	font-size: 25px;
-}
-.formulaire_trajet{
-	/*fond*/
-	background-color: rgba(255,255,255,0.9);
-	/*bordure*/
-	border-radius : 2%;
-	/*marges*/
-	margin-top: 10%;	
-	margin-bottom: 5%;
-	margin-left: 20%;
-	margin-right: 50%;
-	/*taille*/
-	width: 50%;
-	min-width: 300px;
-	max-width:300px;
-	/*texte*/
-	text-align: left;
-}
-.champsForm{
-	margin-top: 5%;
-	margin-left: 5%;
-	margin-bottom: 10%;
-}
-.champsForm input[type=text]{
-	padding: 5px;
-}
-.boutonForm{
-	margin-right: 5%;
-	margin-left: 70%;
-	margin-bottom:5%;
-}
+}*/

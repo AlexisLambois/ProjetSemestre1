@@ -625,3 +625,5 @@ Stacktrace:] with root cause
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
 
+04-Oct-2017 11:06:27.031 INFOS [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+04-Oct-2017 11:06:27.031 INFOS [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
