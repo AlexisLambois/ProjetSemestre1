@@ -5,16 +5,24 @@
 <html>
 <head >
 	<title>Projet</title>
+	<%@ page import="java.sql.*"%>
+	<%@ page import="java.io.*"%>
+	<%@ page import="java.util.*"%>
+	<script src="main.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link href="style.css" rel="stylesheet">
+	<script src="js-webshim/minified/polyfiller.js"></script> 
 </head>
 
 <body class="styleBody">
+
 	<table>
 		<th>
 			<input type="submit" value="Connexion">
 			<input type="submit" value="Créer un compte">
 		</th>
 	</table>
+	
 	<!-- HAUT DE PAGE ACCUEIL -->
 	<div class="hautDePageAccueil">
 		<h1>Réservez vos billets de train</h1>
@@ -22,18 +30,18 @@
 		
 		<!--   FORMULAIRE TRAJET   -->
 		<div class="formulaire_trajet">
-			<form action="">
+			<form action="" class="ws-validate">
 				<h1>Votre trajet</h1>
 				
 				<div class="champsForm">
-					<input class="trajet" type="text" name="villeDep" placeholder="Ville de départ"><br>
-					<input class="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée"/><br>
+					<input list="ville" class="trajet" type="text" name="villeDepart" placeholder="Ville départ" /><br>
+					<input list="ville" class="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée"/><br>
+					<div id="test"></div>
 				</div>
-				
-				<div class="champsForm">
-					<input class="date" type="text" name="aller" placeholder="Aller"><br>
-					<input class="date" type="text" name="retour" placeholder="Retour"/><br>
-				</div>
+				<div class="form-row">
+			        <label for="min">Date Départ</label><br>
+			        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="true" />
+    			</div>
 				
 				<input type="submit" value="Valider">
 			</form>
@@ -57,6 +65,37 @@
 		</tr>
 	</table>
 	FIN DE TABLEAU-->
+	
+	<script language="JavaScript">
+
+		<%
+			String res = "<datalist id=\\\"ville\\\" >";
+			Connection con=null;
+			try {
+				Class.forName("org.postgresql.Driver");
+				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+	
+				Statement stmt = con.createStatement();
+				String query = "SELECT CONCAT_WS('-',nom,ville) FROM gare";
+			
+				ResultSet rs = stmt.executeQuery(query);
+				while( rs.next() ){
+					res+="<option value=\\\""+rs.getString(1)+"\\\">";
+				}
+				res+="</datalist>";
+			}catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		%>
+		document.getElementById("test").innerHTML="<%out.print(res);%>";
+		initDate();
+	</script>
 
 </body>
 </html>
