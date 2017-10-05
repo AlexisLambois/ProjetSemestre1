@@ -1,15 +1,21 @@
-package Requete;
+
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
-public class Requetage{
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/servlet/Requetage")
+public class Requetage extends HttpServlet {
 	
-	private java.sql.Connection con = null;
-	private ResultSet rs = null;
-	private String query;
+	ResultSet rs = null;
 	
-	public Requetage(String query) throws SQLException{
-		
-		this.query = query;
+	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	
+		java.sql.Connection con = null;
+		String query = req.getParameter("query");
 		
 		try {
 
@@ -17,24 +23,19 @@ public class Requetage{
 			Class.forName("org.postgresql.Driver");
 			// connexion a la base
 			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-			
-		}catch(Exception e){
-			e.printStackTrace();
-			con.close();
-		}
-		
-	}
-	
-	public void execute(){
-		
-		try {
 			Statement stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
+			
 		}catch(Exception e){
+			
 			e.printStackTrace();
+			
 		}finally{
+			
 			try {
+				req.setAttribute("rs", rs);
 				con.close();
+				res.sendRedirect("../html_css/temp.jsp");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

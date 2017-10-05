@@ -6,7 +6,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Insert title here</title>
-	<%@ page import="Requete.*" %>
 	<script src="main.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -21,24 +20,11 @@
 	
 	</div>
 	
-	<script type="text/javascript">
-		document.getElementById("test").onclick = function(e){
-			document.getElementById("res").innerHTML = "";
-			var query = "SELECT CONCAT(nom,ville) AS cont FROM gare HAVING cont LIKE '" + document.getElementById("test").text + "%'"; 
-			window.location.href = "temp.jsp?param="+query;
-			<% 
-				out.print(request.getAttributeNames().toString());
-// 				Requetage req = new Requetage(request.getParameter("param"));
-// 				req.execute();
-			%>
-<%-- 			var text = <%req.toListe();%> --%>
-			$(text).appendTo(".res");
-			
-		};
-		function setText(e){
-			document.getElementById("test").value=e.text;
-		}
-	</script>
+<script language="JavaScript">
+
+	submitForm(document.getElementById('res'));
+
+</script>
 
 </body>
 </html>
