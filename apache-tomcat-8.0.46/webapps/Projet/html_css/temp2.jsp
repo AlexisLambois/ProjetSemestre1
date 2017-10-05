@@ -26,39 +26,40 @@
 	<!-- HAUT DE PAGE ACCUEIL -->
 	<div class="hautDePageAccueil">
 		<h1>Réservez vos billets de train</h1>
-		<h3>Voyagez avec nous</h3>
-		
-		<!--   FORMULAIRE TRAJET   -->
-		<div class="formulaire_trajet">
-			<form action="" class="ws-validate">
-				<h1>Votre trajet</h1>
-				
-				<div class="champsForm">
-					<input list="ville" id="trajet" type="text" name="villeDepart" placeholder="Ville départ" required/><br><br>
-					<input list="ville" id="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée" required/><br>
-					<div id="listeVille"></div>
-				</div>
-				<div class="champsForm">
-					<div class="form-row">
-				        <label for="min">Date Départ</label><br>
-				        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
-	    			</div>
-	    			<br>
-					<div class="form-row">
-				        <label for="min">Date Arrivé</label><br>
-				        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
-	    			</div>
-    			</div>
-				<input onclick="test()" type="button" value="Valider">
-				<div id="test">
-					
-				</div>
-			</form>
-		</div>
-		<!-- FIN FORMULAIRE TRAJET -->
-		
+		<h3>Voyagez avec nous</h3>	
 	</div>
-	<!-- FIN HAUT DE PAGE ACCUEIL -->
+	
+	<!--   FORMULAIRE TRAJET   -->
+	<div class="formulaire_trajet">
+		<form action="" class="ws-validate">
+			<h1>Votre trajet</h1>
+				
+			<div class="champsForm">
+				<input list="ville" onkeyup="search(this)" id="trajet" type="text" name="villeDepart" placeholder="Ville départ" required/><br><br>
+				<input list="ville" onkeyup="search(this)" id="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée" required/><br>
+				<div id="listeVille"></div>
+			</div>
+			<div class="champsForm">
+				<div class="form-row">
+			        <label for="min">Date Départ</label><br>
+			        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+	    		</div>
+	    		<br>
+				<div class="form-row">
+			        <label for="min">Date Arrivé</label><br>
+			        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+	    		</div>
+    		</div>
+			<input onclick="" type="button" value="Valider">
+		</form>
+	</div>
+	<div id="choixRep" hidden="true">
+	<h1> Les gares</h1>
+	<div id="liste">
+	</div>
+	</div>
+		<!-- FIN FORMULAIRE TRAJET -->
+		<!-- FIN HAUT DE PAGE ACCUEIL -->
 	
 	<!--  TABLEAU
 	<table>
@@ -79,8 +80,11 @@
 
 		<%
 			String res = "<datalist id=\\\"ville\\\" >";
+			ArrayList<String> list = new ArrayList<>();
 			Connection con=null;
+			
 			try {
+				
 				Class.forName("org.postgresql.Driver");
 				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
 	
@@ -88,10 +92,14 @@
 				String query = "SELECT CONCAT_WS('-',nom,ville) FROM gare";
 			
 				ResultSet rs = stmt.executeQuery(query);
+				
 				while( rs.next() ){
 					res+="<option value=\\\""+rs.getString(1)+"\\\">";
+					list.add(rs.getString(1));
 				}
+				
 				res+="</datalist>";
+				
 			}catch (Exception e) {
 				e.printStackTrace();
 			}finally{
@@ -103,10 +111,45 @@
 			}
 		%>
 		document.getElementById("listeVille").innerHTML="<%out.print(res);%>";
+<%-- 		$("<%out.print(liste);%>").appendTo(document.getElementById("liste")); --%>
+		
+		var tab=new Array();
+		
+		<% for (int i=0; i<list.size(); i++) { %>
+		tab[<%= i %>] = "<%= list.get(i) %>"; 
+		<% } %>
+		
+		var string = "<ul>";
+		tab.forEach(function(element) {
+			string = string + "<li><a>" + element + "</a></li>";
+		});
+		string = string + "</ul>";
+		
+		$(string).appendTo(document.getElementById("liste"));
 		initDate();
-		function test(){
-			document.getElementById("test").innerHTML=("<p class=\"lol\">coucouc</p>");
+		
+		document.onclick = function(e) {
+			if(e.srcElement.id=="trajet"){
+				document.getElementById("choixRep").hidden=false;
+			}else{
+				document.getElementById("choixRep").hidden=true;
+			}
 		}
+		
+		function search(object){
+			
+			document.getElementById("liste").innerHTML = "";
+			var temp = "<ul>";
+			tab.forEach(function(element) {
+				if(element.startsWith(object.value)){
+					
+					temp = temp + "<li><a>" + element + "</a></li>";
+				}
+			});
+			temp = temp + "</ul>";
+			$(temp).appendTo(document.getElementById("liste"));
+		}
+		
 	</script>
 
 </body>
