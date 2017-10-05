@@ -54,5 +54,5 @@ goto setArgs
 :doneSetArgs
 
 call "%EXECUTABLE%" start %CMD_LINE_ARGS%
-
+pause
 :end
