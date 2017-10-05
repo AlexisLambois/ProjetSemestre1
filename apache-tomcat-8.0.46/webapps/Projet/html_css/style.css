@@ -87,10 +87,9 @@
 	/*bordure*/
 	border-radius : 5px;
 	/*marges*/
-	margin-top: 10%;	
+	margin-top: 8%;	
 	margin-bottom: 5%;
-	margin-left: 10%;
-	margin-right: 50%;
+	margin-left: 15%;
 	/*taille*/
 	min-width: 300px;
 	max-width:300px;
@@ -110,7 +109,7 @@
 .champsForm{
 	padding: 15px;
 }
-.champsForm input[class=trajet]{
+.champsForm input[id=trajet]{
 	/*fond*/
 	background-image: url(images/recherche.png);
 	background-size: 12%;
@@ -119,17 +118,8 @@
 	padding: 5px;
 	padding-left: 25px;
 }
-.champsForm input[class=date]{
-	/*fond*/
-	background-image: url(images/calendrier.png);
-	background-size: 12%;
-	background-repeat: no-repeat;
-	
-	padding: 5px;
-	padding-left: 25px;
-}
 
-.formulaire_trajet input[type=submit]{
+.formulaire_trajet input[type=button]{
 	margin-right: 5%;
 	margin-left: 60%;
 	margin-bottom:5%;
@@ -159,3 +149,22 @@
 	width: 50%;
 	height: 300px;
 }*/
+
+/*********************************Format Date*********************************/
+lol {
+  animation-duration: 3s;
+  animation-name: slidein;
+  background-color: black;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}

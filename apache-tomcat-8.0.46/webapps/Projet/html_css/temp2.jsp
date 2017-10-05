@@ -34,16 +34,25 @@
 				<h1>Votre trajet</h1>
 				
 				<div class="champsForm">
-					<input list="ville" class="trajet" type="text" name="villeDepart" placeholder="Ville départ" /><br>
-					<input list="ville" class="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée"/><br>
-					<div id="test"></div>
+					<input list="ville" id="trajet" type="text" name="villeDepart" placeholder="Ville départ" required/><br><br>
+					<input list="ville" id="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée" required/><br>
+					<div id="listeVille"></div>
 				</div>
-				<div class="form-row">
-			        <label for="min">Date Départ</label><br>
-			        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="true" />
+				<div class="champsForm">
+					<div class="form-row">
+				        <label for="min">Date Départ</label><br>
+				        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+	    			</div>
+	    			<br>
+					<div class="form-row">
+				        <label for="min">Date Arrivé</label><br>
+				        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+	    			</div>
     			</div>
-				
-				<input type="submit" value="Valider">
+				<input onclick="test()" type="button" value="Valider">
+				<div id="test">
+					
+				</div>
 			</form>
 		</div>
 		<!-- FIN FORMULAIRE TRAJET -->
@@ -93,8 +102,11 @@
 				}
 			}
 		%>
-		document.getElementById("test").innerHTML="<%out.print(res);%>";
+		document.getElementById("listeVille").innerHTML="<%out.print(res);%>";
 		initDate();
+		function test(){
+			document.getElementById("test").innerHTML=("<p class=\"lol\">coucouc</p>");
+		}
 	</script>
 
 </body>
