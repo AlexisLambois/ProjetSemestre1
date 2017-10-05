@@ -15,29 +15,38 @@
 			<input type="submit" value="Créer un compte">
 		</th>
 	</table>
+	<!-- HAUT DE PAGE ACCUEIL -->
 	<div class="hautDePageAccueil">
-		<label><h1>Réservez vos billets de train</h1></label>
-		<label><h3>Voyagez avec nous</h3></label>
+		<h1>Réservez vos billets de train</h1>
+		<h3>Voyagez avec nous</h3>
+		
+		<!--   FORMULAIRE TRAJET   -->
 		<div class="formulaire_trajet">
 			<form action="">
-				<table class="">
-					<th>Votre trajet</th>			
-				</table>
+				<h1>Votre trajet</h1>
+				
 				<div class="champsForm">
-					<input type="text" name="villeDep" placeholder="Ville de départ"><br>
-					<input type="text" name="villeArrivee" placeholder="Ville d'arrivée"/><br>
+					<input class="trajet" type="text" name="villeDep" placeholder="Ville de départ"><br>
+					<input class="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée"/><br>
 				</div>
+				
 				<div class="champsForm">
-					<input type="text" name="aller" placeholder="Aller"><br>
-					<input type="text" name="retour" placeholder="Retour"/><br>
+					<input class="date" type="text" name="aller" placeholder="Aller"><br>
+					<input class="date" type="text" name="retour" placeholder="Retour"/><br>
 				</div>
-				<input type="submit" value="Valider" class="boutonForm">
+				
+				<input type="submit" value="Valider">
 			</form>
 		</div>
+		<!-- FIN FORMULAIRE TRAJET -->
+		
 	</div>
+	<!-- FIN HAUT DE PAGE ACCUEIL -->
+	
+	<!--  TABLEAU
 	<table>
 		<tr>
-			<td class="image1"><img alt="" src="train2.jpg"></td>
+			<td class="image1"><img alt="" src="images/train2.jpg"></td>
 			<td class="tdText">
 				<h1>C'est simple et c'est tout</h1>
 				<h3>Consultez les horaires de train et le prix des billets</h3>
@@ -47,7 +56,7 @@
 			<td class="tdText">test2</td>
 		</tr>
 	</table>
-	
+	FIN DE TABLEAU-->
 
 </body>
 </html>
