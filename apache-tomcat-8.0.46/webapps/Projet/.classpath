@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="WEB-INF/classes"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/infoetu/lamboisa/S5/Projet/apache-tomcat-8.0.46/lib/servlet-api.jar"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
