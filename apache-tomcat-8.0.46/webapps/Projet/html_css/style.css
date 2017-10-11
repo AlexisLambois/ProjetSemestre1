@@ -50,6 +50,9 @@
 .styleBody{
 	margin: 0px;
 	font-family: Arial;
+}
+
+.hautDePageAccueil {
 	/*fond d'ecran*/
 	background-color: white;
 	background-image: url(images/train3.jpg);
@@ -57,9 +60,6 @@
 	background-position:center top;
 	background-repeat: no-repeat;
 	background-size :100%;
-}
-
-.hautDePageAccueil {
 	/*texte*/
 	padding: 10px;
 	text-align: center;
@@ -82,7 +82,6 @@
 
 /**FORMULAIRE**/
 .formulaire_trajet{
-	float:left;
 	/*fond*/
 	background-color: rgba(255,255,255,0.9);
 	/*bordure*/
@@ -98,12 +97,12 @@
 	text-align: left;
 }
 .formulaire_trajet h1{
-	color: white;
-	text-shadow: 5px 5px 5px black;
 	font-size: 150%;
 	padding : 3% 5% 3% 5%;
 	background: rgb(42,136,173);
 	border-radius: 5px 5px 0 0;
+	color: white;
+	text-shadow: none;
 	margin: 0;
 }
 
@@ -152,9 +151,10 @@
 }*/
 
 /*********************************Format Date*********************************/
-.lol {
+lol {
   animation-duration: 3s;
   animation-name: slidein;
+  background-color: black;
 }
 
 @keyframes slidein {
@@ -168,64 +168,3 @@
     width: 100%;
   }
 }
-
-/**FORMULAIRE**/
-#choixRep{
-	float:right;
-	/*fond*/
-	background-color: rgba(255,255,255,0.9);
-	/*bordure*/
-	border-radius : 5px;
-	/*marges*/
-	margin-top: 8%;	
-	margin-bottom: 5%;
-	margin-right: 15%;
-	/*taille*/
-	min-width: 300px;
-	max-width:300px;
-	max-height: 315px;
-	min-height: 315px;
-	/*texte*/
-	text-align: left;
-}
-
-#choixRep h1{
-	color: white;
-	text-shadow: 5px 5px 5px black;
-	margin: 0;
-	font-size: 150%;
-	padding: 10px;
-	border-radius: 5px 5px 0 0;
-	background: rgb(42,136,173);
-}
-
-#choixRep ul{
-	padding-left: 0%;
-	margin: 0px;
-	overflow: auto;
-}
-
-#choixRep li{
-	list-style: none;
-	padding-top: 5%;
-	padding-bottom: 5%;
-}
-
-#choixRep a{
-	margin-left: 5%;
-}
-
-#choixRep li:hover{
-	zoom:115%;
-	background-color: #CECECE;
-}
-#liste{
-	/*taille*/
-	min-width: 300px;
-	max-width:300px;
-	max-height: 260px;
-	min-height: 260px;
-	overflow: scroll;
-}
-
-
