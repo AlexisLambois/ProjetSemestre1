@@ -18,7 +18,7 @@
 
 	<table>
 		<th>
-			<input type="submit" value="Connexion">
+			<input type="submit" value="Connexion" href="">
 			<input type="submit" value="Créer un compte">
 		</th>
 	</table>
@@ -35,8 +35,8 @@
 			<h1>Votre trajet</h1>
 				
 			<div class="champsForm">
-				<input list="ville" onkeyup="search(this)" id="trajet" type="text" name="villeDepart" placeholder="Ville départ" required/><br><br>
-				<input list="ville" onkeyup="search(this)" id="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée" required/><br>
+				<input onkeyup="search(this)" onclick="search(this)" id="trajet1" type="text" name="villeDepart" placeholder="Ville départ" /><br><br>
+				<input onkeyup="search(this)" onclick="search(this)" id="trajet2" type="text" name="villeArrivee" placeholder="Ville d'arrivée" /><br>
 				<div id="listeVille"></div>
 			</div>
 			<div class="champsForm">
@@ -87,8 +87,9 @@
 				
 				Class.forName("org.postgresql.Driver");
 				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-	
+//				con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
 				Statement stmt = con.createStatement();
+				
 				String query = "SELECT CONCAT_WS('-',nom,ville) FROM gare";
 			
 				ResultSet rs = stmt.executeQuery(query);
@@ -111,7 +112,6 @@
 			}
 		%>
 		document.getElementById("listeVille").innerHTML="<%out.print(res);%>";
-<%-- 		$("<%out.print(liste);%>").appendTo(document.getElementById("liste")); --%>
 		
 		var tab=new Array();
 		
@@ -125,11 +125,10 @@
 		});
 		string = string + "</ul>";
 		
-		$(string).appendTo(document.getElementById("liste"));
 		initDate();
 		
 		document.onclick = function(e) {
-			if(e.srcElement.id=="trajet"){
+			if(e.srcElement.id=="trajet1" || e.srcElement.id=="trajet2"){
 				document.getElementById("choixRep").hidden=false;
 			}else{
 				document.getElementById("choixRep").hidden=true;
@@ -137,17 +136,22 @@
 		}
 		
 		function search(object){
-			
 			document.getElementById("liste").innerHTML = "";
+
 			var temp = "<ul>";
 			tab.forEach(function(element) {
 				if(element.startsWith(object.value)){
-					
-					temp = temp + "<li><a>" + element + "</a></li>";
+					temp = temp + "<li onclick=\"recup(this,"+object.id+")\"><a>" + element + "</a></li>";
 				}
 			});
 			temp = temp + "</ul>";
+			
 			$(temp).appendTo(document.getElementById("liste"));
+			
+		}
+		
+		function recup(string,id){
+			document.getElementById(id.id).value=string.innerText;
 		}
 		
 	</script>
