@@ -18,8 +18,8 @@
 
 	<table>
 		<th>
-			<input type="submit" value="Connexion" href="">
-			<input type="submit" value="Créer un compte">
+			<a href="index.jsp">Connection</a>
+			<a href="inscription.jsp">Inscription</a>
 		</th>
 	</table>
 	
@@ -116,7 +116,7 @@
 		var tab=new Array();
 		
 		<% for (int i=0; i<list.size(); i++) { %>
-		tab[<%= i %>] = "<%= list.get(i) %>"; 
+			tab[<%= i %>] = "<%= list.get(i) %>"; 
 		<% } %>
 		
 		var string = "<ul>";
