@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<p><%out.print(request.getParameter("villeDepart"));%></p>
+	<p><%out.print(request.getParameter("idgare1"));%></p>
 	<% 
 		Connection con=null;
 	
@@ -23,6 +23,8 @@
 			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
 			
 			Statement stmt = con.createStatement();
+			
+			String query = "SELECT () FROM ligne WHERE ;";
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -37,7 +39,7 @@
 	%>
 	
 	<script language="JavaScript">
-		var gareDepart = "<%out.print(request.getParameter("villeDepart"));%>";
+		var gareDepart = "<%out.print(request.getParameter("idgare1"));%>";
 		console.log(gareDepart);
 	</script>
 	

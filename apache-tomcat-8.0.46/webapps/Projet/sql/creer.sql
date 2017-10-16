@@ -86,3 +86,5 @@ INSERT INTO gare(nom,ville) VALUES('St Carle','Paris');
 INSERT INTO gare(nom,ville) VALUES('St Benoit','Paris');
 INSERT INTO gare(nom,ville) VALUES('St JB','Paris');
 INSERT INTO gare(nom,ville) VALUES('St Truc','Paris');
+
+INSERT INTO ligne(gare_dep,gare_arr) VALUES(1,2);
