@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Test</title>
+		<link href="styleTest2.css" rel="stylesheet">
+	</head>
+	<body>
+	
+		<div class="formulaire_trajet" >
+			<form  id="form1">
+				<h1>Votre trajet 1</h1>
+				
+				<div class="champsForm">
+					<input class="trajet" type="text" name="villeDep" placeholder="Ville de départ"><br>
+					<input class="trajet" type="text" name="villeArrivee" placeholder="Ville d'arrivée"/><br>
+				</div>
+				
+				<div class="champsForm">
+					<input class="date" type="text" name="aller" placeholder="Aller"><br>
+					<input class="date" type="text" name="retour" placeholder="Retour"/><br>
+				</div>
+				
+				<input type="button" onclick="truc()" value="Valider">
+			</form>
+		</div>
+		<script type="text/javascript" src="JSTest2.js"></script>
+	</body>
+</html>
