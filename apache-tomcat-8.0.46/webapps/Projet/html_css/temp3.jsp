@@ -18,12 +18,12 @@
 		Connection con=null;
 	
 		try {
+			
 			Class.forName("org.postgresql.Driver");
 			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
 			
 			Statement stmt = con.createStatement();
 			
-			String query = "SELECT CONCAT_WS('-',nom,ville) FROM gare";
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -35,5 +35,11 @@
 		}
 	
 	%>
+	
+	<script language="JavaScript">
+		var gareDepart = "<%out.print(request.getParameter("villeDepart"));%>";
+		console.log(gareDepart);
+	</script>
+	
 </body>
 </html>

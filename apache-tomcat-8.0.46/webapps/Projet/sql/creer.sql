@@ -1,7 +1,8 @@
 DROP TABLE if EXISTS billet;
+DROP TABLE if EXISTS trajet;
+DROP TABLE if EXISTS ligne;
 DROP TABLE if EXISTS train;
 DROP TABLE if EXISTS gare;
-DROP TABLE if EXISTS ligne;
 DROP TABLE if EXISTS client;
 
 CREATE TABLE train
@@ -26,9 +27,24 @@ CREATE TABLE gare
 CREATE TABLE ligne
 (
 	lno serial,
-	gare_dep text,
-	gare_arr text,
-	constraint pk_ligne primary key (lno)
+	gare_dep integer,
+	gare_arr integer,
+	constraint pk_ligne primary key (lno),
+	constraint fk_gare1 foreign key (gare_dep) references gare(gno) on delete restrict on update cascade,
+	constraint fk_gare2 foreign key (gare_arr) references gare(gno) on delete restrict on update cascade
+);
+
+CREATE TABLE trajet
+(
+	trajet_no serial,
+	lno integer,
+	tno integer,
+	prix float,
+	hDep date,
+	duree time,
+	constraint pk_trajet primary key (trajet_no),
+	constraint fk_ligne foreign key (lno) references ligne(lno) on delete restrict on update cascade,
+	constraint fk_train foreign key (tno) references train(tno) on delete restrict on update cascade
 );
 
 CREATE TABLE client
@@ -46,19 +62,14 @@ CREATE TABLE client
 CREATE TABLE billet
 (
 	bno serial,
-	tno integer,
-	lno integer,
+	trajet_no integer,
 	cno integer,
 	hdep time,
 	harr time,
 	prix float,
 	constraint pk_billet primary key (bno),
-	constraint fk_train foreign key (tno)
-		references train(tno)
-		on delete restrict
-		on update cascade,
-	constraint fk_ligne foreign key (lno)
-		references ligne(lno)
+	constraint fk_trajet foreign key (trajet_no)
+		references trajet(trajet_no)
 		on delete restrict
 		on update cascade,
 	constraint fk_client foreign key (cno)
