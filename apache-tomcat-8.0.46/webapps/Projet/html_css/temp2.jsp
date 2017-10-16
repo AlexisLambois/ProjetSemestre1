@@ -31,7 +31,7 @@
 	
 	<!--   FORMULAIRE TRAJET   -->
 	<div class="formulaire_trajet">
-		<form action="" class="ws-validate">
+		<form action="temp3.jsp" class="ws-validate">
 			<h1>Votre trajet</h1>
 				
 			<div class="champsForm">
@@ -42,15 +42,15 @@
 			<div class="champsForm">
 				<div class="form-row">
 			        <label for="min">Date Départ</label><br>
-			        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+			        <input class="min-today" id="min" type="date" name="dateDepart" placeholder="YYYY-MM-DD" data-date-split-input="false" />
 	    		</div>
 	    		<br>
 				<div class="form-row">
 			        <label for="min">Date Arrivé</label><br>
-			        <input class="min-today" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+			        <input class="min-today" id="min" type="date" name="dateArrivee" placeholder="YYYY-MM-DD" data-date-split-input="false" />
 	    		</div>
     		</div>
-			<input onclick="" type="button" value="Valider">
+			<input type="submit" value="Valider">
 		</form>
 	</div>
 	<div id="choixRep" hidden="true">
