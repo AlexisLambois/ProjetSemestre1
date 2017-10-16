@@ -8,14 +8,13 @@ html, body {
 	background-color: black;
 	background-image: url("images/train6.jpg");
 	background-repeat: no-repeat;
-	height: 700px;
+	height: 800px;
 	background-position: center bottom;
 }
 
 .containerHeader{
 	width: 80%;
 	margin: auto;
-	rgb(25, 51, 102);
 	color: white;
 	text-align: center;
 }
@@ -51,10 +50,10 @@ html, body {
 	color: white;
 }
 
-#pageAccueilRecherche {
+.pageAccueilRecherche {
 	display: block;
 }
-#pageAccueilBillet {
+.pageAccueilBillet {
 	display: none;
 	}
 

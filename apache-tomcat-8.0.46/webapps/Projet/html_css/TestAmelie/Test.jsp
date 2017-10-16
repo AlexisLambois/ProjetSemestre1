@@ -54,7 +54,7 @@
 				</div>
 				<!-- FIN PAGE RECHERCHE -->
 				<!-- DEBUT PAGE BILLET -->
-				<div id="pageAccueilBillet">
+				<div class="pageAccueilBillet">
 					<div id="headerAccueil">
 						<h1>HEADER Billet</h1>
 					</div>
