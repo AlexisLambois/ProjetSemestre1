@@ -10,10 +10,20 @@
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.io.*"%>
 	<%@ page import="java.util.*"%>
+	
 	<script type="text/javascript" src="main.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<script src="js-webshim/minified/polyfiller.js"></script>
+	
+	<link href="./calendar/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="./calendar/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+	
+	<script type="text/javascript" src="./calendar/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./calendar/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./calendar/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./calendar/js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+	
 	<link href="final.css" rel="stylesheet">
-	<script src="js-webshim/minified/polyfiller.js"></script> 
 </head>
 
 <body>
@@ -32,27 +42,32 @@
 			</div>
 		</nav>
 		<div class="containerHeader">
-			<div class="pageAccueilRecherche">
+			<div class="pageAccueilRecherche">	
 				<h1>Réservez vos billets de train</h1>
-				<h3>Voyagez avec nous</h3>
+				<h3>Voyagez avec nous</h3>	
 				<div class="formulaire_trajet" >
-					<form>
+					<form>			
 						<h1>Votre trajet</h1>
 						<div class="champsForm">
 							<input onkeyup="search(this)" onclick="search(this)" id="trajet1" type="text" placeholder="Ville de départ"><br>
 							<input onkeyup="search(this)" onclick="search(this)" id="trajet2" type="text" placeholder="Ville d'arrivée"/><br>
 						</div>
-						<div class="champsForm">
-							<div class="form-row">
-			        			<label for="min">Date Départ</label><br>
-			       				<input class="min-today dateDep" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
-	    					</div>
-	    					<br>
-							<div class="form-row">
-						        <label for="min">Date Retour</label><br>
-						        <input class="min-today dateRet" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
-				    		</div>
-						</div>
+						<div class="form-group">
+                			<label class="col-md-2 control-label">Date de départ</label>   			
+                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy - HH:ii p">
+                    			<input class="form-control" type="text" value="" readonly>
+                   	 			<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                			</div>
+           				</div>
+           				<div class="form-group">
+                			<label class="col-md-2 control-label">Date de retour</label>   			
+                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy - HH:ii p">
+                    			<input class="form-control" type="text" value="" readonly>
+                   	 			<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                			</div>
+           				</div>
 						<input type="button" onclick="send()" value="Valider">
 						<span id="error" hidden>Mauvaise entré</span>
 					</form>
@@ -67,6 +82,16 @@
 	</header>
 	
 	<script language="JavaScript">
+		var dateNow = new Date();	
+	
+		$('.form_datetime').datetimepicker({
+	        language:  'fr',
+	        autoclose: true,
+	        todayBtn: true,
+	        pickerPosition: "bottom-left",
+	        minuteStep : 15,
+	        startDate: dateNow
+	    });
 
 		<%
 			ArrayList<String> list = new ArrayList<>();
@@ -102,8 +127,6 @@
 		<% for( int i=0 ; i<list.size() ; i++ ){ %>
 			tab[<%= i %>] = "<%= list.get(i) %>";
 		<% } %>
-		
-		initDate();
 		
 		document.onclick = function(e) {
 			if(e.srcElement.id=="trajet1" || e.srcElement.id=="trajet2"){
@@ -145,7 +168,7 @@
 			
 			var dateValide = (compareDate(dateDep,dateRet) == -1);
 
-			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateArr !="" && idgare1 != undefined && idgare2 != undefined && dateValide ){
+			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateRet !="" && idgare1 != undefined && idgare2 != undefined && dateValide ){
 				
 				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep+"&dateRet="+dateRet;
 			

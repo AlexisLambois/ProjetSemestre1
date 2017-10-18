@@ -133,8 +133,8 @@ html,body{
 	/*marges*/
 	margin-top: 15%;
 	/*taille*/
-	min-width: 300px;
-	max-width:300px;
+	min-width: 500px;
+	max-width:500px;
 	/*texte*/
 	text-align: left;
 }
@@ -183,6 +183,19 @@ html,body{
 	color: white;
 	border: none;
     padding: 5px 15px;
+}
+
+.control-label{
+	width: 30%;
+	padding:0;
+	margin-left: 5%;
+	margin-top: 1.5%;
+}
+
+.col-md-5{
+	width: 60%;
+	padding:0;
+	margin-bottom: 5%;
 }
 
 #choixRep{

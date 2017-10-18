@@ -6,41 +6,31 @@
 <head >
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Projet</title>
-	<link href="style.css" rel="stylesheet">
+	<link href="final.css" rel="stylesheet">
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.io.*"%>
 	<%@ page import="java.util.*"%>
+	<%@ page import="tools.BddTools"%>
 </head>
 
 <body>
-	<p><%out.print(request.getParameter("idgare1"));%></p>
-	<% 
-		Connection con=null;
+	<%
+		BddTools t = null;
 	
-		try {
-			
-			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-			
-			Statement stmt = con.createStatement();
-			
-			String query = "SELECT () FROM ligne WHERE ;";
-			
+		
+	
+		try{
+			t = new BddTools("da2i");
+			t.getRequest("SELECT * FROM trajet WHERE depart='"+datetimeDep+"' AND lno=(SELECT lno FROM ligne WHERE gare_dep="+request.getParameter("idgare1")+" AND gare_arr="+request.getParameter("idgare2")+")");
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
-			try {
-				con.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			t.fermer();
 		}
-	
+		
 	%>
 	
 	<script language="JavaScript">
-		var gareDepart = "<%out.print(request.getParameter("idgare1"));%>";
-		console.log(gareDepart);
 	</script>
 	
 </body>
