@@ -10,7 +10,7 @@
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.io.*"%>
 	<%@ page import="java.util.*"%>
-	<script src="main.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link href="final.css" rel="stylesheet">
 	<script src="js-webshim/minified/polyfiller.js"></script> 
@@ -36,7 +36,7 @@
 				<h1>Réservez vos billets de train</h1>
 				<h3>Voyagez avec nous</h3>
 				<div class="formulaire_trajet" >
-					<form  id="form1">
+					<form>
 						<h1>Votre trajet</h1>
 						<div class="champsForm">
 							<input onkeyup="search(this)" onclick="search(this)" id="trajet1" type="text" placeholder="Ville de départ"><br>
@@ -49,8 +49,8 @@
 	    					</div>
 	    					<br>
 							<div class="form-row">
-						        <label for="min">Date Arrivé</label><br>
-						        <input class="min-today dateArr" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
+						        <label for="min">Date Retour</label><br>
+						        <input class="min-today dateRet" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
 				    		</div>
 						</div>
 						<input type="button" onclick="send()" value="Valider">
@@ -76,7 +76,6 @@
 				
 				Class.forName("org.postgresql.Driver");
 				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-//				con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
 				Statement stmt = con.createStatement();
 				
 				String query = "SELECT CONCAT_WS('-',nom,ville,gno) FROM gare";
@@ -129,16 +128,11 @@
 			
 		}
 		
-		function recup(string,id){
-			document.getElementById(id.id).value=string.innerText;
-		}
-		
 		function send(){
-			
 			var idgare1;
 			var idgare2;
-			var dateDep = document.getElementsByClassName("dateDep")[0].value;
-			var dateArr = document.getElementsByClassName("dateArr")[0].value
+			var dateDep = (document.getElementsByClassName("dateDep")[0].value);
+			var dateRet = (document.getElementsByClassName("dateRet")[0].value);
 			
 			tab.forEach(function(element){
 				if( element.includes(document.getElementById("trajet1").value) ){
@@ -148,10 +142,12 @@
 					idgare2 = element.substring(element.lastIndexOf("-")+1);
 				}
 			});
-			var dateValide;
-			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateArr !="" && idgare1 != undefined && idgare2 != undefined ){
+			
+			var dateValide = (compareDate(dateDep,dateRet) == -1);
+
+			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateArr !="" && idgare1 != undefined && idgare2 != undefined && dateValide ){
 				
-				window.location.href = "http://localhost:8080/Projet/html_css/temp3.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep+"&dateArr="+dateArr;
+				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep+"&dateRet="+dateRet;
 			
 			}else{
 				
