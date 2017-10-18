@@ -49,9 +49,11 @@
 			        <input class="min-today dateArr" id="min" type="date" placeholder="YYYY-MM-DD" data-date-split-input="false" />
 	    		</div>
     		</div>
-			<input type="button" onclick="send()" value="Valider">
+			<input type="button" onclick="send()" value="Valider" id="valider">
+			<span id="error" hidden>Mauvaise entré</span>
 		</form>
 	</div>
+	
 	<div id="choixRep" hidden="true">
 		<h1> Les gares</h1>
 		<div id="liste">
@@ -104,7 +106,7 @@
 			}else{
 				document.getElementById("choixRep").hidden=true;
 			}
-		}
+		}	
 		
 		function search(object){
 			document.getElementById("liste").innerHTML = "";
@@ -126,8 +128,11 @@
 		}
 		
 		function send(){
+			
 			var idgare1;
 			var idgare2;
+			var dateDep = document.getElementsByClassName("dateDep")[0].value;
+			var dateArr = document.getElementsByClassName("dateArr")[0].value
 			
 			tab.forEach(function(element){
 				if( element.includes(document.getElementById("trajet1").value) ){
@@ -137,8 +142,16 @@
 					idgare2 = element.substring(element.lastIndexOf("-")+1);
 				}
 			});
-			console.log(document.getElementsByClassName("dateDep")[0]);
-			window.location.href = "http://localhost:8080/Projet/html_css/temp3.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+document.getElementsByClassName("dateDep")[0].value+"&dateArr="+document.getElementsByClassName("dateArr")[0].value;
+			var dateValide = 
+			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateArr !="" && idgare1 != undefined && idgare2 != undefined ){
+				
+				window.location.href = "http://localhost:8080/Projet/html_css/temp3.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep+"&dateArr="+dateArr;
+			
+			}else{
+				
+				document.getElementById("error").hidden = false;
+				
+			}
 		}
 		
 	</script>
