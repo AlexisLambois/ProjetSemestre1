@@ -11,9 +11,9 @@
 			<!-- DEBUT MENU -->
 			<nav class="menuAccueilHeader">
 				<div class="containerMenu">
-					<div class="logoMenuAccueil">
-						<img src="images/logo.png">
-					</div>
+					<!-- <div class="logoMenuAccueil">
+						<img src="images/">
+					</div>-->
 					<div class="lienMenuAccueil">
 	                       <a><button>CREER UN COMPTE</button></a>
 	                       <a><button>SE CONNECTER</button></a>
