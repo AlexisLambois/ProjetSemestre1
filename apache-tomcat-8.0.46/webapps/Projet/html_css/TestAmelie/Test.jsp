@@ -6,7 +6,7 @@
 		<title>Test Accueil</title>
 		<link href="style.css" rel="stylesheet">
 	</head>	
-	<body class="bodyAccueil">
+	<body>
 		<header class="backGroundHeader">
 			<!-- DEBUT MENU -->
 			<nav class="menuAccueilHeader">

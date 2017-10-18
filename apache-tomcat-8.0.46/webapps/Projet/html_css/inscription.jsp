@@ -7,8 +7,7 @@
 <head>
 
 	<title>Projet</title>
-	<link href="style.css" rel="stylesheet">
-<!-- 	<meta http-equiv="refresh" content="1" > -->
+	<link href="final.css" rel="stylesheet">
 </head>
 <body>
 	
