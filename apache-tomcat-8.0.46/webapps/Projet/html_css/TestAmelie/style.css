@@ -12,17 +12,14 @@ html, body {
 	background-position: center bottom;
 }
 
-.containerHeader{
-	width: 80%;
+.containerMenu{
+	max-width: 1024px;
 	margin: auto;
-	color: white;
-	text-align: center;
 }
 
 .menuAccueilHeader{
 	background-color: rgb(25, 51, 102);
 	overflow: hidden;
-	border-radius: 5px;
 }
 
 .logoMenuAccueil{
@@ -50,6 +47,15 @@ html, body {
 	color: white;
 }
 
+.containerHeader{
+	max-width: 700px;
+	width: 80%;
+	margin: auto;
+	color: white;
+	text-align: center;
+	overflow: hidden;
+}
+
 .pageAccueilRecherche {
 	display: block;
 }
@@ -63,10 +69,10 @@ html, body {
 	/*bordure*/
 	border-radius : 6px;
 	/*marges*/
-	margin-top: 20px;	
+	margin-top: 40px;	
 	/*taille*/
-	min-width: 300px;
-	max-width: 300px;
+	width: 45%;
+	min-width: 250px;
 	/*texte*/
 	text-align: left;
 }
@@ -84,6 +90,9 @@ html, body {
 .formulaire_choix {
 	float: right;
 }
+.formulaire_billet{
+	float: left;
+}
 
 .champsForm{
 	padding: 15px;
@@ -91,24 +100,34 @@ html, body {
 .champsForm input[class=trajet]{
 	/*fond*/
 	background-image: url(images/recherche.png);
-	background-size: 12%;
+	background-size: 25px;
 	background-repeat: no-repeat;
 	
 	padding: 5px;
 	padding-left: 25px;
+	width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 .champsForm input[class=date]{
 	/*fond*/
 	background-image: url(images/calendrier.png);
-	background-size: 12%;
+	background-size: 25px;
 	background-repeat: no-repeat;
 	
 	padding: 5px;
 	padding-left: 25px;
+	width: 100%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 .formulaire_trajet input[type=button], .formulaire_choix input[type=button], .formulaire_billet input[type=button]{
-	margin-bottom:10px;
-	margin-right: 10px;
+	margin-bottom:15px;
+	margin-right: 15px;
 	float:right;
 	border-radius: 2px;
 	font: Bold 15px Arial;
