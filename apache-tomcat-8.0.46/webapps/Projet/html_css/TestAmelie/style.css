@@ -24,6 +24,7 @@ html, body {
 
 .logoMenuAccueil{
 	float: left;
+	color: white;
 }
 .logoMenuAccueil img{
 	width: 100px;
