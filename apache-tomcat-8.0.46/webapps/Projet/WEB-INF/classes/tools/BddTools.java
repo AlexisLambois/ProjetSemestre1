@@ -7,6 +7,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Properties;
+
 public class BddTools {
 	
 	Connection con = null;
@@ -81,6 +82,38 @@ public class BddTools {
 		}
 		return temp;
 		
+	}
+	
+	public String toHtml(String requete){
+		
+		String html = "<table>";
+
+		try{
+
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(requete);
+			ResultSetMetaData md = rs.getMetaData();
+
+			html+="<tr>";
+			for (int i = 1; i <= md.getColumnCount(); i++) {
+				html+="<th>"+(md.getColumnName(i))+"</th>";
+			}
+			html+="</tr>";
+
+			while(rs.next()){
+				html+="<tr>";
+				for (int i = 1; i <= md.getColumnCount(); i++) {
+					html+="<td>"+rs.getString(i)+"</td>";
+				}
+				html+="</tr>";
+			}
+
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+		return html;
+
 	}
 	
 	public String describe(String table){

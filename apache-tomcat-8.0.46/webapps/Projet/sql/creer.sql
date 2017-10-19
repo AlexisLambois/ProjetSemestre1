@@ -79,13 +79,13 @@ CREATE TABLE billet
 );
 
 INSERT INTO client(nom,mail,mdp) VALUES('root','root@root.root','root');
-INSERT INTO gare(nom,ville) VALUES('St Cyprien','Paris');
-INSERT INTO gare(nom,ville) VALUES('St Jean','Paris');
-INSERT INTO gare(nom,ville) VALUES('St Phillipe','Paris');
-INSERT INTO gare(nom,ville) VALUES('St Carle','Paris');
-INSERT INTO gare(nom,ville) VALUES('St Benoit','Paris');
-INSERT INTO gare(nom,ville) VALUES('St JB','Paris');
-INSERT INTO gare(nom,ville) VALUES('St Truc','Paris');
+INSERT INTO gare(nom,ville,cp) VALUES('St Cyprien','Paris',75000);
+INSERT INTO gare(nom,ville,cp) VALUES('St Jean','Paris',75000);
+INSERT INTO gare(nom,ville,cp) VALUES('St Phillipe','Paris',75000);
+INSERT INTO gare(nom,ville,cp) VALUES('St Carle','Paris',75000);
+INSERT INTO gare(nom,ville,cp) VALUES('St Benoit','Paris',75000);
+INSERT INTO gare(nom,ville,cp) VALUES('St JB','Paris',75000);
+INSERT INTO gare(nom,ville,cp) VALUES('St Truc','Paris',75000);
 
 INSERT INTO ligne(gare_dep,gare_arr) VALUES(1,2);
 INSERT INTO ligne(gare_dep,gare_arr) VALUES(1,3);

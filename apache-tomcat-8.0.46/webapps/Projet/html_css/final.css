@@ -132,15 +132,15 @@ html,body{
 	border-radius : 5px;
 	/*marges*/
 	margin-top: 15%;
-	/*taille*/
-	min-width: 500px;
-	max-width:500px;
 	/*texte*/
 	text-align: left;
 }
 
 .formulaire_trajet{
 	float: left;
+	/*taille*/
+	min-width: 500px;
+	max-width:500px;
 }
 
 .formulaire_trajet h1, #choixRep h1{
@@ -151,6 +151,7 @@ html,body{
 	background: rgb(42,136,173);
 	border-radius: 5px 5px 0 0;
 	margin: 0;
+	
 }
 
 .champsForm{
@@ -218,6 +219,10 @@ html,body{
 
 #choixRep a{
 	margin-left: 5%;
+}
+
+#choixRep a:hover{
+	cursor:pointer;
 }
 
 #choixRep li:hover{

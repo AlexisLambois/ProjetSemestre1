@@ -54,16 +54,16 @@
 						</div>
 						<div class="form-group">
                 			<label class="col-md-2 control-label">Date de départ</label>   			
-                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy - HH:ii p">
-                    			<input class="form-control" type="text" value="" readonly>
+                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy HH:ii:ss p">
+                    			<input class="form-control" id="dateDep" type="text" value="" readonly>
                    	 			<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                 			</div>
            				</div>
            				<div class="form-group">
                 			<label class="col-md-2 control-label">Date de retour</label>   			
-                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy - HH:ii p">
-                    			<input class="form-control" type="text" value="" readonly>
+                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy HH:ii:ss p">
+                    			<input class="form-control" id="dateRet" type="text" value="" readonly>
                    	 			<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                 			</div>
@@ -72,10 +72,10 @@
 						<span id="error" hidden>Mauvaise entré</span>
 					</form>
 				</div>
-			</div>
-			<div id="choixRep" hidden>
-				<h1> Les gares</h1>
-				<div id="liste">
+				<div id="choixRep" hidden>
+					<h1> Les gares</h1>
+					<div id="liste">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -152,10 +152,11 @@
 		}
 		
 		function send(){
+			window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1=1&idgare2=4&dateDep=19/10/2017%20%C3%A0%2009:26:49&dateRet=29/10/2017%20%C3%A0%2019:30:47";
 			var idgare1;
 			var idgare2;
-			var dateDep = (document.getElementsByClassName("dateDep")[0].value);
-			var dateRet = (document.getElementsByClassName("dateRet")[0].value);
+			var dateDep = new Date(document.getElementById("dateDep").value);
+			var dateRet = new Date(document.getElementById("dateRet").value);
 			
 			tab.forEach(function(element){
 				if( element.includes(document.getElementById("trajet1").value) ){
@@ -170,8 +171,8 @@
 
 			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateRet !="" && idgare1 != undefined && idgare2 != undefined && dateValide ){
 				
-				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep+"&dateRet="+dateRet;
-			
+//  				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false});
+				
 			}else{
 				
 				document.getElementById("error").hidden = false;
