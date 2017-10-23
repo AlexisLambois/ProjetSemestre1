@@ -152,11 +152,12 @@
 		}
 		
 		function send(){
-			window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1=1&idgare2=4&dateDep=19/10/2017%20%C3%A0%2009:26:49&dateRet=29/10/2017%20%C3%A0%2019:30:47";
 			var idgare1;
 			var idgare2;
 			var dateDep = new Date(document.getElementById("dateDep").value);
 			var dateRet = new Date(document.getElementById("dateRet").value);
+			dateDep.setSeconds(00);
+			dateRet.setSeconds(00);
 			
 			tab.forEach(function(element){
 				if( element.includes(document.getElementById("trajet1").value) ){
@@ -171,7 +172,7 @@
 
 			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateRet !="" && idgare1 != undefined && idgare2 != undefined && dateValide ){
 				
-//  				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false});
+ 				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false});
 				
 			}else{
 				

@@ -40,7 +40,7 @@ CREATE TABLE trajet
 	lno integer,
 	tno integer,
 	prix float,
-	depart timestamp,
+	depart time,
 	duree time,
 	constraint pk_trajet primary key (trajet_no),
 	constraint fk_ligne foreign key (lno) references ligne(lno) on delete restrict on update cascade,
@@ -96,4 +96,4 @@ INSERT INTO ligne(gare_dep,gare_arr) VALUES(1,7);
 
 INSERT INTO train(type,categorie,nbPlace) VALUES('A320','A',300);
 
-INSERT INTO trajet(lno,tno,prix,depart,duree) VALUES(1,1,35,'2017-10-18 12:05:00','2:30');
+INSERT INTO trajet(lno,tno,prix,depart,duree) VALUES(1,1,35,'12:00:00','2:30');
