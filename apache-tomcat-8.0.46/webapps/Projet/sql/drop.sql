@@ -1,0 +1,6 @@
+DROP TABLE if EXISTS billet;
+DROP TABLE if EXISTS trajet;
+DROP TABLE if EXISTS ligne;
+DROP TABLE if EXISTS train;
+DROP TABLE if EXISTS gare;
+DROP TABLE if EXISTS client;
