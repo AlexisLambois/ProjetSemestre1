@@ -1,73 +1,81 @@
-OCE705694,OCESN,IC Eco Paris-Strasbourg,2
-OCESN-87113001-87118000,OCESN,Paris-Est - Troyes,2
-OCE28625,OCESN,Paris-Troyes-Belfort,2
-OCE645642,OCESN,Paris-Boulogne,2
+OCEDB-80194035-87213470,OCESN,Neustadt (Weinstr) Hbf - Wissembourg,2
+OCEDB-80194324-87213470,OCESN,WINDEN PFALZ - Wissembourg,2
+OCEDB-87212464-80191031,OCESN,Lauterbourg - WOERTH RHEIN,2
+OCEDB-80194258-87213470,OCESN,Landau Hbf - Wissembourg,2
 OCESN-87116137-87116160,OCESN,Longueville (S.-et-M.) - Provins,3
-OCE645647,OCESN,Paris-Maubeuge/Cambrai,2
 OCESN-87116301-87430819,OCESN,Coulommiers - La-Ferté-Gaucher-Centre,3
 OCESN-87581009-87324061,OCESN,Bordeaux-St-Jean - Lacanau-Océan,3
-OCE20620,OCESN,Paris-Rouen-Le Havre,2
-OCESN-87413013-87384008,OCESN,Le Havre - Paris-St-Lazare,2
 OCESN-87381897-87386680,OCESN,Conflans-Ste-Honorine - Les Mureaux,3
 OCESN-87386680-87381509,OCESN,Les Mureaux - Mantes-la-Jolie,3
-OCE20624,OCESN,Paris-Caen-Cherbourg/Trouville,2
 OCESN-87381509-87386573,OCESN,Mantes-la-Jolie - Poissy,2
-OCE20621,OCESN,Paris-Granville,2
 OCESN-87381509-87415604,OCESN,Mantes-la-Jolie - Vernon-Giverny,2
-OCE16628,OCESN,Paris-Limoges-Toulouse,2
-OCESN-87594002-87547000,OCESN,Brive-la-Gaillarde - Paris-Austerlitz,2
-OCESN-87547000-87611004,OCESN,Paris-Austerlitz - Toulouse-Matabiau,2
-OCE16623,OCESN,IC Eco Paris-Toulouse,2
-OCE645676,OCESN,Paris-Latour de Carol/Cerbère (Port-Bou),2
-OCESN-87785006-87547000,OCESN,Cerbère - Paris-Austerlitz,2
-OCESN-87547000-71793150,OCESN,Paris-Austerlitz - Port-Bou,2
-OCE645675,OCESN,Paris-Toulouse/Rodez/Albi,2
-OCESN-87547000-87613422,OCESN,Paris-Austerlitz - Rodez,2
-OCE24619,OCESN,Nantes-Bordeaux,2
-OCE16622,OCESN,Paris-Bourges-Montluçon,2
-OCESN-87641001-87547000,OCESN,Montluçon-Ville - Paris-Austerlitz,2
-OCESN-87576207-87547000,OCESN,Bourges - Paris-Austerlitz,2
-OCE677596,OCESN,IC Eco Paris-Bordeaux,2
-OCESN-87481002-87547000,OCESN,Nantes - Paris-Austerlitz,2
-OCE645669,OCESN,Nantes-Tours-Lyon,2
 OCESN-87581009-87592006,OCESN,Bordeaux-St-Jean - Limoges-Bénédictins,2
-OCESN-87581009-87594093,OCESN,Bordeaux-St-Jean - Ussel,2
-OCE645668,OCESN,Bordeaux-Lyon via Limoges,2
-OCE28628,OCESN,Bordeaux-Marseille-Nice,2
 OCESN-87681007-87682005,OCESN,Corbeil-Essonnes - Melun,3
 OCESN-87681007-87681635,OCESN,Corbeil-Essonnes - Coudray-Montceaux,3
 OCESN-87681007-87681452,OCESN,Corbeil-Essonnes - La Ferté-Alais,3
-OCE645667,OCESN,Bordeaux-Lyon via Clermont Fd,2
-OCESN-87756056-87547000,OCESN,Nice-Ville - Paris-Austerlitz,2
-OCE645679,OCESN,Paris-Briançon/Nice,2
-OCE677603,OCESN,Paris-Montargis-Nevers,2
-OCE645663,OCESN,Paris-Clermont Fd,2
 OCESN-87745497-87746479,OCESN,Annemasse - St-Gervais-L-B-Le-Fayet,2
 OCESN-87581009-87651851,OCESN,Bordeaux-St-Jean - Cap-Ferret-Andernos,3
-OCE645644,OCESN,Paris-Amiens,2
-OCE645648,OCESN,Paris-St Quentin,2
-OCE20625,OCESN,Caen-Le Mans-Tours,2
-OCE20622,OCESN,Paris-Vernon-Rouen,2
-OCE20623,OCESN,Paris-Evreux-Serquigny,2
-OCESN-87611483-87611004,OCESN,Latour-de-Carol-Enveitg - Toulouse-Matabiau,2
-OCE240745,OCESN,Paris-Orléans-Tours,2
-OCE24618,OCESN,Toulouse-Hendaye,2
-OCESN-87673004-87611004,OCESN,Bayonne - Toulouse-Matabiau,2
+OCESN-87641001-87576009,OCESN,Montluçon-Ville - Vierzon,2
 OCESN-87722025-87571000,OCESN,Lyon-Perrache - Tours,2
-OCE677601,OCESN,Clermont Fd-Nimes,2
 OCE610,OCESN,Paris-Vaug. / Dreux / Argentan / Granville,2
+OCE35,OCESN,Paris-Le Mans,2
+OCESN-87394130-87394296,OCESN,Maintenon - Nogent-le-Rotrou,2
+OCESN-87396002-87394130,OCESN,Le Mans - Maintenon,2
+OCE705741,OCESN,ORL - TO,2
+OCESN-87722025-87696005,OCESN,Lyon-Perrache - Nevers,2
+OCE669703,OCESN,Tours-Paray-Lyon,2
+OCESN-87696005-87571000,OCESN,Nevers - Tours,2
+OCE343,OCESN,IC MARSEILLE/SISTERON/BRIANCON + GAP/BRI,2
+OCE647,OCESN,Villefranche-La Tour de Carol,2
 OCESN-87611483-87784686,OCESN,Latour-de-Carol-Enveitg - Villefranche-Vernet-l.B,2
+OCE655,OCESN,ROMANS/BRIANCON,2
+OCESN-87763607-87761650,OCESN,Briançon - Romans-Bourg-de-Péage,2
+OCESN-87763003-87761650,OCESN,Gap - Romans-Bourg-de-Péage,2
+OCESN-87763607-87751008,OCESN,Briançon - Marseille-St-Charles,2
+OCESN-87763466-87751008,OCESN,Embrun - Marseille-St-Charles,2
+OCE318,OCESN,IC MARSEILLE/NICE,2
+OCE46,OCESN,Geneve - Evian - Annecy - Valence,2
+OCE213,OCESN,Lyon - Grenoble,2
+OCE160686,OCESN,Lyon - Marseille Multi Activités,2
 OCE725905,OCESN,Paris Bercy - Dijon - Lyon (Multi-Activités),2
+OCE16635,OCESN,Lyon - (LTP) - Chambéry - Bourg-St-Maurice,2
+OCESN-87741793-87723197,OCESN,Bourg-St-Maurice - Lyon-Part-Dieu,2
+OCE16634,OCESN,Lyon - (LPT - AMB) - Chambéry,2
+OCESN-87723197-87742007,OCESN,Lyon-Part-Dieu - Modane,2
+OCE67,OCESN,Lyon - (LTP) - Chambéry - Modane,2
+OCE52,OCESN,Lyon - Annecy,2
+OCESN-87741009-87723197,OCESN,Chambéry-Chal.-les-Eaux - Lyon-Part-Dieu,2
+OCE534,OCESN,Belfort -Mulhouse ville,2
+OCE633121,OCESN,LILLE-TOURCOING-MOUSCRON,2
+OCE697619,OCESN,LILLE-TOURNAI-ASCQ-ORCHIES,2
+OCESN-87276113-87271007,OCESN,Chantilly-Gouvieux - Paris-Nord,2
+OCE136637,OCESN,PARIS - CREIL,2
+OCESN-87313874-87286005,OCESN,Amiens - Lille Flandres,2
+OCESN-87286005-87411017,OCESN,Lille Flandres - Rouen-Rive-Droite,2
+OCESN-87342006-87286005,OCESN,Béthune - Lille Flandres,2
 OCESN-87286005-87343004,OCESN,Lille Flandres - Valenciennes,2
 OCESN-87342014-87286005,OCESN,Arras - Lille Flandres,2
+OCESN-87281006-87286005,OCESN,Dunkerque - Lille Flandres,2
+OCESN-87295014-87286005,OCESN,Jeumont - Lille Flandres,2
+OCESN-87345520-87286005,OCESN,Cambrai Ville - Lille Flandres,2
 OCESN-87286302-87286005,OCESN,Hazebrouck - Lille Flandres,2
+OCESN-87317586-87286005,OCESN,Boulogne Ville - Lille Flandres,2
+OCESN-87345025-87286005,OCESN,Lens - Lille Flandres,2
+OCESN-87286005-87342337,OCESN,Lille Flandres - St Pol sur Ternoise,2
+OCESN-87342006-87342337,OCESN,Béthune - St Pol sur Ternoise,3
 OCESN-87313510-87317529,OCESN,Beauvais-Gare-SNCF - Le Tréport-Mers-Les-B,2
 OCESN-87413013-87411017,OCESN,Le Havre - Rouen-Rive-Droite,2
+OCESN-87581009-87581314,OCESN,Bordeaux-St-Jean - Lesparre,2
 OCESN-87783001-87613422,OCERRR MidiPy,Millau - Rodez,2
 OCESN-87611095-87611004,OCESN,Boussens - Toulouse-Matabiau,2
 OCESN-87592006-87641001,OCESN,Limoges-Bénédictins - Montluçon-Ville,2
+OCESN-87756486-87756056,OCESN,Menton - Nice-Ville,2
 OCESN-87785006-87784009,OCESN,Cerbère - Perpignan,2
+OCE317,OCESN,NICE/TENDE,2
 OCE325,OCESN,Metz - Forbach - Saarbrücken,2
+OCESN-87193615-87212027,OCESN,Sarreguemines - Strasbourg,2
+OCESN-80253914-87212027,OCESN,Saarbrucken-Hbf - Strasbourg,2
+OCESN-87212142-87212027,OCESN,Mommenheim - Strasbourg,2
 OCE600929,OCESN,Haguenau - Niederbronn - Bitche,3
 OCESN-87193821-87213256,OCESN,Bitche - Niederbronn,3
 OCE600928,OCESN,Haguenau - Wissembourg,3
@@ -250,9 +258,9 @@ OCE583,OCESN,Lisieux / Trouville-Deauville / Dives-Cabourg,2
 OCE616,OCESN,Rouen R.D. / Caen,2
 OCE637207,OCESN,FECAMP BREAUTE ROUTIER REGULIER,3
 OCESN-87484006-87484303,OCESN,Angers-St-Laud - Cholet,2
-OCE669711,OCESN,Cars Réguliers L 11  (Nantes - St Gilles Croix de Vie),3
-OCE669705,OCESN,Cars Réguliers L 06  (Nantes - Clisson - Cholet,3
 OCE1081887,OCESN,Cars Reguliers L 24  (Le Mans - Alençon),3
+OCE669705,OCESN,"Cars Réguliers ""L 06""  (Nantes - Clisson – Cholet)",3
+OCE669711,OCESN,"Cars Réguliers ""L 11""  (Nantes - St Gilles Croix de Vie)",3
 OCE685636,OCESN,AMIENS - ALBERT / CAR,3
 OCE985904,OCESN,FISMES-LA FERTE MILON,3
 OCE685639,OCESN,BUSIGNY - ST QUENTIN / CAR,3
@@ -280,6 +288,8 @@ OCE252843,OCESN,CARS GE VCE,3
 OCE252844,OCESN,CARS Grenoble Chambery,3
 OCE160697,OCESN,Lyon - Grenoble Routier,3
 OCE669574,OCESN,St Etienne Lyon routier,3
+OCESN-87723197-87726000,OCESN,Lyon-Part-Dieu - St-Etienne-Châteaucreux,2
+OCESN-87697128-87726000,OCESN,Lyon-Part-Dieu-Gare-Rou - St-Etienne-Châteaucreux,2
 OCE232739,OCESN,Lyon St Paul - Lozanne Routier,3
 OCE156701,OCESN,Lyon - Roanne Routier,3
 OCE144649,OCESN,LYON - LOZANNE - PARAY-LE-MONIAL Routier,3
@@ -412,14 +422,37 @@ OCE637144,OCESN,Car METZ - VERDUN,3
 OCESN-87592006-87726802,OCESN,Limoges-Bénédictins - Roanne,3
 OCESN-87641001-87726802,OCESN,Montluçon-Ville - Roanne,3
 OCESN-87734004-87594093,OCESN,Clermont-Ferrand - Ussel,3
+OCESN-87317586-87223263,OCESN,Boulogne Ville - Lille Europe,2
+OCESN-87281006-87223263,OCESN,Dunkerque - Lille Europe,2
+OCESN-87223263-87317057,OCESN,Lille Europe - Rang du Fl. Verton Ber.,2
 OCESN-87478404-87396002,OCESN,Laval - Le Mans,2
+OCESN-87172007-87172254,OCESN,Charleville-Mézières - Sedan,2
+OCE337,OCESN,LES ARCS/VINTIMILLE,2
+OCESN-80253914-87193615,OCESN,Saarbrucken-Hbf - Sarreguemines,2
+OCE327,OCESN,Metz - Trier HBF,2
 OCE324,OCESN,Nancy - Longwy - Luxembourg,2
+OCESN-87672725-87672006,OCESN,Oloron-Ste-Marie - Pau,2
+OCE626,OCESN,Avignon-Port Bou,2
+OCE240747,OCESN,tram-train-SGS,2
+OCE577,OCESN,Strasbourg - Kehl,2
+OCE16630,OCESN,Mulhouse ville Freiburg,2
 OCE323,OCESN,Nancy - Metz - Luxembourg,2
+OCESN-82001000-87191007,OCESN,Luxembourg - Thionville,2
 OCESN-87763607-87763003,OCENI,Briançon - Gap,3
+OCESN-87765008-87773002,OCESN,Avignon-Centre - Montpellier-Saint-Roch,2
+OCESN-85000109-87182063,OCESN,Basel-SBB - Mulhouse,2
+OCE200734,OCESN,Strasbourg - Mulhouse - Bâle,2
 OCE367,OCESN,Besançon TGV - Besançon - Morteau - la Chaux de Fonds,2
+OCESN-87598219-87718619,OCESN,Le Locle-Col-des-Roches - Morteau,2
+OCESN-87718007-85043141,OCESN,Besançon-Viotte - La Chaux-de-Fonds,2
 OCE192718,OCESN,Pontarlier Frasne Vallorbe (autocar et train),2
 OCE368,OCESN,Dole Pontarlier -Besançon Dole St Claude,2
+OCE50,OCESN,Lyon - Genève,2
+OCE49,OCESN,Lyon - Bellegarde - Evian,2
+OCE222,OCESN,BELLEGARDE GENEVE,2
+OCESN-87571240-87571000,OCESN,St-Pierre-des-Corps - Tours,7
 OCE645593,OCESN,Strasbourg - Lauterbourg,3
+OCE413,OCESN,TOURS-ST PIERRE NAVETTES TGV,7
 OCE645579,OCESN,Strasbourg - Sarrebruck,3
 OCE645588,OCESN,Strasbourg - Haguenau - Wissembourg,3
 OCE645640,OCESN,Mulhouse - Mullheim,3
@@ -474,6 +507,7 @@ OCESN-87734459-87734475,OCESN,Pont-de-Dore - Thiers,3
 OCESN-87734004-87734475,OCESN,Clermont-Ferrand - Thiers,2
 OCESN-87645002-87613091,OCESN,Aurillac - Figeac,3
 OCESN-87734004-87734426,OCESN,Clermont-Ferrand - Vertaizon,3
+OCESN-87645002-87734004,OCESN,Aurillac - Clermont-Ferrand,2
 OCE726008,OCESN,Dijon - Nevers,2
 OCE725925,OCESN,Decize - Nevers - Cosne,2
 OCE725906,OCESN,Nevers - Paray - Lyon (Multi-Activités),3
@@ -484,6 +518,7 @@ OCESN-87683268-87682302,OCESN,Laroche-Migennes - Montereau,3
 OCESN-87725002-87713040,OCESN,Chalon-sur-Saône - Dijon-Ville,2
 OCE725919,OCESN,Dijon - Bourg en Bresse (Multi-Activités),2
 OCE725917,OCESN,Dijon - Is sur Tille,2
+OCESN-87172007-87172130,OCESN,Charleville-Mézières - Givet,2
 OCE16,OCESN,Nantes - Redon - Rennes - St Malo,2
 OCESN-87481002-87471003,OCESN,Nantes - Rennes,2
 OCE18,OCESN,Nantes - Quimper - Brest,2
@@ -501,6 +536,7 @@ OCESN-87481648-87471359,OCESN,Châteaubriant - Retiers,3
 OCE9,OCESN,Morlaix - Roscoff,2
 OCESN-87545756-87545707,OCESN,Châteaudun - Voves,2
 OCE121,OCESN,Tours Chinon,2
+OCE77,OCESN,Poitiers - Tours,2
 OCE705738,OCESN,Tours - Nevers,2
 OCE645596,OCESN,Commentry / Montluçon / Vierzon,2
 OCESN-87543017-87543066,OCESN,Aubrais-(les) - Château-Gaillard,3
@@ -527,6 +563,7 @@ OCESN-87615286-87615260,OCESN,Carcassonne - Quillan,2
 OCESN-87734350-87783282,OCESN,Langogne - Marvejols,3
 OCESN-87615286-87781104,OCESN,Carcassonne - Narbonne,2
 OCESN-87597609-87592006,OCESN,Guéret - Limoges-Bénédictins,2
+OCE116622,OCESN,LIMOGES - ANGOULEME,2
 OCE104647,OCESN,LIMOGES - PERIGUEUX - BORDEAUX,2
 OCESN-87693630-87592824,OCESN,Limoges-CIEL - St-Yrieix-la-Perche,3
 OCESN-87594002-87592006,OCESN,Brive-la-Gaillarde - Limoges-Bénédictins,2
@@ -614,6 +651,7 @@ OCE705965,OCESN,MARSEILLE/AVIGNON/ORANGE via RGC ARS et CNV,2
 OCE216736,OCESN,CARPENTRAS / AVIGNON TGV,2
 OCE340,OCESN,MARSEILLE/AIX/PERTUIS,2
 OCE705966,OCESN,MARSEILLE/MIRAMAS via PDB,2
+OCE336,OCESN,MARSEILLE/LES ARCS,2
 OCESN-87763607-87763029,OCESN,Briançon - Valence-TGV,3
 OCESN-87763029-87763300,OCESN,Valence-TGV - Veynes-Dévoluy,3
 OCESN-87763003-87763029,OCESN,Gap - Valence-TGV,3
@@ -655,35 +693,309 @@ OCESN-87745000-85010082,OCESN,Bellegarde-Gare - Genève,3
 OCE801885,OCESN,SGB-VLO,3
 OCESN-87746008-87746305,OCESN,Annecy - La Roche-sur-Foron,2
 OCESN-87746784-87151589,OCESN,Chamonix-Mont-Blanc - Le Châtelard-Frontière,3
+OCESN-87212225-87212027,OCESN,Saverne - Strasbourg,2
+OCESN-87215012-87212027,OCESN,Sarrebourg - Strasbourg,2
+OCE200740,OCESN,Strasbourg - Metz,2
+OCE200737,OCESN,Haguenau- Strasbourg,2
+OCE637330,OCESN,Wissembourg - Strasbourg,2
+OCE597,OCESN,Lauterbourg - Strasbourg,2
+OCESN-87214577-87212027,OCESN,Molsheim - Strasbourg,2
+OCESN-87338525-87193615,OCESN,Krimmeri-Meinau - Sarreguemines,2
+OCESN-87144014-87212027,OCESN,St-Dié-des-Vosges - Strasbourg,2
+OCESN-87214783-87212027,OCESN,Saales - Strasbourg,2
+OCE200731,OCESN,Strasbourg - Sélestat Omnibus,2
+OCESN-87212027-87214056,OCESN,Strasbourg - Sélestat,2
+OCESN-87182014-87182063,OCESN,Colmar - Mulhouse,2
+OCE596,OCESN,Metzeral - Colmar,2
+OCESN-87214247-87212027,OCESN,Barr - Strasbourg,2
+OCESN-87214288-87212027,OCESN,Obernai - Strasbourg,2
+OCESN-87214320-87212027,OCESN,Rosheim - Strasbourg,2
+OCE617095,OCESN,Strasbourg - Rothau - Saales -St Dié,2
+OCE535,OCESN,Mulhouse - Kruth (73500),2
+OCESN-87182642-87182568,OCESN,Kruth - Thann,2
+OCESN-87213058-87213256,OCESN,Haguenau - Niederbronn,2
+OCESN-87213256-87212027,OCESN,Niederbronn - Strasbourg,2
+OCE361,OCESN,Metz - Onville - Conflans-Jarny - Verdun,2
+OCE773848,OCESN,Reims-Bar le Duc-Nancy-Luneville-Sarrebourg,2
+OCESN-87144006-87192039,OCESN,Epinal - Metz-Ville,2
+OCE354,OCESN,Nancy - Lunéville - Sarrebourg,2
+OCE359,OCESN,Metz - Nancy - St-Dié,2
+OCE326,OCESN,Metz - Rémilly - Sarrebourg,2
+OCE200741,OCESN,Strasbourg - Nancy,2
+OCESN-87144006-87144014,OCESN,Epinal - St-Dié-des-Vosges,2
+OCE701652,OCESN,CHATEAU THIERRY-CHALONS-EPERNAY-REIMS,2
+OCE701656,OCESN,CGV-REIMS-DIJON,2
+OCE701659,OCESN,CGV-SEDAN,2
+OCESN-87172254-87191007,OCESN,Sedan - Thionville,2
+OCESN-87172007-87194274,OCESN,Charleville-Mézières - Longuyon,2
+OCE917881,OCESN,EPERNAY - CHARLEVILLE,2
+OCE701650,OCESN,CHARLEVILLE-GIVET,2
+OCE701662,OCESN,CHARLEVILLE - HIRSON,2
+OCE701648,OCESN,PARIS-ST DIZIER-BAR LE DUC,2
+OCE701651,OCESN,LA FERTE MILON-REIMS,2
+OCE701653,OCESN,REIMS-LAON,2
+OCE777845,OCESN,CHALONS-CULMONT,2
+OCESN-87713040-87175000,OCESN,Dijon-Ville - St-Dizier,2
+OCE705832,OCESN,LONGUEVILLE - DIJON,2
+OCESN-87142125-87118000,OCESN,Culmont-Chalindrey - Troyes,2
+OCESN-87142000-87142125,OCESN,Chaumont - Culmont-Chalindrey,2
+OCESN-87713040-87118000,OCESN,Dijon-Ville - Troyes,2
+OCESN-87142000-87713040,OCESN,Chaumont - Dijon-Ville,2
+OCE701657,OCESN,CGV-REIMS (Navettes),2
+OCE697673,OCESN,LILLE-VALENCIENNES-AULNOYE-JEUMONT-VALENCIENNES-CAMBRAI,2
+OCE697679,OCESN,BUSIGNY-AULNOYE-JEUMONT(p),2
+OCE697675,OCESN,LILLE-VALENCIENNES-AULNOYE-HIRSON,2
+OCE697688,OCESN,LILLE-LENS (Via DON),2
+OCE697671,OCESN,ARRAS-ST POL-ETAPLE-CALAIS,2
+OCE633148,OCESN,LILLE-DON-BETHUNE-ST POL,2
+OCE697635,OCESN,RANG DU FLIERS-CALAIS,2
+OCE697623,OCESN,ARRAS-DOUAI-LILLE,2
+OCE633130,OCESN,BETHUNE-LENS-LILLE (via libercourt),2
+OCE697684,OCESN,BUSIGNY-CAMBRAI-DOUAI-LILLE,2
+OCESN-87345520-87345009,OCESN,Cambrai Ville - Douai,2
+OCE633135,OCESN,LILLE-DOUAI-VALENCIENNES-CAMBRAI,2
+OCE697682,OCESN,LENS-DOUAI-VALENCIENNES,2
+OCE697686,OCESN,ST QUENTIN-BUSIGNY-CAMBRAI-DOUAI-LILLE,2
+OCE633124,OCESN,LILLE-COMINES,2
+OCE633126,OCESN,LILLE-DUNKERQUE,2
+OCE633127,OCESN,DUNKERQUE-CALAIS,2
+OCE633129,OCESN,LILLE-CALAIS,2
+OCE633125,OCESN,ARRAS-HAZEBROUCK-DUNKERQUE,2
+OCESN-87313510-87271007,OCESN,Beauvais-Gare-SNCF - Paris-Nord,2
+OCE136634,OCESN,PARIS - PERSAN BEAUMONT - BEAUVAIS,2
+OCE136635,OCESN,BEAUVAIS - ABANCOURT - LE TREPORT(2 sqx-bvs),2
+OCE232740,OCESN,PARIS - LE TREPORT (2trains)(+3trains à la mer,2
+OCESN-87317529-87271007,OCESN,Le Tréport-Mers-Les-B - Paris-Nord,2
+OCE128626,OCESN,CREIL - BEAUVAIS,2
+OCE128629,OCESN,PARIS - COMPIEGNE - ST QUENTIN,2
+OCE649566,OCESN,AMIENS - ABBEVILLE,2
+OCE128631,OCESN,AMIENS - ABBEVILLE - LE TREPORT MERS(5 trains),2
+OCE132635,OCESN,COMPIEGNE - AMIENS,2
+OCE128628,OCESN,PARIS - AMIENS,2
+OCE531,OCESN,AMIENS - TERGNIER - LAON - ST QUENTIN,2
+OCE527,OCESN,AMIENS - ALBERT,2
+OCE697637,OCESN,AMIENS-BOULOGNE-CALAIS (Multi),2
+OCE685609,OCESN,AMIENS - SERQUEUX,2
+OCE697677,OCESN,AULNOYE-LAON (Multi),2
+OCE649563,OCESN,LAON - HIRSON,2
+OCE685617,OCESN,TERGNIER-BUSIGNY,2
+OCE530,OCESN,ST QUENTIN - BUSIGNY,2
+OCE532,OCESN,PARIS - CREPY - SOISSONS - LAON,2
+OCE653580,OCESN,GIVERNY,2
+OCE516,OCESN,Paris / Rouen R.D.,2
+OCESN-87413542-87413013,OCESN,Fécamp - Le Havre,2
+OCE645688,OCESN,ELBEUF YVETOT,2
+OCE536,OCESN,Paris Evreux Caen,2
+OCESN-87381244-87411470,OCESN,Gisors - Serqueux,2
+OCE128635,OCESN,Rouen R.D. / Dieppe,2
+OCE581,OCESN,Lisieux / Caen / Cherbourg,2
+OCESN-87444265-87444372,OCESN,Lisieux - Trouville-Deauville,2
+OCESN-87444414-87444372,OCESN,Dives-Cabourg - Trouville-Deauville,2
+OCE584,OCESN,Caen / St Lo / Coutances / Granville,2
+OCE589,OCESN,Lisieux / Saint Lo,2
+OCE585,OCESN,Caen / Rennes,2
+OCESN-87444000-87471003,OCESN,Caen - Rennes,2
+OCESN-87444000-87396002,OCESN,Caen - Le Mans,2
+OCESN-87471003-87471359,OCESN,Rennes - Retiers,2
+OCE5,OCESN,Rennes - Saint Malo,2
+OCE14,OCESN,Rennes - Auray - Quiberon,2
+OCESN-87473223-87473009,OCESN,Lannion - St-Brieuc,2
+OCE8,OCESN,Saint Brieuc - Brest,2
+OCE164687,OCESN,Laval-Vitré-Rennes,2
+OCESN-87471003-87471508,OCESN,Rennes - Vitré,2
+OCE7,OCESN,Rennes - Saint Brieuc,2
+OCE171,OCESN,Lannion - Brest,2
+OCE1,OCESN,Rennes - Brest,2
+OCE6,OCESN,Rennes - Redon,2
+OCESN-87471300-87471003,OCESN,Redon - Rennes,2
+OCE4,OCESN,Redon - Quimper,2
+OCE2,OCESN,Rennes - Quimper,2
+OCE123,OCESN,Tours- Chateau Du Loir- Le Mans,2
+OCE681596,OCESN,Chateau du Loir - Le Mans - Alençon,2
+OCESN-87444539-87396002,OCESN,Argentan - Le Mans,2
+OCE37,OCESN,Tours -Caen,2
+OCE24,OCESN,Le Mans - Angers - Nantes,2
+OCE31,OCESN,Le Mans - Le Croisic,2
+OCESN-87484006-87481002,OCESN,Angers-St-Laud - Nantes,2
+OCE669665,OCESN,Le Mans-Laval,2
+OCESN-87478404-87471003,OCESN,Laval - Rennes,2
+OCE17,OCESN,Le Mans-Rennes,2
+OCE685599,OCESN,Nantes - Sablé - Rennes (Virgule),2
+OCE22,OCESN,Nantes - Saint-Nazaire - Le Croisic,2
+OCE30,OCESN,Nantes - Redon,2
+OCESN-87481002-87487603,OCESN,Nantes - Saumur,2
+OCE26,OCESN,Nantes-La Roche sur Yon - Les Sables,2
+OCE669677,OCESN,Nantes-Angers-Tours,2
+OCE33,OCESN,Thouars - La-Roche-sur-Yon,2
+OCE140648,OCESN,SAUMUR - LES SABLES D'OLONNES,2
+OCE27,OCESN,Nantes - Saint-Gilles-Croix-de-Vie - Pornic,2
+OCE28,OCESN,Angers - Cholet,2
+OCE669661,OCESN,Nantes - Luçon - La Rochelle,2
+OCE25,OCESN,Nantes - Cholet,2
+OCE34,OCESN,Orléans - Tours - Nantes - Le Croisic,2
+OCESN-87484006-87481788,OCESN,Angers-St-Laud - Le Croisic,2
+OCESN-87571000-87545707,OCESN,Tours - Voves,2
+OCE749844,OCESN,Tours - Saumur,2
+OCE99,OCESN,Bressuire - Thouars - Saumur - Tours,2
+OCE98,OCESN,Thouars - Saumur - Angers,2
+OCE122,OCESN,Tours Loches,2
+OCESN-87571455-87571000,OCESN,Reignac - Tours,2
+OCE705740,OCESN,PAZ - ORL,2
+OCESN-87547000-87574558,OCESN,Paris-Austerlitz - Vendôme,2
+OCE124,OCESN,Tours Vendôme Châteaudun (Voves - Chartres) Paris Austerlitz,2
+OCESN-87545756-87547000,OCESN,Châteaudun - Paris-Austerlitz,2
+OCE8627,OCESN,Dijon - Tours,2
+OCE645595,OCESN,Commentry / Montluçon / Vierzon,2
+OCESN-87576207-87641001,OCESN,Bourges - Montluçon-Ville,2
+OCE705739,OCESN,Orléans - Nevers,2
+OCE125,OCESN,Orleans-Vierzon-Chateauroux- Argenton-Limoges,2
+OCESN-87641001-87641357,OCESN,Montluçon-Ville - Vallon-en-Sully,2
+OCE68622,OCESN,Droué - Chartres - Courtalain,2
+OCESN-87394452-87394007,OCESN,Brou - Chartres,2
 OCESN-87394007-87394494,OCESN,Chartres - Courtalain-St-Pellerin,2
+OCESN-87394007-87545707,OCESN,Chartres - Voves,2
+OCE669681,OCESN,Le Mans - Nogent,2
+OCE76,OCESN,Poitiers - Châtellerault,2
+OCE79,OCESN,Poitiers - Angoulême,2
+OCE80,OCESN,Poitiers - La Rochelle,2
+OCESN-87485003-87575001,OCESN,La Rochelle-Ville - Poitiers,2
+OCESN-87486019-87571000,OCESN,La Roche-sur-Yon - Tours,2
+OCE89,OCESN,Royan - Niort,2
+OCESN-87485300-87491001,OCESN,Niort - Saintes,2
+OCESN-87485300-87491803,OCESN,Niort - Royan,2
+OCE85,OCESN,La Rochelle - Angoulême,2
+OCE629119,OCESN,Angoulême - Bordeaux,2
+OCESN-87583005-87581009,OCESN,Angoulême - Bordeaux-St-Jean,2
+OCE629097,OCESN,Brive - Périgeux - Bordeaux,2
+OCE725952,OCESN,BORDEAUX-PERIGUEUX-BRIVE-TULLE,2
+OCESN-87581009-87594499,OCESN,Bordeaux-St-Jean - Tulle,2
+OCESN-87581009-87595009,OCESN,Bordeaux-St-Jean - Périgueux,2
+OCESN-87594382-87595009,OCESN,Condat-le-Lardin - Périgueux,2
+OCESN-87595298-87595009,OCESN,Mussidan - Périgueux,2
+OCESN-87584268-87581009,OCESN,Bergerac - Bordeaux-St-Jean,2
+OCESN-87581009-87595827,OCESN,Bordeaux-St-Jean - Sarlat,2
+OCE629106,OCESN,Périgueux - Agen,2
+OCESN-87586008-87586453,OCESN,Agen - Monsempron-Libos,2
+OCESN-87586008-87592006,OCESN,Agen - Limoges-Bénédictins,2
+OCESN-87595751-87595009,OCESN,Le Buisson - Périgueux,2
+OCESN-87595751-87586453,OCESN,Le Buisson - Monsempron-Libos,2
+OCESN-87581009-87671016,OCESN,Bordeaux-St-Jean - Mont-de-Marsan,2
+OCESN-87581009-87673103,OCESN,Bordeaux-St-Jean - Morcenx,2
+OCESN-87581009-87581256,OCESN,Bordeaux-St-Jean - Pauillac,2
+OCESN-87581314-87581751,OCESN,Lesparre - Pessac,2
+OCESN-87581009-87581389,OCESN,Bordeaux-St-Jean - Le-Verdon,2
+OCESN-87581009-87581199,OCESN,Bordeaux-St-Jean - Macau,2
+OCESN-87581199-87581751,OCESN,Macau - Pessac,2
+OCESN-87581009-87673202,OCESN,Bordeaux-St-Jean - Dax,2
+OCESN-87673004-87671008,OCESN,Bayonne - Tarbes,2
+OCE629115,OCESN,Tarbes - Pau - Bayonne,2
+OCESN-87672006-87671008,OCESN,Pau - Tarbes,2
+OCESN-87673004-87673723,OCESN,Bayonne - St-Jean-Pied-de-Port,2
+OCESN-87672774-87672006,OCESN,Bedous - Pau,2
+OCESN-87691949-87672006,OCESN,Bidos - Pau,2
+OCE116623,OCESN,LIMOGES - POITIERS,2
+OCESN-87583005-87592006,OCESN,Angoulême - Limoges-Bénédictins,2
+OCESN-87592006-87592824,OCESN,Limoges-Bénédictins - St-Yrieix-la-Perche,2
+OCE104648,OCESN,LIMOGES - ST YRIEIX - BRIVE,2
+OCESN-87594002-87594093,OCESN,Brive-la-Gaillarde - Ussel,2
+OCESN-87592006-87594093,OCESN,Limoges-Bénédictins - Ussel,2
+OCE104653,OCESN,LIMOGES - EYMOUTIERS - USSEL - CLERMONT FD,2
+OCE104651,OCESN,LIMOGES -GUERET - MONTLUCON,2
+OCE136641,OCESN,Limoges - Felletin - Montluçon,2
+OCESN-87594002-87594275,OCESN,Brive-la-Gaillarde - Meymac,2
+OCESN-87594499-87594093,OCESN,Tulle - Ussel,2
+OCE645564,OCESN,CHATEAUROUX - ST SEBASTIEN - LIMOGES,2
+OCE104649,OCESN,LIMOGES - UZERCHE - BRIVE,2
+OCESN-87613422-87611004,OCESN,Rodez - Toulouse-Matabiau,2
+OCE4624,OCESN,Rodez / Millau / Tournemire-Roquefort,2
+OCESN-87594002-87613422,OCESN,Brive-la-Gaillarde - Rodez,2
+OCESN-87594002-87613109,OCESN,Brive-la-Gaillarde - Capdenac,2
+OCESN-87613091-87613422,OCESN,Figeac - Rodez,2
+OCE4618,OCESN,Toulouse / Auch,2
+OCE4627,OCESN,Toulouse / Narbonne / Nimes / Cerbère,2
+OCE645731,OCESN,Toulouse / Figeac,2
+OCE645732,OCESN,Toulouse / Figeac / Aurillac,2
+OCESN-87734251-87734004,OCESN,Arvant - Clermont-Ferrand,2
+OCESN-87615245-87611004,OCESN,Tessonnières - Toulouse-Matabiau,2
+OCESN-87645002-87615245,OCESN,Aurillac - Tessonnières,2
+OCESN-87734004-87615245,OCESN,Clermont-Ferrand - Tessonnières,2
+OCESN-87671008-87611004,OCESN,Tarbes - Toulouse-Matabiau,2
+OCESN-87734004-87641001,OCESN,Clermont-Ferrand - Montluçon-Ville,2
+OCE384859,OCESN,Clermont Fd / Durtol / Volvic (ligne 14),2
+OCE388859,OCESN,Clermont Fd / Thiers (ligne 6),2
+OCE384849,OCESN,Clermont Fd / Vic / Issoire / Brioude (ligne 1),2
+OCE384862,OCESN,Clermont Fd / Nimes (ligne 4),2
+OCE645562,OCESN,Nîmes Clermont Multi Activité,2
+OCE384856,OCESN,Clermont Fd pass nord / sud,2
+OCE649569,OCESN,Cermont Ferrand / Dijon Multi-Activités,2
+OCE156702,OCESN,Lyon - Clermont-FD,2
+OCE645563,OCESN,Clermont / Roanne / Lyon,2
+OCE8622,OCESN,IV MARSEILLE / MONTPELLIER / NARBONNE / CERBERE Multi activités,2
+OCE645673,OCESN,IV  MARSEILLE / NIMES / MONTPELLIER / NARBONNE,2
+OCE645674,OCESN,Marseille / Nîmes,2
+OCE651,OCESN,Nîmes-Mende-St Chély d'Apcher,2
+OCE124628,OCESN,Directs  NA AL MDE,2
+OCE644,OCESN,Nîmes-Le Grau du Roi,2
+OCESN-87775866-87775007,OCESN,Le Grau-du-Roi - Nîmes,2
+OCE643,OCESN,Carcassonne-Quillan,2
+OCESN-87783605-87775007,OCESN,Mende - Nîmes,2
+OCE652,OCESN,Béziers-Neussargues,2
+OCE144653,OCESN,Montpellier St Chély,2
+OCESN-87751008-87753004,OCESN,Marseille-St-Charles - Miramas,2
+OCESN-87765008-87318964,OCESN,Avignon-Centre - Avignon-TGV,2
+OCESN-87781005-87784009,OCESN,Béziers - Perpignan,2
+OCESN-87781005-87785006,OCESN,Béziers - Cerbère,2
+OCESN-87751750-87751008,OCESN,Aubagne - Marseille-St-Charles,2
+OCE312847,OCESN,AVIGNON TOULON,2
+OCE204,OCESN,Macon - Bourg-en-Bresse - Ambérieu,2
+OCE64,OCESN,Ambérieu - Chambéry,2
+OCE160696,OCESN,SAG-Rives - Grenoble Gières - Chy,2
+OCE48,OCESN,ACY_CR,2
+OCE63,OCESN,Annecy - St Gervais,2
+OCE61,OCESN,Annemasse - Annecy,2
+OCE70,OCESN,Chambéry - St Marcellin,2
+OCE160695,OCESN,Lyon - SAG - Grenoble Gières,2
+OCE645617,OCESN,Grenoble - Gap - Briancon Multi Activités,2
+OCESN-87763003-87747006,OCESN,Gap - Grenoble,2
+OCE645618,OCESN,Grenoble - Gap - Briancon,2
+OCE160689,OCESN,Macon - Valence - (Pierrelatte),2
+OCESN-87723197-87761007,OCESN,Lyon-Part-Dieu - Valence-Ville,2
+OCE160687,OCESN,(Macon) - Lyon - Avignon Multi Activités,2
+OCE156707,OCESN,Lyon - St-Etienne - Firminy,2
+OCE2222222,OCESN,Firminy - St-Etienne - Lyon,2
+OCE55,OCESN,St-Claude - Oyonnax - Bourg - LPR,2
+OCE56,OCESN,Lyon - Bourg-en-Bresse (via Villars),2
+OCESN-87743005-87743633,OCESN,Bourg-en-Bresse - St-Claude,2
+OCE201,OCESN,Lyon - Roanne,2
+OCE199,OCESN,St-Etienne - Lyon - Ambérieu,2
+OCE202,OCESN,St-Etienne - Roanne,2
+OCE12627,OCESN,Villefranche - Lyon - Vienne,2
+OCE203,OCESN,St-Etienne - Montbrison,2
+OCE156708,OCESN,Lyon - Le Puy,2
+OCE726006,OCESN,Paris Lyon - Laroche (omnibus),2
+OCESN-87696807-87683268,OCESN,Clamecy - Laroche-Migennes,2
+OCESN-87683573-87686667,OCESN,Auxerre-St-Gervais - Paris-Bercy,2
+OCESN-87683789-87686667,OCESN,Avallon - Paris-Bercy,2
+OCESN-87683573-87683268,OCESN,Auxerre-St-Gervais - Laroche-Migennes,2
+OCESN-87683789-87686006,OCESN,Avallon - Paris-Gare-de-Lyon,2
+OCE873849,OCESN,Auxerre - Dijon,2
+OCE873850,OCESN,Laroche - Dijon,2
+OCE725921,OCESN,Dijon - Chalon - Mâcon,2
+OCESN-87683789-87683268,OCESN,Avallon - Laroche-Migennes,2
+OCESN-87696617-87683268,OCESN,Corbigny - Laroche-Migennes,2
+OCE725926,OCESN,ETANG - Dijon,2
+OCE717917,OCESN,Chalon - Montchanin - Paray,2
+OCE725927,OCESN,Montchanin - Nevers,2
+OCE725929,OCESN,Decize - Nevers - Moulins,2
+OCESN-87696005-87726802,OCESN,Nevers - Roanne,2
+OCE316845,OCESN,Belfort - Dijon,2
+OCE335,OCESN,Besançon viotte - Besançon TGV,2
+OCESN-87715326-87715441,OCESN,Champagnole - Morez,2
+OCESN-87715102-87715441,OCESN,Andelot - Morez,2
+OCE645569,OCESN,Belfort - Lyon,2
+OCE645568,OCESN,Belfort - Lyon Multi-activités,2
+OCESN-87718239-87722025,OCESN,Lons-le-Saunier - Lyon-Perrache,2
+OCESN-87184002-87718239,OCESN,Belfort-Ville - Lons-le-Saunier,2
 OCEZW-87576025-87576215,OCESN,Romorantin-Blanc-Argent - Valençay,2
 OCEZW-87576025-87543165,OCESN,Romorantin-Blanc-Argent - Salbris,2
-DUA800850009,DUA850,Aulnay sous Bois - Bondy,0
-DUA800850012,DUA850,T11,0
-DUA800854042,DUA854,Gare St-Lazare - Versailles R. Droite / Cergy Le Haut / Noisy le-Roi / St-Germain-en-Laye GC,2
-DUA800851081,DUA851,Gare de Lyon / Gare de Bercy - Montereau / Montargis / Laroche Migennes,2
-DUA800853022,DUA853,Gare du Nord - Crépy en Valois,2
-DUA800855048,DUA855,La DÚfense Grande Arche - La VerriÞre via Chaville Rive Droite,2
-DUA800854041,DUA854,Gare St-Lazare - Ermont Eaubonne / Vernon / Gisors,2
-DUA800852051,DUA852,Gare Montparnasse / Gare Montparnasse Vaugirard - Chartres / Dreux / Evreux,2
-DUA800850011,DUA850,Gare de l'Est - La Ferté Milon / Château-Thierry / Crécy la Chapelle / La Ferté G. Centre / Provins,2
-DUA810801041,DUA801,Cergy Le Haut / Poissy / St-Germain-en-Laye - Marne-la-Vallée Chessy Disneyland / Boissy-St-Léger,2
-DUA800804081,DUA804,Creil - Corbeil Essonnes / Melun / Malesherbes,2
-DUA800803071,DUA803,Pontoise / Versailles R. Gauche / St-Quentin en Y. - Versailles Ch. / Dourdan la F. / St-Martin d'E,2
-DUA800805091,DUA805,Haussmann Saint-Lazare - Chelles Gournay / Tournan,2
-DUA810802061,DUA802,Aéroport CDG 2 / Mitry Claye - Robinson / St-Rémy lès Chevreuse,2
-DUA800805591,DUA805,Haussmann Saint-Lazare - Chelles Gournay / Tournan,3
-DUA800852551,DUA852,Gare Montparnasse / Gare Montparnasse Vaugirard - Chartres / Dreux / Evreux,3
-DUA800850509,DUA850,Aulnay sous Bois - Bondy,3
-DUA810801541,DUA801,Sartrouville - Cergy le Haut (Bus de substitution),3
-DUA800854541,DUA854,Gare St-Lazare - Ermont Eaubonne / Vernon / Gisors,3
-DUA800853522,DUA853,Gare du Nord - Crépy en Valois,3
-DUA800851581,DUA851,Gare de Lyon / Gare de Bercy - Montereau / Montargis / Laroche Migennes,3
-DUA800855548,DUA855,La Défense Grande Arche - La Verrière,3
-DUA800854542,DUA854,Gare St-Lazare - Versailles R. Droite / Cergy Le Haut / Noisy le-Roi / St-Germain-en-Laye GC,3
-DUA800804581,DUA804,Creil - Corbeil Essonnes / Melun / Malesherbes,3
-DUA800803571,DUA803,Pontoise / Versailles R. Gauche / St-Quentin en Y. - Versailles Ch. / Dourdan la F. / St-Martin d'E,3
-DUA800850511,DUA850,Gare de l'Est - La Ferté Milon / Château-Thierry / Crécy la Chapelle / La Ferté G. Centre / Provins,3
-DUA800853521,DUA853,Gare du Nord - Pontoise / Luzarches / Beauvais / Creil,3
-DUA810802561,DUA802,AÚroport Charles de Gaulle 1 (Terminal 1 - Terminal 3) - Aulnay sous Bois (Bus),3
-DUA800853021,DUA853,Gare du Nord - Pontoise / Luzarches / Beauvais / Creil,2
+OCEZW-87543165-87576215,OCESN,Salbris - Valençay,2

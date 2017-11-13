@@ -120,5 +120,4 @@ INSERT INTO client(nom,mail,mdp) VALUES('root','root@root.root','root');
 \copy calendar FROM '/home/infoetu/lamboisa/S5/Projet/data/data_calendar.csv' DELIMITER ',';
 \copy calendar_dates FROM '/home/infoetu/lamboisa/S5/Projet/data/data_calendar_dates.csv' DELIMITER ',';
 \copy stop_times (trajet_id,departure_time,arrival_time,stop_id,num_sequence) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_stop_times.csv' DELIMITER ',';
-\copy transferts FROM '/home/infoetu/lamboisa/S5/Projet/data/data_transfert.csv' DELIMITER ',';
 

@@ -43,5 +43,8 @@
 			return Integer.parseInt(string.substring(index1,index2));
 		}
 	%>
+	<script language="JavaScript">
+		console.log(sessionStorage.getItem("gare1"));
+	</script>
 </body>
 </html>

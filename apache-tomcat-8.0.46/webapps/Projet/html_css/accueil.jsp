@@ -103,7 +103,7 @@
 				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
 				Statement stmt = con.createStatement();
 				
-				String query = "SELECT CONCAT_WS('-',nom,ville,gno) FROM gare";
+				String query = "SELECT CONCAT_WS(' ? ',libelle,commune,gare_id) FROM gare";
 			
 				ResultSet rs = stmt.executeQuery(query);
 				
@@ -141,8 +141,8 @@
 
 			var temp = "<ul>";
 			tab.forEach(function(element) {
-				if(element.startsWith(object.value)){
-					temp = temp + "<li onclick=\"recup(this,"+object.id+")\"><a>" +  element.substring(0, element.lastIndexOf("-")) + "</a></li>";
+				if(element.includes(object.value)){
+					temp = temp + "<li onclick=\"recup(this,"+object.id+")\"><a>" + element.substring(0,element.indexOf("?")) + " ( " +  element.substring(element.indexOf("?")+1, element.lastIndexOf("?")) + " ) " + "</a></li>";
 				}
 			});
 			temp = temp + "</ul>";
@@ -158,21 +158,23 @@
 			var dateRet = new Date(document.getElementById("dateRet").value);
 			dateDep.setSeconds(00);
 			dateRet.setSeconds(00);
+			var value1 = document.getElementById("trajet1").value;
+			var value2 = document.getElementById("trajet2").value;
 			
 			tab.forEach(function(element){
-				if( element.includes(document.getElementById("trajet1").value) ){
-					idgare1 = element.substring(element.lastIndexOf("-")+1);
+				if( element.includes(value1.substring(0,value1.indexOf("("))) ){
+					sessionStorage.setItem("gare1",element.substring(0,element.indexOf("?")));
 				}
-				if( element.includes(document.getElementById("trajet2").value) ){
-					idgare2 = element.substring(element.lastIndexOf("-")+1);
+				if( element.includes(value2.substring(0,value2.indexOf("("))) ){
+					sessionStorage.setItem("gare2",element.substring(0,element.indexOf("?")));
 				}
 			});
 			
 			var dateValide = (compareDate(dateDep,dateRet) == -1);
 
-			if( document.getElementById("trajet1").value != "" && document.getElementById("trajet2").value != "" && dateDep !="" && dateRet !="" && idgare1 != undefined && idgare2 != undefined && dateValide ){
+			if( value1 != "" && value2 != "" && dateDep !="" && dateRet !="" && sessionStorage.getItem("gare1") != undefined && sessionStorage.getItem("gare2") != undefined && dateValide ){
 				
- 				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?idgare1="+idgare1+"&idgare2="+idgare2+"&dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false});
+ 				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false});
 				
 			}else{
 				
