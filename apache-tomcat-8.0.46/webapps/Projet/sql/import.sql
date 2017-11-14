@@ -51,7 +51,6 @@ CREATE TABLE agency(
 );
 
 CREATE TABLE gare(
-	gare_id serial,
 	libelle text,
 	fret char(1),
 	voyageur char(1),
@@ -61,7 +60,7 @@ CREATE TABLE gare(
 	departement text,
 	latitude float ,
 	longitude float,
-	constraint pk_gare primary key (gare_id)
+	constraint pk_gare primary key (libelle,commune)
 );
 
 CREATE TABLE stops(
@@ -113,7 +112,7 @@ CREATE TABLE stop_times(
 
 INSERT INTO client(nom,mail,mdp) VALUES('root','root@root.root','root');
 \copy agency (agency_id,nom,url,timezone,lang) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_agency.csv' DELIMITER ',';
-\copy gare (libelle,fret,voyageur,codeligne,rang,commune,departement,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/gares.csv' DELIMITER ',';
+\copy gare (libelle,fret,voyageur,codeligne,rang,commune,departement,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_final_gares.csv' DELIMITER ',';
 \copy stops (stop_id,name,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_stops.csv' DELIMITER ',';
 \copy routes (route_id,agency_id,route_long_name,type) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_routes.csv' DELIMITER ',';
 \copy trajet FROM '/home/infoetu/lamboisa/S5/Projet/data/data_trajet.csv' DELIMITER ',';

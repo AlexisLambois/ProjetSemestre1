@@ -15,36 +15,31 @@
 </head>
 
 <body>
-
-	<%
-		BddTools t = null;
-		String html = null;
-		String date1 = request.getParameter("dateDep");
-		String date2 = request.getParameter("dateRet");
-		String heure1 = date1.substring(13, 21);
 	
-		String heure2 = "";
-		try{
+	<%
+	
+		BddTools t = null;
+		String stop_id1 = null;
+		String stop_id2 = null;
+		
+		try {
 			t = new BddTools("da2i");
-			html = t.toHtml("SELECT gare1.nom,gare1.ville,gare1.cp,gare2.nom,gare2.ville,gare2.cp,depart,duree,prix FROM trajet INNER JOIN ligne on trajet.lno = ligne.lno INNER JOIN gare AS gare1 ON ligne.gare_dep = gare1.gno INNER JOIN gare AS gare2 ON ligne.gare_arr = gare2.gno WHERE depart='"+heure1+"' AND ligne.lno=(SELECT ligne.lno FROM ligne WHERE gare_dep="+request.getParameter("idgare1")+" AND gare_arr="+request.getParameter("idgare2")+")");
+			stop_id1 = t.toString("SELECT stop_id FROM stops WHERE name='"+session.getAttribute("gare1")+"';");
+			stop_id2 = t.toString("SELECT stop_id FROM stops WHERE name='"+session.getAttribute("gare2")+"';");
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			t.fermer();
 		}
+		
+		out.print(stop_id1);
+		
 	%>
-	
-	<div class="listeTrajet">
-		<%out.print("SELECT gare1.nom,gare1.ville,gare1.cp,gare2.nom,gare2.ville,gare2.cp,depart,duree,prix FROM trajet INNER JOIN ligne on trajet.lno = ligne.lno INNER JOIN gare AS gare1 ON ligne.gare_dep = gare1.gno INNER JOIN gare AS gare2 ON ligne.gare_arr = gare2.gno WHERE depart='"+heure1+"' AND ligne.lno=(SELECT ligne.lno FROM ligne WHERE gare_dep="+request.getParameter("idgare1")+" AND gare_arr="+request.getParameter("idgare2")+")");%>
-	</div>
 	
 	<%!
 		int subToInt(String string, int index1, int index2){
 			return Integer.parseInt(string.substring(index1,index2));
 		}
 	%>
-	<script language="JavaScript">
-		console.log(sessionStorage.getItem("gare1"));
-	</script>
 </body>
 </html>

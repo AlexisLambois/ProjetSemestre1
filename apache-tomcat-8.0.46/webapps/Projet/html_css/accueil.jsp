@@ -103,7 +103,7 @@
 				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
 				Statement stmt = con.createStatement();
 				
-				String query = "SELECT CONCAT_WS(' ? ',libelle,commune,gare_id) FROM gare";
+				String query = "SELECT CONCAT_WS(' ? ',libelle,commune,fret) as concat FROM gare ORDER BY concat";
 			
 				ResultSet rs = stmt.executeQuery(query);
 				
@@ -152,29 +152,27 @@
 		}
 		
 		function send(){
-			var idgare1;
-			var idgare2;
+		
 			var dateDep = new Date(document.getElementById("dateDep").value);
 			var dateRet = new Date(document.getElementById("dateRet").value);
 			dateDep.setSeconds(00);
 			dateRet.setSeconds(00);
-			var value1 = document.getElementById("trajet1").value;
-			var value2 = document.getElementById("trajet2").value;
+			var value1 = null;
+			var value2 = null;
 			
 			tab.forEach(function(element){
-				if( element.includes(value1.substring(0,value1.indexOf("("))) ){
-					sessionStorage.setItem("gare1",element.substring(0,element.indexOf("?")));
+				if(element.substring(0,element.indexOf("?")-1).valueOf() == (document.getElementById("trajet1").value.substring(0,document.getElementById("trajet1").value.indexOf("(")-1)).valueOf()){
+					value1 = element.substring(0,element.indexOf("?")-1);
 				}
-				if( element.includes(value2.substring(0,value2.indexOf("("))) ){
-					sessionStorage.setItem("gare2",element.substring(0,element.indexOf("?")));
+				if(element.substring(0,element.indexOf("?")-1).valueOf() == (document.getElementById("trajet2").value.substring(0,document.getElementById("trajet2").value.indexOf("(")-1)).valueOf()){
+					value2 = element.substring(0,element.indexOf("?")-1);
 				}
 			});
-			
 			var dateValide = (compareDate(dateDep,dateRet) == -1);
 
-			if( value1 != "" && value2 != "" && dateDep !="" && dateRet !="" && sessionStorage.getItem("gare1") != undefined && sessionStorage.getItem("gare2") != undefined && dateValide ){
-				
- 				window.location.href = "http://localhost:8080/Projet/html_css/search.jsp?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false});
+			if( value1 != "" && value2 != "" && dateDep != "" && dateRet != "" && value1 != null && value2 != null && dateValide ){
+		
+				document.location.href=".././servlet/Search?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false})+"&gare1="+value1+"&gare2="+value2;
 				
 			}else{
 				

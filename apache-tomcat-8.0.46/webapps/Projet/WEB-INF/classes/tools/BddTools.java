@@ -26,6 +26,7 @@ public class BddTools {
 
 		}catch(Exception e){
 			e.printStackTrace();
+			fermer();
 		}
 		return con;
 	}
@@ -78,28 +79,57 @@ public class BddTools {
 			
 		}catch(Exception e){
 			e.printStackTrace();
+			fermer();
 			return null;
 		}
 		return temp;
 		
 	}
 	
-	public String toHtml(String requete){
+	public String toString(String requete) throws Exception{
 		
-		String html = "<table>";
-
+		String html = "";
+		
 		try{
-
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(requete);
 			ResultSetMetaData md = rs.getMetaData();
+	
+			for (int i = 1; i <= md.getColumnCount(); i++) {
+				html+=(md.getColumnName(i))+"%";
+			}
+			html+="\n";
+	
+			while(rs.next()){
+				for (int i = 1; i <= md.getColumnCount(); i++) {
+					html+=rs.getString(i)+"%";
+				}
+				html+="\n";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			fermer();
+		}
+		
+		return html;
 
+	}
+	
+	public String toHtml(String requete){
+		
+		String html = "<table>";
+		
+		try{
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(requete);
+			ResultSetMetaData md = rs.getMetaData();
+	
 			html+="<tr>";
 			for (int i = 1; i <= md.getColumnCount(); i++) {
 				html+="<th>"+(md.getColumnName(i))+"</th>";
 			}
 			html+="</tr>";
-
+	
 			while(rs.next()){
 				html+="<tr>";
 				for (int i = 1; i <= md.getColumnCount(); i++) {
@@ -107,11 +137,11 @@ public class BddTools {
 				}
 				html+="</tr>";
 			}
-
 		}catch(Exception e){
 			e.printStackTrace();
-			return null;
+			fermer();
 		}
+		
 		return html;
 
 	}
@@ -129,6 +159,7 @@ public class BddTools {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
+			fermer();
 			return null;
 		}
 		return res;
