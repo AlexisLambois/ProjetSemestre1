@@ -22,8 +22,9 @@ public class BddTools {
 
 		try{
 			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-
+			//con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+			con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
+			
 		}catch(Exception e){
 			e.printStackTrace();
 			fermer();
@@ -61,12 +62,12 @@ public class BddTools {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(requete);
 			ResultSetMetaData md = rs.getMetaData();
-			
-			ArrayList<String> temp2 = new ArrayList<>();
-			for (int i = 1; i <= md.getColumnCount(); i++) {
-				temp2.add(md.getColumnName(i));
-			}
-			temp.add(temp2);
+//			
+//			ArrayList<String> temp2 = new ArrayList<>();
+//			for (int i = 1; i <= md.getColumnCount(); i++) {
+//				temp2.add(md.getColumnName(i));
+//			}
+//			temp.add(temp2);
 			
 			ArrayList<String> donne = new ArrayList<>();
 			while(rs.next()){
@@ -86,7 +87,7 @@ public class BddTools {
 		
 	}
 	
-	public String toString(String requete) throws Exception{
+	public String toString(String requete){
 		
 		String html = "";
 		
@@ -95,16 +96,16 @@ public class BddTools {
 			ResultSet rs = stmt.executeQuery(requete);
 			ResultSetMetaData md = rs.getMetaData();
 	
-			for (int i = 1; i <= md.getColumnCount(); i++) {
-				html+=(md.getColumnName(i))+"%";
-			}
-			html+="\n";
+//			for (int i = 1; i <= md.getColumnCount(); i++) {
+//				html+=(md.getColumnName(i))+"%";
+//			}
+//			html+="?";
 	
 			while(rs.next()){
 				for (int i = 1; i <= md.getColumnCount(); i++) {
 					html+=rs.getString(i)+"%";
 				}
-				html+="\n";
+				html+="?";
 			}
 		}catch(Exception e){
 			e.printStackTrace();

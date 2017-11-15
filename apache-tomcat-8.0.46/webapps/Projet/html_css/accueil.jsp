@@ -100,7 +100,8 @@
 			try {
 				
 				Class.forName("org.postgresql.Driver");
-				con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+				//con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+				con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
 				Statement stmt = con.createStatement();
 				
 				String query = "SELECT CONCAT_WS(' ? ',libelle,commune,fret) as concat FROM gare ORDER BY concat";

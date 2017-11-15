@@ -14,9 +14,10 @@ public class Search extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession(true);
-		System.out.println(req.getQueryString());
-	    session.setAttribute("gare1", req.getParameter("gare1"));
-	    session.setAttribute("gare2", req.getParameter("gare2"));
+	    //session.setAttribute("gare1", req.getParameter("gare1"));
+	    //session.setAttribute("gare2", req.getParameter("gare2"));
+	    session.setAttribute("gare1", "Paris-Bercy");
+	    session.setAttribute("gare2", "St-Florentin-Vergigny");
 	    session.setAttribute("dateDep", req.getParameter("dateDep"));
 	    session.setAttribute("dateRet", req.getParameter("dateRet"));
 		res.sendRedirect("../html_css/search.jsp");
