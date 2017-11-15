@@ -2,6 +2,7 @@
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
@@ -24,12 +25,12 @@ public class Search extends HttpServlet {
 //	    session.setAttribute("dateDep", req.getParameter("dateDep"));
 //	    session.setAttribute("dateRet", req.getParameter("dateRet"));
 		
-		/****** Variables *******/
+		/***** Variables *****/
 		
 		BddTools t = null;
 		Date date1 = null;
 		Date date2 = null;
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
 		String stop_id1 = null;
 		String stop_id2 = null;
@@ -103,6 +104,30 @@ public class Search extends HttpServlet {
 		Matcher m = pattern.matcher(phrase);
 		m.find();
 		return (String)m.group();
+	}
+	
+	int getOrdinalCalendar(Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE",Locale.FRENCH);
+		String day_name = (String)sdf.format(date);
+		
+		switch (day_name) {
+			case "lundi":
+				return 0;
+			case "mardi":
+				return 1;
+			case "mercredi":
+				return 2;
+			case "jeudi":
+				return 3;
+			case "vendredi":
+				return 4;
+			case "samedi":
+				return 5;
+			case "dimanche":
+				return 6;
+		}
+		
+		return -1;
 	}
 	
 }
