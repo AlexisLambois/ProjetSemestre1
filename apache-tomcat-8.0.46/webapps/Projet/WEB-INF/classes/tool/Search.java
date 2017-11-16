@@ -1,23 +1,24 @@
-
+package tool;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-
+import tool.BddTools;
 @WebServlet("/servlet/Search")
 public class Search extends HttpServlet {
 	
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-//		HttpSession session = req.getSession(true);
+		HttpSession session = req.getSession(true);
 //	    //session.setAttribute("gare1", req.getParameter("gare1"));
 //	    //session.setAttribute("gare2", req.getParameter("gare2"));
 //	    session.setAttribute("gare1", "Paris-Bercy");
@@ -35,8 +36,8 @@ public class Search extends HttpServlet {
 		String stop_id1 = null;
 		String stop_id2 = null;
 		ArrayList<ArrayList<String>> trajet_id = null;
-		ArrayList<ArrayList<String>> service_id = null;
-		ArrayList<ArrayList<String>> dispo = null;
+		HashMap<String,String> service_dispo = new HashMap<>();
+		ArrayList<String> res_trajet = new ArrayList<>();
 		
 		try {
 			
@@ -53,7 +54,7 @@ public class Search extends HttpServlet {
 			stop_id2 = t.toString("SELECT stop_id FROM stops WHERE name='"+req.getParameter("gare2")+"' LIMIT 1;");
 			
 			/**** Parse pour obtenir que les numeros ****/
-			
+		
 			stop_id1 = getDigit(stop_id1);
 			stop_id2 = getDigit(stop_id2);
 			
@@ -63,27 +64,54 @@ public class Search extends HttpServlet {
 			
 			/**** Recuperation des ids de service qui correspondent aux trajet  ****/
 			
-			service_id = new ArrayList<>();
-			String temp="";
-			ArrayList<String> list_temp = null;
+			String temp = "";
 			
 			for(ArrayList<String> list: trajet_id){
-				temp = t.toString("SELECT service_id FROM trajet WHERE trajet_id='"+list.get(0)+"';");
-				list_temp = new ArrayList<String>();
-				list_temp.add(getDigit(temp));
-				service_id.add(list_temp);
+				temp = getDigit( t.toString("SELECT service_id FROM trajet WHERE trajet_id='"+list.get(0)+"';") );
+				service_dispo.put(temp,"");
 			}
-			
+
 			/**** Recuperation des disponibilites de service qui correspondent aux trajet  ****/
-			
-			dispo = new ArrayList<>();
 		
-			for(ArrayList<String> list: service_id){
-				temp = t.toString("SELECT monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date FROM calendar WHERE service_id='"+list.get(0)+"';");
-				list_temp = new ArrayList<String>();
-				list_temp.add(temp.substring(0,temp.length()-2));
-				dispo.add(list_temp);
+			for (String key : service_dispo.keySet()) {
+				temp = t.toString("SELECT monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date FROM calendar WHERE service_id='"+key+"';");
+				service_dispo.put(key,temp);
 			}
+			
+			/**** Tri des trajet non disponible ****/
+			
+			int index1 = getOrdinalCalendar(date1);
+			Date date_temp1 = null;
+			Date date_temp2 = null;
+			int cpt = 0;
+			String[] tab_temp = null;
+			
+			for (String value : service_dispo.values()) {
+				
+				if( value != "" ) {
+					
+					 tab_temp = (value.substring(0,value.length()-2)).split("%");
+					 date_temp1 = sdf.parse(tab_temp[7]);
+					 date_temp2 = sdf.parse(tab_temp[8]);
+					 if( tab_temp[index1].equals("1") && date1.after(date_temp1) && date1.before(date_temp2) ) {
+						 res_trajet.add(trajet_id.get(cpt).get(0));
+					 }	 
+				}
+				cpt++;
+			}
+			
+			int num_seq1 = 0;
+			int num_seq2 = 0;
+			
+			for ( int i = 0 ; i < res_trajet.size() ; i++ ) {
+				num_seq1 = Integer.parseInt(getDigit(t.toString("SELECT num_sequence FROM stop_times WHERE trajet_id='"+res_trajet.get(i)+"' AND stop_id LIKE '%"+stop_id1+"%';")));
+				num_seq2 = Integer.parseInt(getDigit(t.toString("SELECT num_sequence FROM stop_times WHERE trajet_id='"+res_trajet.get(i)+"' AND stop_id LIKE '%"+stop_id2+"%';")));
+				if( num_seq1 > num_seq2 ) {
+					res_trajet.remove(i);
+				}
+			}
+			
+			 session.setAttribute("res",res_trajet);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -9,7 +9,7 @@
 	<link href="final.css" rel="stylesheet">
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.util.*"%>
-	<%@ page import="tools.BddTools"%>
+	<%@ page import="tool.BddTools"%>
 	<script src="main.js"></script>
 	<script type="text/javascript" src="./calendar/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 </head>
@@ -17,14 +17,24 @@
 <body>
 	
 	<%
-
+		BddTools t = null;
+	
+		try{
+			
+			t = new BddTools("da2i");
+	
+			ArrayList<String> tab_trajet_id =  (ArrayList<String> )session.getAttribute("res");
+			
+			for(String trajet_id: tab_trajet_id){
+				out.print(t.toHtml("SELECT trajet_id,name,departure_time,arrival_time,num_sequence FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+trajet_id+"';"));
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			t.fermer();
+		}
 	%>
 	
-	<%!
-		int subToInt(String string, int index1, int index2){
-			return Integer.parseInt(string.substring(index1,index2));
-		}
-			
-	%>
 </body>
 </html>

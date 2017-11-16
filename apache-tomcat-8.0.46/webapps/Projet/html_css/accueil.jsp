@@ -12,7 +12,6 @@
 	<%@ page import="java.util.*"%>
 	
 	<script type="text/javascript" src="main.js"></script>
-
 	<script src="js-webshim/minified/polyfiller.js"></script>
 	
 	<link href="./calendar/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -173,8 +172,8 @@
 
 			if( value1 != "" && value2 != "" && dateDep != "" && dateRet != "" && value1 != null && value2 != null && dateValide ){
 		
-				document.location.href=".././servlet/Search?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false})+"&gare1="+value1+"&gare2="+value2;
-				
+				//document.location.href=".././servlet/Search?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false})+"&gare1="+value1+"&gare2="+value2;
+				document.location.href=".././servlet/Search?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false})+"&gare1=Paris-Bercy&gare2=St-Florentin-Vergigny";
 			}else{
 				
 				document.getElementById("error").hidden = false;
