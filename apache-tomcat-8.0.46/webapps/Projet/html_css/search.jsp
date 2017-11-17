@@ -33,7 +33,7 @@
 				String[] tab = temp.split("\\?");
 				tab_temp.add(tab[0]);
 				tab_temp.add(tab[tab.length-1]);
-				out.print("<table border=1 ><tr><td>"+tab_temp.get(0).split("%")[0]+"</td><td>"+tab_temp.get(0).split("%")[1]+"</td></tr></table>");
+				out.print(tab_temp.get(0).split("%")[0]+"</td><td>"+tab_temp.get(0).split("%")[1]+"</td></tr></table>");
 			//}
 			
 		}catch(Exception e){
