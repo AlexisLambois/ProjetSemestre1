@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	
+	<h1>Trajet disponible pour aller de : <%out.print(session.getAttribute("gare1"));%> à <%out.print(session.getAttribute("gare2"));%></h1>
 	<%
 		BddTools t = null;
 	
@@ -25,9 +25,16 @@
 	
 			ArrayList<String> tab_trajet_id =  (ArrayList<String> )session.getAttribute("res");
 			
-			for(String trajet_id: tab_trajet_id){
-				out.print(t.toHtml("SELECT trajet_id,name,departure_time,arrival_time,num_sequence FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+trajet_id+"';"));
-			}
+			String temp = "";
+			ArrayList<String> tab_temp = new ArrayList<>();
+			
+			//for(String trajet_id: tab_trajet_id){
+				temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+tab_trajet_id.get(0)+"';");
+				String[] tab = temp.split("\\?");
+				tab_temp.add(tab[0]);
+				tab_temp.add(tab[tab.length-1]);
+				out.print("<table border=1 ><tr><td>"+tab_temp.get(0).split("%")[0]+"</td><td>"+tab_temp.get(0).split("%")[1]+"</td></tr></table>");
+			//}
 			
 		}catch(Exception e){
 			e.printStackTrace();
