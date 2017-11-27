@@ -151,7 +151,7 @@ html,body{
 	background: rgb(42,136,173);
 	border-radius: 5px 5px 0 0;
 	margin: 0;
-	
+
 }
 
 .champsForm{
@@ -163,7 +163,7 @@ html,body{
 	background-image: url(images/recherche.png);
 	background-size: 25px;
 	background-repeat: no-repeat;
-	
+
 	margin-top:2%;
 	padding: 5px;
 	padding-left: 25px;
@@ -237,4 +237,49 @@ html,body{
 	max-height: 260px;
 	min-height: 260px;
 	overflow: scroll;
+}
+
+/********************* Page Search ************************/
+
+.souligner_gras{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.trajet_clic{
+	width: 60%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:3%;
+	border:5px black solid;
+	border-radius: 20px;
+	background-color: red;
+}
+
+.trajet_clic h2{
+	margin-left: 2%;
+}
+
+.trajet_clic p{
+	margin-left: 5%;
+}
+
+.trajet_clic:hover{
+	background-color: #F2F2F2;
+	cursor: pointer;
+}
+
+.choix_trajet h1{
+	text-align: center;
+	text-decoration: underline;
+}
+
+.buy{
+	margin-left: 92%;
+	margin-right: 0px;
+	text-align: right;
+}
+
+.buy img{
+	width: 6%;
 }
