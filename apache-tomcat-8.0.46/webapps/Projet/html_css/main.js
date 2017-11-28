@@ -15,3 +15,4 @@ function compareDate(date1,date2){
 function recup(string,id){
 	document.getElementById(id.id).value=string.innerText;
 }
+

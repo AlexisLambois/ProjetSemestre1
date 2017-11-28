@@ -6,6 +6,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
 	<title>Projet</title>
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.io.*"%>
@@ -15,13 +16,11 @@
 	<script type="text/javascript" src="main.js"></script>
 	<script src="js-webshim/minified/polyfiller.js"></script>
 
-	<link href="./calendar/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="./calendar/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
-
-	<script type="text/javascript" src="./calendar/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="./calendar/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./calendar/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="./calendar/js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script type="text/javascript" src="picker/src/wickedpicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="picker/src/wickedpicker.css" />
 
 	<link href="final.css" rel="stylesheet">
 </head>
@@ -51,23 +50,25 @@
 						<div class="champsForm">
 							<input onkeyup="search(this)" onclick="search(this)" id="trajet1" type="text" placeholder="Ville de départ"><br>
 							<input onkeyup="search(this)" onclick="search(this)" id="trajet2" type="text" placeholder="Ville d'arrivée"/><br>
-						</div>
-						<div class="form-group">
-                			<label class="col-md-2 control-label">Date de départ</label>
-                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy HH:ii:ss p">
-                    			<input class="form-control" id="dateDep" type="text" value="" readonly>
-                   	 			<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                			</div>
-           				</div>
-           				<div class="form-group">
-                			<label class="col-md-2 control-label">Date de retour</label>
-                			<div class="input-group date form_datetime col-md-5" data-date-format="dd MM yyyy HH:ii:ss p">
-                    			<input class="form-control" id="dateRet" type="text" value="" readonly>
-                   	 			<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                			</div>
-           				</div>
+							<div class="form-group">
+								<label>Date : </label>
+	                			<div>
+	                    			<input type="text" id="datepicker">
+	                			</div>
+	           				</div>
+	           				<SELECT id="select" name="avant_arpes" size="1">
+	                			<option value="0" >Partir après
+	                			<option value="1" >Arrivee après
+	                			<option value="2" >Partir avant
+	                			<option value="3" >Arrivee avant
+                			</SELECT>
+                			<div class="form-group">
+                				<label>Heure : </label>
+	                			<div>
+	                    			<input type="text" id="timepicker">
+	                			</div>
+	           				</div>
+                		</div>
 						<input type="button" onclick="send()" value="Valider">
 						<span id="error" hidden>Mauvaise entré</span>
 					</form>
@@ -80,17 +81,21 @@
 			</div>
 		</div>
 	</header>
-
 	<script language="JavaScript">
+	  
 		var dateNow = new Date();
-
-		$('.form_datetime').datetimepicker({
-	        language:  'fr',
-	        autoclose: true,
-	        todayBtn: true,
-	        pickerPosition: "bottom-left",
-	        minuteStep : 15,
-	        startDate: dateNow
+		$('#timepicker').wickedpicker({
+			 twentyFour: true,
+			 title: 'Heure',
+			 now: '0:00'
+		});
+	    $("#datepicker").datepicker({
+	    	firstDay: 1,
+	    	monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+	    	dayNamesMin: ['D','L', 'M', 'M', 'J', 'V', 'S'],
+	    	weekHeader: 'Sem.',
+	    	dateFormat: 'yy-mm-dd',
+	        minDate: dateNow
 	    });
 
 		<%
@@ -141,12 +146,13 @@
 
 		function send(){
 
-			var dateDep = new Date(document.getElementById("dateDep").value);
-			var dateRet = new Date(document.getElementById("dateRet").value);
-			dateDep.setSeconds(00);
-			dateRet.setSeconds(00);
+			var date = new Date(document.getElementById("datepicker").value);
+			date.setSeconds(00);
 			var value1 = null;
 			var value2 = null;
+			var temps = replaceAll(document.getElementById("timepicker").value," ","");
+			var select = document.getElementById( "select" );
+			select = ( select.options[ select.selectedIndex ].value );
 
 			tab.forEach(function(element){
 				if(element.valueOf() == (document.getElementById("trajet1").value).valueOf()){
@@ -156,17 +162,20 @@
 					value2 = element;
 				}
 			});
-			var dateValide = (compareDate(dateDep,dateRet) == -1);
 
-			if( value1 != "" && value2 != "" && dateDep != "" && dateRet != "" && value1 != null && value2 != null && dateValide ){
+			if( value1 != "" && value2 != "" && date != "" && value1 != null && value2 != null ){
 
-				document.location.href=".././servlet/Search?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false})+"&gare1="+value1+"&gare2="+value2;
-				//document.location.href=".././servlet/Search?dateDep="+dateDep.toLocaleString("fr-FR", {hour12: false})+"&dateRet="+dateRet.toLocaleString("fr-FR", {hour12: false})+"&gare1=Paris-Bercy&gare2=St-Florentin-Vergigny";
+				document.location.href=".././servlet/Search?date="+date.toLocaleString("fr-FR", {hour12: false})+"&gare1="+value1+"&gare2="+value2+"&temps="+temps+"&select="+select;
+			
 			}else{
 
 				document.getElementById("error").hidden = false;
 
 			}
+		}
+		
+		function replaceAll(str, find, replace) {
+		    return str.replace(new RegExp(find, 'g'), replace);
 		}
 
 	</script>

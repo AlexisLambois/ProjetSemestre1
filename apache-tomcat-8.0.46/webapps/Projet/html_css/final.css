@@ -4,6 +4,7 @@ html,body{
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
+	background-color: #BBD2E1;
 }
 
 /**************** Formulaire inscription **********************/
@@ -55,11 +56,11 @@ html,body{
 /********************* Page accueil ************************/
 
 .backGroundHeader{
-	background-color: black;
+	/**background-color: black;
 	background-image: url("images/train6.jpg");
 	background-repeat: no-repeat;
 	height: 800px;
-	background-position: center bottom;
+	background-position: center bottom;***/
 }
 
 .menuAccueilHeader{
@@ -158,20 +159,36 @@ html,body{
 	padding: 15px;
 }
 
-.champsForm input[id=trajet1], .champsForm input[id=trajet2]{
-	/*fond*/
-	background-image: url(images/recherche.png);
-	background-size: 25px;
-	background-repeat: no-repeat;
-
+.champsForm input[id=trajet1], .champsForm input[id=trajet2], .champsForm select{
 	margin-top:2%;
 	padding: 5px;
-	padding-left: 25px;
+	padding-left: 2%;
 	width: 100%;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+.form-group{
+	margin-top:2%;
+	padding: 5px;
+	padding-left: 2%;
+	width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.form-group label{
+	float:left;	
+}
+
+.form-group input{
+	margin-left: 2%;
+}
+
+.input-group{
+	width: 70%;
 }
 
 .formulaire_trajet input[type=button]{
@@ -191,12 +208,6 @@ html,body{
 	padding:0;
 	margin-left: 5%;
 	margin-top: 1.5%;
-}
-
-.col-md-5{
-	width: 60%;
-	padding:0;
-	margin-bottom: 5%;
 }
 
 #choixRep{
@@ -283,3 +294,4 @@ html,body{
 .buy img{
 	width: 6%;
 }
+

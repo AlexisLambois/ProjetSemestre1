@@ -1,13 +1,8 @@
 package tool;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
+import java.util.regex.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -19,18 +14,13 @@ public class Search extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		HttpSession session = req.getSession(true);
-	    	session.setAttribute("gare1", req.getParameter("gare1"));
-	    	session.setAttribute("gare2", req.getParameter("gare2"));
-	    	//session.setAttribute("gare1", "Paris-Bercy");
-	    	//session.setAttribute("gare2", "St-Florentin-Vergigny");
-//	    session.setAttribute("dateDep", req.getParameter("dateDep"));
-//	    session.setAttribute("dateRet", req.getParameter("dateRet"));
+	    session.setAttribute("gare1", req.getParameter("gare1"));
+	    session.setAttribute("gare2", req.getParameter("gare2"));
 
 		/***** Variables *****/
 
 		BddTools t = null;
-		Date date1 = null;
-		Date date2 = null;
+		Date date = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		String stop_id1 = null;
@@ -44,8 +34,7 @@ public class Search extends HttpServlet {
 
 			/**** Parse de Date de string dd/mm/yyyy a Date YYYY-mm-dd ****/
 
-			date1 = sdf.parse(parseDate((String)req.getParameter("dateDep")));
-			date2 = sdf.parse(parseDate((String)req.getParameter("dateRet")));
+			date = sdf.parse(parseDate((String)req.getParameter("date")));
 
 			t = new BddTools("da2i");
 
@@ -81,7 +70,7 @@ public class Search extends HttpServlet {
 
 			/**** Tri des trajet non disponible ****/
 
-			int index1 = getOrdinalCalendar(date1);
+			int index1 = getOrdinalCalendar(date);
 			Date date_temp1 = null;
 			Date date_temp2 = null;
 			int cpt = 0;
@@ -94,7 +83,7 @@ public class Search extends HttpServlet {
 					 tab_temp = (value.substring(0,value.length()-2)).split("%");
 					 date_temp1 = sdf.parse(tab_temp[7]);
 					 date_temp2 = sdf.parse(tab_temp[8]);
-					 if( tab_temp[index1].equals("1") && date1.after(date_temp1) && date1.before(date_temp2) ) {
+					 if( tab_temp[index1].equals("1") && date.after(date_temp1) && date.before(date_temp2) ) {
 						 res_trajet.add(trajet_id.get(cpt).get(0));
 					 }
 				}
@@ -103,15 +92,54 @@ public class Search extends HttpServlet {
 
 			int num_seq1 = 0;
 			int num_seq2 = 0;
-			System.out.println(res_trajet);
+			
+			ArrayList<String> vide = new ArrayList<>();
+			
 			for ( int i = 0 ; i < res_trajet.size() ; i++ ) {
 				num_seq1 = Integer.parseInt(getDigit(t.toString("SELECT num_sequence FROM stop_times WHERE trajet_id='"+res_trajet.get(i)+"' AND stop_id LIKE '%"+stop_id1+"%';")));
 				num_seq2 = Integer.parseInt(getDigit(t.toString("SELECT num_sequence FROM stop_times WHERE trajet_id='"+res_trajet.get(i)+"' AND stop_id LIKE '%"+stop_id2+"%';")));
 				if( num_seq1 < num_seq2 ) {
-					finale.add(res_trajet.get(i));
+					vide.add(res_trajet.get(i));
 				}
 			}
-			System.out.println(finale);
+			
+			res_trajet = vide;
+			
+			LinkedHashMap<String,String> has = new LinkedHashMap<>();
+			
+			for(int i = 0 ; i < res_trajet.size() ; i++){
+				temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+res_trajet.get(i)+"';");
+				String[] tab = temp.split("\\?");
+				has = new LinkedHashMap<>();
+				for(int j = 0 ; j < tab.length ; j++){
+					tab_temp = (tab[j].split("%"));
+					has.put(tab_temp[0],tab_temp[1]);
+				}
+		
+				switch (req.getParameter("select")) {
+					case "0":
+						if( compareTime( (has.get(req.getParameter("gare1")).substring(0,5)), req.getParameter("temps") ) == -1 ) {
+							finale.add(res_trajet.get(i));
+						}
+						break;
+					case "1":
+						if( compareTime( (has.get(req.getParameter("gare2")).substring(0,5)), req.getParameter("temps") ) == -1 ) {
+							finale.add(res_trajet.get(i));
+						}
+						break;
+					case "2":
+						if( compareTime( (has.get(req.getParameter("gare1")).substring(0,5)), req.getParameter("temps") ) == 1 ) {
+							finale.add(res_trajet.get(i));
+						}
+						break;
+					case "3":
+						if( compareTime( (has.get(req.getParameter("gare2")).substring(0,5)), req.getParameter("temps") ) == 1 ) {
+							finale.add(res_trajet.get(i));
+						}
+						break;
+				}
+			}
+			
 			session.setAttribute("res",finale);
 
 		}catch(Exception e) {
@@ -126,6 +154,24 @@ public class Search extends HttpServlet {
 
 	String parseDate(String date){
 		return date.substring(6,10)+"-"+date.substring(3,5)+"-"+date.substring(0,2);
+	}
+	
+	int compareTime(String time1, String time2){
+		SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
+		try {
+			Date date1 = parser.parse(time1);
+			Date date2 = parser.parse(time2);
+			if(date1.before(date2)) {
+				return 1;
+			}
+			if(date1.after(date2)) {
+				return -1;
+			}
+			return 0;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
 	}
 
 	String getDigit(String phrase) {
