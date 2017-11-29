@@ -53,6 +53,17 @@ public class BddTools {
 		}
 	}
 	
+	public ResultSet toResult(String requete){
+		try{
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(requete);
+			return rs;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public ArrayList<ArrayList<String>> getRequest(String requete){
 		
 		ArrayList<ArrayList<String>> temp = new ArrayList<>();

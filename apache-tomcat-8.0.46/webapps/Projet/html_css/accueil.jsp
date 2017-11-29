@@ -28,6 +28,7 @@
 <body>
 
 	<header class="backGroundHeader">
+	<% if(session.getAttribute("id_client") == null ){ %>
 		<nav class="menuAccueilHeader">
 			<div class="containerMenu">
 				<div class="logoMenuAccueil">
@@ -36,10 +37,22 @@
 				<div class="lienMenuAccueil">
 					<a href="inscription.jsp"><button>CREER UN COMPTE</button></a>
 					<a href="connection.jsp"><button>SE CONNECTER</button></a>
-					<a href="#">AIDE</a>
 				</div>
 			</div>
 		</nav>
+	<% }else{ %>
+		<nav class="menuAccueilHeader">
+			<div class="containerMenu">
+				<div class="logoMenuAccueil">
+					<img src="images/logo.png">
+				</div>
+				<div class="lienMenuAccueil">
+					<a href="inscription.jsp"><button>MON PANIER</button></a>
+					<a href=".././servlet/Deconnexion"><button>DECONNECTION</button></a>
+				</div>
+			</div>
+		</nav>
+	<% } %>
 		<div class="containerHeader">
 			<div class="pageAccueilRecherche">
 				<h1>Réservez vos billets de train</h1>

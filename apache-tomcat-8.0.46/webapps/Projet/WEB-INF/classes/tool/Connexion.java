@@ -1,3 +1,4 @@
+package tool;
 import java.io.IOException;
 import java.sql.*;
 import javax.servlet.ServletException;
@@ -8,38 +9,29 @@ import javax.servlet.http.*;
 public class Connexion extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		Connection con=null;
+		BddTools t = null;
 		boolean find = false;
 		HttpSession session = req.getSession(true);
 		ResultSet rs = null;
 		
 		try {
 
-			// enregistrement du driver
-			Class.forName("org.postgresql.Driver");
+			t = new BddTools("da2i");
+			rs = t.toResult("SELECT pseudo FROM client WHERE pseudo='" + req.getParameter("pseudo") + "' AND mdp='" + req.getParameter("passwd") + "'");
 
-			// connexion a la base
-			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-			
-			// execution de la requete
-			Statement stmt = con.createStatement();
-			String query = "SELECT cno FROM client WHERE mail='" + req.getParameter("mail") + "' AND mdp='" + req.getParameter("passwd") + "'";
-			
-			rs = stmt.executeQuery(query);
 			find = rs.next();
-			
+	
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			try {
-				con.close();
 				if(find){
-					res.sendRedirect("../html_css/fiche_client.jsp");
+					res.sendRedirect("../html_css/accueil.jsp");
 					session.setAttribute("id_client", rs.getString(1));
 				}else{
-					res.sendRedirect("../html_css/index.jsp?auth=false");
+					res.sendRedirect("../html_css/connection.jsp?auth=false");
 				}
-			} catch (SQLException e) {
+			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}

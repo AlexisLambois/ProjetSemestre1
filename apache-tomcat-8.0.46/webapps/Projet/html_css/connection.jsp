@@ -16,8 +16,8 @@
 		<form method="POST" action=".././servlet/Connexion">
 		
 			<div class="champ">
-				<label>Adresse mail :</label>
-				<input type="email" name="mail" required><br/>
+				<label>Pseudo :</label>
+				<input type="text" name="pseudo" required><br/>
 			</div>
 			<div class="champ">
 				<label>Mot de Passe :</label>
