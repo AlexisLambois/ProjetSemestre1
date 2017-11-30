@@ -47,7 +47,7 @@
 					<img src="images/logo.png">
 				</div>
 				<div class="lienMenuAccueil">
-					<a href="inscription.jsp"><button>MON PANIER</button></a>
+					<a href=""><button>MON PANIER</button></a>
 					<a href=".././servlet/Deconnexion"><button>DECONNECTION</button></a>
 				</div>
 			</div>

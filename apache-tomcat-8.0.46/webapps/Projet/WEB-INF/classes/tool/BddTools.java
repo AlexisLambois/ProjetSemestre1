@@ -22,8 +22,8 @@ public class BddTools {
 
 		try{
 			Class.forName("org.postgresql.Driver");
-			//con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-			con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
+			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+			//con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
 			
 		}catch(Exception e){
 			e.printStackTrace();
