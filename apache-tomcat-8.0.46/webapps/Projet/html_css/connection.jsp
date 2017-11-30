@@ -14,7 +14,7 @@
 	<div class="formulaire_connection_inscription" >
 	
 		<form method="POST" action=".././servlet/Connexion">
-		
+		<input type="hidden" value="<%=request.getParameter("page")%>" name="page">
 			<div class="champ">
 				<label>Pseudo :</label>
 				<input type="text" name="pseudo" required><br/>

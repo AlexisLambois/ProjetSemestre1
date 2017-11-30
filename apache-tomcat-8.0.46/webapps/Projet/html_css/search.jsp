@@ -16,6 +16,22 @@
 </head>
 
 <body>
+	<nav class="menuAccueilHeader">
+		<div class="containerMenu">
+			<div class="logoMenuAccueil">
+				<a href="accueil.jsp"><img src="images/logo.png"></a>
+			</div>
+			<div class="lienMenuAccueil">
+	<% if(session.getAttribute("id_client") == null ){ %>
+				<a href="inscription.jsp"><button>CREER UN COMPTE</button></a>
+				<a href="connection.jsp?page=search"><button>SE CONNECTER</button></a>
+	<% }else{ %>
+				<a href=""><button>MON PANIER</button></a>
+				<a href=".././servlet/Deconnexion?page=search"><button>DECONNECTION</button></a>
+	<% } %>
+			</div>
+		</div>
+	</nav>
 	<div class="choix_trajet">
 	<h1>Trajet disponible pour aller de : <%out.print(session.getAttribute("gare1"));%> à <%out.print(session.getAttribute("gare2"));%></h1>
 	<%

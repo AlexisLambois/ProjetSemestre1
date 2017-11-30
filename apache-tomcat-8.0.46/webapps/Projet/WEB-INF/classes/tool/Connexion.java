@@ -26,7 +26,7 @@ public class Connexion extends HttpServlet {
 		}finally{
 			try {
 				if(find){
-					res.sendRedirect("../html_css/accueil.jsp");
+					res.sendRedirect("../html_css/"+req.getParameter("page")+".jsp");
 					session.setAttribute("id_client", rs.getString(1));
 				}else{
 					res.sendRedirect("../html_css/connection.jsp?auth=false");

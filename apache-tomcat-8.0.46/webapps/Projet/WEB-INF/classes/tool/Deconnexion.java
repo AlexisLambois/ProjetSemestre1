@@ -19,7 +19,7 @@ public class Deconnexion extends HttpServlet {
 			e.printStackTrace();
 		}finally{
 			try {
-				res.sendRedirect("../html_css/accueil.jsp");
+				res.sendRedirect("../html_css/"+req.getParameter("page")+".jsp");
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
