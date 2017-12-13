@@ -5,8 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Properties;
+import java.util.*;
 
 public class BddTools {
 	
@@ -22,8 +21,8 @@ public class BddTools {
 
 		try{
 			Class.forName("org.postgresql.Driver");
-			con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
-			//con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
+			//con = DriverManager.getConnection("jdbc:postgresql://psqlserv/da2i","lamboisa","moi");
+			con = DriverManager.getConnection("jdbc:postgresql://localhost/da2i","lamboisa","moi");
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -87,6 +86,56 @@ public class BddTools {
 					donne.add(rs.getString(i));
 				}
 				temp.add(donne);
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			fermer();
+			return null;
+		}
+		return temp;
+		
+	}
+	
+	public ArrayList<String> getRequests (String requete){
+		
+		ArrayList<String> temp = new ArrayList<>();
+		
+		try{
+			
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(requete);
+			ResultSetMetaData md = rs.getMetaData();
+		
+			while(rs.next()) {
+				temp.add(rs.getString(1));
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			fermer();
+			return null;
+		}
+		return temp;
+		
+	}
+	
+	public HashMap<String,String> getHash(String requete){
+		
+		HashMap<String,String> temp = new HashMap<>();
+		
+		try{
+			
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(requete);
+			ResultSetMetaData md = rs.getMetaData();
+			
+			while(rs.next()){
+				String value = "";
+				for (int i = 2; i <= md.getColumnCount(); i++) {
+					value = value + "%" + rs.getString(i);
+				}
+				temp.put(rs.getString(1),value);
 			}
 			
 		}catch(Exception e){

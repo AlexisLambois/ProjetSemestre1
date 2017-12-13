@@ -26,8 +26,7 @@ public class Search extends HttpServlet {
 		String stop_id1 = null;
 		String stop_id2 = null;
 		ArrayList<ArrayList<String>> trajet_id = null;
-		HashMap<String,String> service_dispo = new HashMap<>();
-		ArrayList<String> res_trajet = new ArrayList<>();
+		ArrayList<ArrayList<String>> trajet_id_dispo = new ArrayList<>();
 		ArrayList<String> finale = new ArrayList<>();
 
 		try {
@@ -47,61 +46,63 @@ public class Search extends HttpServlet {
 
 			stop_id1 = getDigit(stop_id1);
 			stop_id2 = getDigit(stop_id2);
-
-			/**** Recuperation des ids de trajet qui sont commun aux deux arrets  ****/
+			
+			String temp = "";
+			int cpt = 0;
+			boolean trouve = false;
+			
+			/**** Recuperation des ids de trajet qui sont commun aux deux arrets ( DIRECT ) ****/
 
 			trajet_id = t.getRequest("SELECT st1.trajet_id FROM stop_times as st1 INNER JOIN stop_times as st2 ON st1.trajet_id=st2.trajet_id WHERE st1.stop_id LIKE'%"+stop_id1+"%' AND st2.stop_id LIKE '%"+stop_id2+"%';");
 
-			/**** Recuperation des ids de service qui correspondent aux trajet  ****/
-
-			String temp = "";
-
-			for(ArrayList<String> list: trajet_id){
-				temp = getDigit( t.toString("SELECT service_id FROM trajet WHERE trajet_id='"+list.get(0)+"';") );
-				service_dispo.put(temp,"");
+			if( trajet_id.size() == 0 ) {
+				
+				cpt = 1;
+				
+				do {
+					
+					String query = "SELECT td1.trajet_id,td2.gare1,td2.trajet_id";
+					
+					for(int i = 0 ; i < cpt-1 ; i++) {
+						query+= ",td"+(i+3)+".gare1,td"+(i+3)+".trajet_id";
+					}
+					
+					query+= " FROM temporaly_data as td1";
+					
+					for( int i = 0 ; i < cpt ; i++) {
+						query+=" INNER JOIN temporaly_data as td"+(i+2)+" ON td"+(i+1)+".gare2=td"+(i+2)+".gare1";
+					}
+					
+					query+=" WHERE td1.gare1 LIKE '%87286401%' AND td"+(cpt+1)+".gare2 LIKE '%87286542%';";
+					
+					trajet_id = t.getRequest(query);
+					
+				}while( trajet_id.size() == 0 || cpt == 4);
+				
 			}
-
-			/**** Recuperation des disponibilites de service qui correspondent aux trajet  ****/
-
-			for (String key : service_dispo.keySet()) {
-				temp = t.toString("SELECT monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date FROM calendar WHERE service_id='"+key+"';");
-				service_dispo.put(key,temp);
-			}
-
-			/**** Tri des trajet non disponible ****/
-
-			int index1 = getOrdinalCalendar(date);
-			Date date_temp1 = null;
-			Date date_temp2 = null;
-			int cpt = 0;
-			String[] tab_temp = null;
-
-			for (String value : service_dispo.values()) {
-
-				if( value != "" ) {
-
-					 tab_temp = (value.substring(0,value.length()-2)).split("%");
-					 date_temp1 = sdf.parse(tab_temp[7]);
-					 date_temp2 = sdf.parse(tab_temp[8]);
-					 if( tab_temp[index1].equals("1") && date.after(date_temp1) && date.before(date_temp2) ) {
-						 res_trajet.add(trajet_id.get(cpt).get(0));
-					 }
+			
+			String day = (String)sdf.format(date);
+			sdf = new SimpleDateFormat("EEEE",Locale.ENGLISH);
+			String day_name = (String)sdf.format(date).toLowerCase();
+			
+			for( ArrayList<String> obj: trajet_id ) {
+				if( obj.size() == 1 ) {
+					temp = "SELECT trajet_id\n" + 
+							"FROM trajet\n" + 
+							"WHERE trajet_id='"+obj.get(0)+"' AND service_id in (\n" + 
+							"SELECT service_id\n" + 
+							"FROM calendar\n" + 
+							"WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"');";
+				}else {
+					
 				}
-				cpt++;
-			}
-
-			int num_seq1 = 0;
-			int num_seq2 = 0;
-			
-			ArrayList<String> vide = new ArrayList<>();
-			
-			for ( int i = 0 ; i < res_trajet.size() ; i++ ) {
-				num_seq1 = Integer.parseInt(getDigit(t.toString("SELECT num_sequence FROM stop_times WHERE trajet_id='"+res_trajet.get(i)+"' AND stop_id LIKE '%"+stop_id1+"%';")));
-				num_seq2 = Integer.parseInt(getDigit(t.toString("SELECT num_sequence FROM stop_times WHERE trajet_id='"+res_trajet.get(i)+"' AND stop_id LIKE '%"+stop_id2+"%';")));
-				if( num_seq1 < num_seq2 ) {
-					vide.add(res_trajet.get(i));
+				
+				if() {
+					
 				}
 			}
+			
+			/****
 			
 			res_trajet = vide;
 			
@@ -140,7 +141,7 @@ public class Search extends HttpServlet {
 				}
 			}
 			
-			session.setAttribute("res",finale);
+			session.setAttribute("res",finale);****/
 
 		}catch(Exception e) {
 			e.printStackTrace();
