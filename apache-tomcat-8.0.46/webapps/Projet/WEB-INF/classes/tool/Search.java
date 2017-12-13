@@ -27,7 +27,7 @@ public class Search extends HttpServlet {
 		String stop_id2 = null;
 		ArrayList<ArrayList<String>> trajet_id = null;
 		ArrayList<ArrayList<String>> trajet_id_dispo = new ArrayList<>();
-		ArrayList<String> finale = new ArrayList<>();
+		ArrayList<ArrayList<String>> finale = new ArrayList<>();
 
 		try {
 
@@ -94,18 +94,19 @@ public class Search extends HttpServlet {
 							"FROM calendar\n" + 
 							"WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"');";
 				}else {
-					
+					temp = "SELECT service_id FROM trajet WHERE trajet_id IN (";
+					for(int i = 0 ; i < obj.size() ; i=i+2) {
+						temp+="'"+obj.get(i)+"',";
+					}
+					temp = temp.substring(0,temp.length()-1);
+					temp+=	") INTERSECT SELECT service_id FROM calendar WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"';";
 				}
-				
-				if() {
-					
+				ArrayList<String> res_temp_service = t.getRequests(temp);
+				if( res_temp_service.size() == ((obj.size()+1)%2) ) {
+					trajet_id_dispo.add(obj);
 				}
 			}
-			
-			/****
-			
-			res_trajet = vide;
-			
+				
 			LinkedHashMap<String,String> has = new LinkedHashMap<>();
 			
 			for(int i = 0 ; i < res_trajet.size() ; i++){
@@ -181,29 +182,4 @@ public class Search extends HttpServlet {
 		m.find();
 		return (String)m.group();
 	}
-
-	int getOrdinalCalendar(Date date) {
-		SimpleDateFormat sdf = new SimpleDateFormat("EEEE",Locale.FRENCH);
-		String day_name = (String)sdf.format(date);
-
-		switch (day_name) {
-			case "lundi":
-				return 0;
-			case "mardi":
-				return 1;
-			case "mercredi":
-				return 2;
-			case "jeudi":
-				return 3;
-			case "vendredi":
-				return 4;
-			case "samedi":
-				return 5;
-			case "dimanche":
-				return 6;
-		}
-
-		return -1;
-	}
-
 }
