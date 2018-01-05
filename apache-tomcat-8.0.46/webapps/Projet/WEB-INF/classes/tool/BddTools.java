@@ -156,11 +156,6 @@ public class BddTools {
 			ResultSet rs = stmt.executeQuery(requete);
 			ResultSetMetaData md = rs.getMetaData();
 	
-//			for (int i = 1; i <= md.getColumnCount(); i++) {
-//				html+=(md.getColumnName(i))+"%";
-//			}
-//			html+="?";
-	
 			while(rs.next()){
 				for (int i = 1; i <= md.getColumnCount(); i++) {
 					html+=rs.getString(i)+"%";

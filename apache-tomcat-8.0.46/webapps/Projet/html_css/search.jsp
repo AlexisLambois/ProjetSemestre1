@@ -41,7 +41,6 @@
 
 			t = new BddTools("da2i");
 
-			ArrayList<String> caddie = (ArrayList<String>)session.getAttribute("caddie");
 			ArrayList<String> tab_trajet_id =  (ArrayList<String>)session.getAttribute("res");
 
 			String temp = "";
@@ -49,21 +48,65 @@
 			LinkedHashMap<String,String> has = new LinkedHashMap<>();
 
 			for(int i = 0 ; i < tab_trajet_id.size() ; i++){
-				temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+tab_trajet_id.get(i)+"';");
-				String[] tab = temp.split("\\?");
-				has = new LinkedHashMap<>();
-				for(int j = 0 ; j < tab.length ; j++){
-					tab_temp = (tab[j].split("%"));
-					has.put(tab_temp[0],tab_temp[1]);
+				
+				String[] data = tab_trajet_id.get(i).split("\\%");
+				
+				if(data.length == 1){
+			
+					temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+tab_trajet_id.get(i)+"';");
+					
+					String[] tab = temp.split("\\?");
+					has = new LinkedHashMap<>();
+					
+					for(int j = 0 ; j < tab.length ; j++){
+						tab_temp = (tab[j].split("%"));
+						has.put(tab_temp[0],tab_temp[1]);
+					}
+					
+					out.print("<div class=\"trajet_clic\" onclick=\"add("+tab_trajet_id.get(i)+")\" >");
+					out.print("<h2>Trajet n°"+(i+1)+" : </h2>");
+					out.print("<p>Départ : gare <span class=\"souligner_gras\">" + has.keySet().toArray()[0] + "</span> à <span class=\"souligner_gras\">" + has.get( has.keySet().toArray()[0]) + "</span><br>" );
+					out.print("Arrivée : gare <span class=\"souligner_gras\">" + has.keySet().toArray()[has.size()-1] + "</span> à <span class=\"souligner_gras\">" + has.get( has.keySet().toArray()[has.size()-1]) + "</span><br>");
+					out.print("Votre gare de départ : gare <span class=\"souligner_gras\">" + session.getAttribute("gare1") + "</span> à <span class=\"souligner_gras\">" + has.get(session.getAttribute("gare1")) + "</span><br>");
+					out.print("Votre gare de arrivée : gare <span class=\"souligner_gras\">" + session.getAttribute("gare2") + "</span> à <span class=\"souligner_gras\">" + has.get(session.getAttribute("gare2")) + "</span></p>");
+					out.print("<span class=\"buy\"><img src=\"images/caddie.png\"></span>");
+					out.print("</div>");
+					
+				}else{
+					System.out.println(data[0]+" "+data[1]+" "+data[2]);
+					temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE st.trajet_id='"+data[0]+"';");
+					
+					String[] tab = temp.split("\\?");
+					has = new LinkedHashMap<>();
+					
+					for(int j = 0 ; j < tab.length ; j++){
+						tab_temp = (tab[j].split("%"));
+						has.put(tab_temp[0],tab_temp[1]);
+					}
+					
+					temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE st.trajet_id='"+data[2]+"';");
+					LinkedHashMap<String,String> has2 = new LinkedHashMap<>();
+					tab = temp.split("\\?");
+					
+					for(int j = 0 ; j < tab.length ; j++){
+						tab_temp = (tab[j].split("%"));
+						has2.put(tab_temp[0],tab_temp[1]);
+					}
+					
+					temp = t.toString("SELECT name FROM stops WHERE stop_id='"+data[1]+"';");
+					temp = temp.substring(0,temp.length()-2);
+					out.print("<div class=\"trajet_clic\" onclick=\"add("+tab_trajet_id.get(i)+")\" >");
+					out.print("<h2>Trajet n°"+(i+1)+" : </h2>");
+					out.print("<p> Prendre train direction : <span class=\"souligner_gras\">" + has.keySet().toArray()[has.keySet().toArray().length-1] + "</span><br>");
+					out.print("&nbsp Gare de départ : gare <span class=\"souligner_gras\">" + session.getAttribute("gare1") + "</span> à <span class=\"souligner_gras\">" + has.get(session.getAttribute("gare1")) + "</span><br>");
+					out.print("&nbsp Descendre gare : <span class=\"souligner_gras\">" + temp + "</span> à <span class=\"souligner_gras\">" + has.get(temp) + "</span><br>");
+					out.print("Continuer train direction : <span class=\"souligner_gras\">" + has2.keySet().toArray()[has2.keySet().toArray().length-1] + "</span><br>");
+					out.print("&nbsp Reprendre gare : <span class=\"souligner_gras\">" + temp + "</span> à <span class=\"souligner_gras\">" + has2.get(temp) + "</span><br>");
+					out.print("&nbsp Gare d'arrivée : gare <span class=\"souligner_gras\">" + session.getAttribute("gare2") + "</span> à <span class=\"souligner_gras\">" + has2.get(session.getAttribute("gare2")) + "</span></p>");
+					out.print("<span class=\"buy\"><img src=\"images/caddie.png\"></span>");
+					out.print("</div>");
+					
 				}
-				out.print("<div class=\"trajet_clic\" onclick=\"add("+tab_trajet_id.get(i)+")\" >");
-				out.print("<h2>Trajet n°"+(i+1)+" : </h2>");
-				out.print("<p>Départ : gare <span class=\"souligner_gras\">" + has.keySet().toArray()[0] + "</span> à <span class=\"souligner_gras\">" + has.get( has.keySet().toArray()[0]) + "</span><br>" );
-				out.print("Arrivée : gare <span class=\"souligner_gras\">" + has.keySet().toArray()[has.size()-1] + "</span> à <span class=\"souligner_gras\">" + has.get( has.keySet().toArray()[has.size()-1]) + "</span><br>");
-				out.print("Votre gare de départ : gare <span class=\"souligner_gras\">" + session.getAttribute("gare1") + "</span> à <span class=\"souligner_gras\">" + has.get(session.getAttribute("gare1")) + "</span><br>");
-				out.print("Votre gare de arrivée : gare <span class=\"souligner_gras\">" + session.getAttribute("gare2") + "</span> à <span class=\"souligner_gras\">" + has.get(session.getAttribute("gare2")) + "</span></p>");
-				out.print("<span class=\"buy\"><img src=\"images/caddie.png\"></span>");
-				out.print("</div>");
 			}
 
 		}catch(Exception e){
@@ -74,9 +117,7 @@
 	%>
 	</div>
 	<script language="JavaScript">
-		function add(object){
-			caddie.add(object);
-		}
+		
 	</script>
 </body>
 </html>
