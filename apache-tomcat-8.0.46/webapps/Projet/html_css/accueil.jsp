@@ -60,7 +60,7 @@
 	                    			<input type="text" id="datepicker">
 	                			</div>
 	           				</div>
-	           				<SELECT id="select" name="avant_arpes" size="1">
+	           				<SELECT id="select" name="avant_apres" size="1">
 	                			<option value="0" >Partir après
 	                			<option value="1" >Arrivee après
 	                			<option value="2" >Partir avant
