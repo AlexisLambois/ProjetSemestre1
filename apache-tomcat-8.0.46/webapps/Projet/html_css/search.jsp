@@ -11,7 +11,6 @@
 	<%@ page import="java.util.*"%>
 	<%@ page import="tool.BddTools"%>
 	<script src="main.js"></script>
-	<script type="text/javascript" src="./calendar/js/jquery-1.8.3.min.js" charset="UTF-8"></script>
 	<link href="final.css" rel="stylesheet">
 </head>
 
@@ -73,7 +72,7 @@
 					out.print("</div>");
 					
 				}else{
-					System.out.println(data[0]+" "+data[1]+" "+data[2]);
+					
 					temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE st.trajet_id='"+data[0]+"';");
 					
 					String[] tab = temp.split("\\?");

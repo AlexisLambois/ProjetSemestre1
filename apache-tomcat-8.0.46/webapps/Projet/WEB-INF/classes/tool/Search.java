@@ -28,7 +28,8 @@ public class Search extends HttpServlet {
 		ArrayList<ArrayList<String>> trajet_id = null;
 		ArrayList<ArrayList<String>> trajet_id_dispo = new ArrayList<>();
 		ArrayList<String> finale = new ArrayList<>();
-
+		String query = "";
+		
 		try {
 
 			/**** Parse de Date de string dd/mm/yyyy a Date YYYY-mm-dd ****/
@@ -52,16 +53,22 @@ public class Search extends HttpServlet {
 			boolean trouve = false;
 			
 			/**** Recuperation des ids de trajet qui sont commun aux deux arrets ( DIRECT ) ****/
-
-			trajet_id = t.getRequest("SELECT trajet_id FROM temporaly_data WHERE gare1 LIKE'%"+stop_id1+"%' AND gare2 LIKE '%"+stop_id2+"%';");
+			
+			query = "SELECT trajet_id FROM temporaly_data WHERE gare1 LIKE'%"+stop_id1+"%' AND gare2 LIKE '%"+stop_id2+"%'";
+			
+			trajet_id = t.getRequest(query);
 			
 			if( trajet_id.size() == 0 ) {
+				
+				String day = (String)sdf.format(date);
+				sdf = new SimpleDateFormat("EEEE",Locale.ENGLISH);
+				String day_name = (String)sdf.format(date).toLowerCase();
 				
 				do {
 					
 					cpt++;
 					
-					String query = "SELECT td1.trajet_id,td2.gare1,td2.trajet_id";
+					query = "SELECT td1.trajet_id,td2.gare1,td2.trajet_id";
 					
 					for(int i = 0 ; i < cpt-1 ; i++) {
 						query+= ",td"+(i+3)+".gare1,td"+(i+3)+".trajet_id";
@@ -75,121 +82,13 @@ public class Search extends HttpServlet {
 					
 					query+=" WHERE td1.gare1 LIKE '%"+stop_id1+"%' AND td"+(cpt+1)+".gare2 LIKE '%"+stop_id2+"%';";
 					
-					trajet_id = t.getRequest(query);
-					
 				}while( trajet_id.size() == 0 && cpt < 2);
 				
-			}
+				query+=" AND td1.trajet_id IN ( SELECT trajet_id FROM trajet WHERE service_id FROM calendar WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"'))";
+				query+=" AND td2.trajet_id IN ( SELECT trajet_id FROM trajet WHERE service_id FROM calendar WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"'))";
 			
-			String day = (String)sdf.format(date);
-			sdf = new SimpleDateFormat("EEEE",Locale.ENGLISH);
-			String day_name = (String)sdf.format(date).toLowerCase();
-			
-			for( ArrayList<String> obj: trajet_id ) {
-				if( obj.size() == 1 ) {
-					temp = "SELECT trajet_id\n" + 
-							"FROM trajet\n" + 
-							"WHERE trajet_id='"+obj.get(0)+"' AND service_id in (\n" + 
-							"SELECT service_id\n" + 
-							"FROM calendar\n" + 
-							"WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"');";
-				}else {
-					temp = "SELECT service_id FROM trajet WHERE trajet_id IN (";
-					for(int i = 0 ; i < obj.size() ; i=i+2) {
-						temp+="'"+obj.get(i)+"',";
-					}
-					temp = temp.substring(0,temp.length()-1);
-					temp+=	") INTERSECT SELECT service_id FROM calendar WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"';";
-				}
-				ArrayList<String> res_temp_service = t.getRequests(temp);
-				if( res_temp_service.size() == ((obj.size()+1)%2) ) {
-					trajet_id_dispo.add(obj);
-				}
-			}
-			
-			LinkedHashMap<String,String> has = new LinkedHashMap<>();
-			
-			if( trajet_id_dispo.size() != 0 && trajet_id_dispo.get(0).size() == 1) {
-				
-				for(int i = 0 ; i < trajet_id_dispo.size() ; i++){
-					
-					temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+trajet_id_dispo.get(i).get(0)+"';");
-					String[] tab = temp.split("\\?");
-					has = new LinkedHashMap<>();
-
-					for(int j = 0 ; j < tab.length ; j++){
-						String[] tab_temp = (tab[j].split("%"));
-						has.put(tab_temp[0],tab_temp[1]);
-					}
-			
-					switch (req.getParameter("select")) {
-						case "0":
-							if( compareTime( (has.get(req.getParameter("gare1")).substring(0,5)), req.getParameter("temps") ) == -1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0));
-							}
-							break;
-						case "1":
-							if( compareTime( (has.get(req.getParameter("gare2")).substring(0,5)), req.getParameter("temps") ) == -1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0));
-							}
-							break;
-						case "2":
-							if( compareTime( (has.get(req.getParameter("gare1")).substring(0,5)), req.getParameter("temps") ) == 1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0));
-							}
-							break;
-						case "3":
-							if( compareTime( (has.get(req.getParameter("gare2")).substring(0,5)), req.getParameter("temps") ) == 1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0));
-							}
-							break;
-					}
-				}
-					
-			}else if( trajet_id_dispo.size() != 0 && trajet_id_dispo.get(0).size() == 3 ){
-				for(int i = 0 ; i < trajet_id_dispo.size() ; i++){
-					
-					switch (req.getParameter("select")) {
-						case "0": case "2":
-							temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+trajet_id_dispo.get(i).get(0)+"';");
-	
-							break;
-						case "1": case "3":
-							temp = t.toString("SELECT name,arrival_time FROM stop_times AS st INNER JOIN stops AS s ON st.stop_id=s.stop_id WHERE trajet_id='"+trajet_id_dispo.get(i).get(2)+"';");
-							break;
-					}
-					
-					String[] tab = temp.split("\\?");
-					has = new LinkedHashMap<>();
-					
-					for(int j = 0 ; j < tab.length ; j++){
-						String[] tab_temp = (tab[j].split("%"));
-						has.put(tab_temp[0],tab_temp[1]);
-					}
-					
-					switch (req.getParameter("select")) {
-						case "0":
-							if( compareTime((has.get(req.getParameter("gare1")).substring(0,5)), req.getParameter("temps")) == -1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0)+"%"+trajet_id_dispo.get(i).get(1)+"%"+trajet_id_dispo.get(i).get(2));
-							}
-							break;
-						case "1":
-							if( compareTime( (has.get(req.getParameter("gare2")).substring(0,5)), req.getParameter("temps") ) == -1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0)+"%"+trajet_id_dispo.get(i).get(1)+"%"+trajet_id_dispo.get(i).get(2));
-							}
-							break;
-						case "2":
-							if( compareTime( (has.get(req.getParameter("gare1")).substring(0,5)), req.getParameter("temps") ) == 1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0)+"%"+trajet_id_dispo.get(i).get(1)+"%"+trajet_id_dispo.get(i).get(2));
-							}
-							break;
-						case "3":
-							if( compareTime( (has.get(req.getParameter("gare2")).substring(0,5)), req.getParameter("temps") ) == 1 ) {
-								finale.add(trajet_id_dispo.get(i).get(0)+"%"+trajet_id_dispo.get(i).get(1)+"%"+trajet_id_dispo.get(i).get(2));
-							}
-							break;
-					}
-				}
+			}else{
+				query+=" AND trajet_id IN ( SELECT trajet_id FROM trajet WHERE service_id FROM calendar WHERE "+day_name+"=1 AND start_date < '"+day+"' AND end_date > '"+day+"')) ";
 			}
 			
 			session.setAttribute("res",finale);

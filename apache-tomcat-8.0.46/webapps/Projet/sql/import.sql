@@ -8,6 +8,7 @@ DROP TABLE if EXISTS stops;
 DROP TABLE if EXISTS client;
 DROP TABLE if EXISTS calendar_dates;
 DROP TABLE if EXISTS calendar;
+DROP TABLE if EXISTS temporaly_data;
 
 CREATE TABLE calendar(
 	service_id int,
@@ -110,22 +111,29 @@ CREATE TABLE stop_times(
 	constraint fk_stop foreign key (stop_id) REFERENCES stops(stop_id) on delete restrict on update cascade
 );
 
+CREATE TABLE temporaly_data as(
+	SELECT st1.trajet_id,st1.stop_id as gare1,st1.num_sequence as ns1,st2.stop_id as gare2,st2.num_sequence as ns2
+	FROM stop_times as st1
+	INNER JOIN stop_times as st2 ON st1.trajet_id=st2.trajet_id
+	WHERE st1.stop_id!=st2.stop_id AND st1.stop_times_id < st2.stop_times_id
+);
+	
 INSERT INTO client(nom,pseudo,mdp) VALUES('root','root','root');
---\copy agency (agency_id,nom,url,timezone,lang) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_agency.csv' DELIMITER ',';
---\copy gare (libelle,fret,voyageur,codeligne,rang,commune,departement,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_final_gares.csv' DELIMITER ',';
---\copy stops (stop_id,name,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_stops.csv' DELIMITER ',';
---\copy routes (route_id,agency_id,route_long_name,type) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_routes.csv' DELIMITER ',';
---\copy trajet FROM '/home/infoetu/lamboisa/S5/Projet/data/data_trajet.csv' DELIMITER ',';
---\copy calendar FROM '/home/infoetu/lamboisa/S5/Projet/data/data_calendar.csv' DELIMITER ',';
---\copy calendar_dates FROM '/home/infoetu/lamboisa/S5/Projet/data/data_calendar_dates.csv' DELIMITER ',';
---\copy stop_times (trajet_id,departure_time,arrival_time,stop_id,num_sequence) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_stop_times.csv' DELIMITER ',';
+\copy agency (agency_id,nom,url,timezone,lang) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_agency.csv' DELIMITER ',';
+\copy gare (libelle,fret,voyageur,codeligne,rang,commune,departement,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_final_gares.csv' DELIMITER ',';
+\copy stops (stop_id,name,latitude,longitude) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_stops.csv' DELIMITER ',';
+\copy routes (route_id,agency_id,route_long_name,type) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_routes.csv' DELIMITER ',';
+\copy trajet FROM '/home/infoetu/lamboisa/S5/Projet/data/data_trajet.csv' DELIMITER ',';
+\copy calendar FROM '/home/infoetu/lamboisa/S5/Projet/data/data_calendar.csv' DELIMITER ',';
+\copy calendar_dates FROM '/home/infoetu/lamboisa/S5/Projet/data/data_calendar_dates.csv' DELIMITER ',';
+\copy stop_times (trajet_id,departure_time,arrival_time,stop_id,num_sequence) FROM '/home/infoetu/lamboisa/S5/Projet/data/data_stop_times.csv' DELIMITER ',';
 
-\copy agency (agency_id,nom,url,timezone,lang) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_agency.csv' DELIMITER ',';
-\copy gare (libelle,fret,voyageur,codeligne,rang,commune,departement,latitude,longitude) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_final_gares.csv' DELIMITER ',';
-\copy stops (stop_id,name,latitude,longitude) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_stops.csv' DELIMITER ',';
-\copy routes (route_id,agency_id,route_long_name,type) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_routes.csv' DELIMITER ',';
-\copy trajet FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_trajet.csv' DELIMITER ',';
-\copy calendar FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_calendar.csv' DELIMITER ',';
-\copy calendar_dates FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_calendar_dates.csv' DELIMITER ',';
-\copy stop_times (trajet_id,departure_time,arrival_time,stop_id,num_sequence) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_stop_times.csv' DELIMITER ',';
+--\copy agency (agency_id,nom,url,timezone,lang) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_agency.csv' DELIMITER ',';
+--\copy gare (libelle,fret,voyageur,codeligne,rang,commune,departement,latitude,longitude) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_final_gares.csv' DELIMITER ',';
+--\copy stops (stop_id,name,latitude,longitude) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_stops.csv' DELIMITER ',';
+--\copy routes (route_id,agency_id,route_long_name,type) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_routes.csv' DELIMITER ',';
+--\copy trajet FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_trajet.csv' DELIMITER ',';
+--\copy calendar FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_calendar.csv' DELIMITER ',';
+--\copy calendar_dates FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_calendar_dates.csv' DELIMITER ',';
+--\copy stop_times (trajet_id,departure_time,arrival_time,stop_id,num_sequence) FROM 'C:/Users/Alexis/git/ProjetSemestre1/data/data_stop_times.csv' DELIMITER ',';
 

@@ -1,22 +1,21 @@
-DROP TABLE if EXISTS test;
-DROP TABLE if EXISTS temporaly_data;
-
-CREATE TABLE test(
-	id serial,
-	trajet_id int,
-	stop_id int,
-	primary key (id)
+SELECT td1.trajet_id,td2.gare1,td2.trajet_id 
+FROM temporaly_data as td1 
+INNER JOIN temporaly_data as td2 ON td1.gare2=td2.gare1
+WHERE td1.gare1 LIKE '%87286401%' AND td2.gare2 LIKE '%87286542%' 
+AND td1.trajet_id IN ( 
+	SELECT trajet_id 
+	FROM trajet 
+	WHERE service_id IN (
+		SELECT service_id 
+		FROM calendar 
+		WHERE tuesday=1 AND start_date < '2018-01-09' AND end_date > '2018-01-09'
+	)
+) AND td2.trajet_id  IN ( 
+	SELECT trajet_id 
+	FROM trajet 
+	WHERE service_id IN (
+		SELECT service_id 
+		FROM calendar 
+		WHERE tuesday=1 AND start_date < '2018-01-09' AND end_date > '2018-01-09'
+	)
 );
-
-INSERT INTO test(trajet_id,stop_id) VALUES(1,1);
-INSERT INTO test(trajet_id,stop_id) VALUES(1,2);
-INSERT INTO test(trajet_id,stop_id) VALUES(1,3);
-INSERT INTO test(trajet_id,stop_id) VALUES(1,4);
-INSERT INTO test(trajet_id,stop_id) VALUES(1,5);
-
-
-CREATE TABLE temporaly_data as(
-	SELECT st1.trajet_id,st1.stop_id as gare1,st1.num_sequence as ns1,st2.stop_id as gare2,st2.num_sequence as ns2
-	FROM stop_times as st1
-	INNER JOIN stop_times as st2 ON st1.trajet_id=st2.trajet_id
-	WHERE st1.stop_id!=st2.stop_id AND st1.stop_times_id < st2.stop_times_id);
