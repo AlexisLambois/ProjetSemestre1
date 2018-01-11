@@ -220,5 +220,25 @@ public class BddTools {
 		}
 		return res;
 	}
+	
+	public void Insert(String query){
+		try{
+			Statement stmt = this.con.createStatement();
+			stmt.executeUpdate(query);
+		}catch(Exception e){
+			e.printStackTrace();
+			fermer();
+		}
+	}
+	
+	public void Delete(String query){
+		try{
+			Statement stmt = this.con.createStatement();
+			stmt.executeQuery(query);
+		}catch(Exception e){
+			e.printStackTrace();
+			fermer();
+		}
+	}
 
 }

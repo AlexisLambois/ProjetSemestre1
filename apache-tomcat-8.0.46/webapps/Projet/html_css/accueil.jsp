@@ -38,7 +38,7 @@
 					<a href="inscription.jsp"><button>CREER UN COMPTE</button></a>
 					<a href="connection.jsp?page=accueil"><button>SE CONNECTER</button></a>
 		<% }else{ %>
-					<a href=""><button>MON PANIER</button></a>
+					<a href=".././servlet/Panier"><button>MON PANIER</button></a>
 					<a href=".././servlet/Deconnexion?page=accueil"><button>DECONNECTION</button></a>
 		<% } %>
 				</div>
@@ -149,9 +149,7 @@
 		}
 
 		function send(){
-
-			var date = new Date(document.getElementById("datepicker").value);
-			date.setSeconds(00);
+			
 			var value1 = null;
 			var value2 = null;
 			var temps = replaceAll(document.getElementById("timepicker").value," ","");
@@ -167,8 +165,9 @@
 				}
 			});
 
-			if( value1 != "" && value2 != "" && date != "" && value1 != null && value2 != null ){
-
+			if( value1 != "" && value2 != "" && value1 != null && value2 != null && document.getElementById("datepicker").value != ""){
+				var date = new Date(document.getElementById("datepicker").value);
+				date.setSeconds(00);
 				document.location.href=".././servlet/Search?date="+date.toLocaleString("fr-FR", {hour12: false})+"&gare1="+value1+"&gare2="+value2+"&temps="+temps+"&select="+select;
 			
 			}else{

@@ -21,13 +21,13 @@
 				<a href="accueil.jsp"><img src="images/logo.png"></a>
 			</div>
 			<div class="lienMenuAccueil">
-	<% if(session.getAttribute("id_client") == null ){ %>
-				<a href="inscription.jsp"><button>CREER UN COMPTE</button></a>
-				<a href="connection.jsp?page=search"><button>SE CONNECTER</button></a>
-	<% }else{ %>
-				<a href=""><button>MON PANIER</button></a>
-				<a href=".././servlet/Deconnexion?page=search"><button>DECONNECTION</button></a>
-	<% } %>
+				<% if(session.getAttribute("id_client") == null ){ %>
+							<a href="inscription.jsp"><button>CREER UN COMPTE</button></a>
+							<a href="connection.jsp?page=search"><button>SE CONNECTER</button></a>
+				<% }else{ %>
+							<a href=".././servlet/Panier"><button>MON PANIER</button></a>
+							<a href=".././servlet/Deconnexion?page=search"><button>DECONNECTION</button></a>
+				<% } %>
 			</div>
 		</div>
 	</nav>
@@ -62,7 +62,7 @@
 						has.put(tab_temp[0],tab_temp[1]);
 					}
 					
-					out.print("<div class=\"trajet_clic\" onclick=\"add("+tab_trajet_id.get(i)+")\" >");
+					out.print("<div class=\"trajet_clic\" onclick=\"add('"+tab_trajet_id.get(i)+"%"+session.getAttribute("gare1")+"%"+session.getAttribute("gare2")+"%"+session.getAttribute("date")+"')\" >");
 					out.print("<h2>Trajet n°"+(i+1)+" : </h2>");
 					out.print("<p>Départ : gare <span class=\"souligner_gras\">" + has.keySet().toArray()[0] + "</span> à <span class=\"souligner_gras\">" + has.get( has.keySet().toArray()[0]) + "</span><br>" );
 					out.print("Arrivée : gare <span class=\"souligner_gras\">" + has.keySet().toArray()[has.size()-1] + "</span> à <span class=\"souligner_gras\">" + has.get( has.keySet().toArray()[has.size()-1]) + "</span><br>");
@@ -94,7 +94,7 @@
 					
 					temp = t.toString("SELECT name FROM stops WHERE stop_id='"+data[1]+"';");
 					temp = temp.substring(0,temp.length()-2);
-					out.print("<div class=\"trajet_clic\" onclick=\"add("+tab_trajet_id.get(i)+")\" >");
+					out.print("<div class=\"trajet_clic\" onclick=\"add('"+tab_trajet_id.get(i)+"%"+session.getAttribute("gare1")+"%"+session.getAttribute("gare2")+"%"+session.getAttribute("date")+"')\" >");
 					out.print("<h2>Trajet n°"+(i+1)+" : </h2>");
 					out.print("<p> Prendre train direction : <span class=\"souligner_gras\">" + has.keySet().toArray()[has.keySet().toArray().length-1] + "</span><br>");
 					out.print("&nbsp Gare de départ : gare <span class=\"souligner_gras\">" + session.getAttribute("gare1") + "</span> à <span class=\"souligner_gras\">" + has.get(session.getAttribute("gare1")) + "</span><br>");
@@ -116,7 +116,17 @@
 	%>
 	</div>
 	<script language="JavaScript">
-		
+		function add(object){
+			var r = confirm("Valider le ticket !");
+			if (r == true) {
+				if( "<%=session.getAttribute("id_client")%>" != "null" ){
+					var tab = object.split("%");
+					document.location.href=".././servlet/Insert?object="+tab;
+				}else{
+					alert("Vous n'êtes pas connecté ! ");
+				}
+			}
+		}
 	</script>
 </body>
 </html>
